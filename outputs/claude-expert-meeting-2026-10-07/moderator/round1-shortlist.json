@@ -1,0 +1,110 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 아이디어 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "round": 1,
+  "round_name": "사회자 후보 압축",
+  "date": "2026-10-07",
+  "moderator": "메인 오케스트레이터(Claude Opus 5.5)",
+  "inputs": [
+    "industry-researcher/round1-briefing.json",
+    "shipping-ops/round1-ideas.json",
+    "port-terminal/round1-ideas.json",
+    "logistics-data-architect/round1-ideas.json",
+    "ai-engineer/round1-ideas.json",
+    "business-strategist/round1-ideas.json",
+    "regulation-esg/round1-ideas.json"
+  ],
+  "independence_note": "라운드1 전문가들은 코덱스 회의를 읽지 않았다. 사회자는 별도 요청으로 코덱스 결론을 판별하는 읽기 전용 검토(심사 관점 4명+반박 1명, 파일 미작성)를 병행했고, 그 결과 'A′: 적하목록 제출 전 수출신고필증–SI–Draft B/L 3자 정합성 점검'이 제안됐다. 아래 M1에서 수출신고필증(EP) 대조 요소는 그 외부 판별에서 온 것으로 출처를 표시한다. 나머지 압축은 라운드1 전문가 산출물만으로 했다.",
+  "key_findings_from_briefing": [
+    {"finding": "kobcax.com 공모 게시판에 2026년 응모작 약 50건이 공개돼 있고, 요강은 동일·유사 내용의 먼저 응모한 건을 우선한다. 제목으로 확인된 응모작: 냉동컨테이너 이동 후 전원 인계 완료 확인(09-29), 부산신항 ITT 환적 장치계획 AI(10-01), 장기체화 컨테이너 AI(10-05), 벌크선 화물창 합격판정 AI(09-20).", "source": "https://kobcax.com/contest/?sbr2_page=2", "status": "fact(제목 기준, 본문 미확인)"},
+    {"finding": "KOBC가 이미 실증한 주제: 위험물 선적 가능 여부 챗봇, 터미널 통계 자연어 분석, 컨테이너 손상 비전AI, 사이버보안 지침-문서 비교. 2026년 지원 대상을 벌크 선사로 확대.", "source": "industry-researcher 브리핑", "status": "fact(보도 기준)"},
+    {"finding": "추출·입력·SI 검증 자체는 포스코DX R대리(2026-04), IQAX×CargoNPay(2025-10), Raft, Shipamax 등이 이미 제공한다. 메일 태스크 추출·독촉(후보 B 일반형)은 Tandom·Wove·Expedock이 제공한다.", "source": "industry-researcher 브리핑", "status": "fact(공급사 자료 기준)"},
+    {"finding": "KOBC는 2026-08부터 LG CNS와 중소선사 AI 진단·컨설팅·PoC를 진행한다. 중소기업 디지털 성숙도 19점(대기업 46점), AI 도입·정착 14%.", "source": "industry-researcher 브리핑", "status": "fact(보도 기준)"}
+  ],
+  "shortlist": [
+    {
+      "id": "M1",
+      "title": "발행 전 수출 선적서류 정합성 게이트: 최신 SI 버전·Draft MBL·HBL(적하목록 초안)·수출신고필증 대조로 출항 후 유료 정정 예방",
+      "track": "해운 AX(대안: 물류 AX)",
+      "merged_from": ["business-strategist-3", "logistics-data-architect-3", "후보 A", "regulation-esg·port-terminal의 A 개선 의견", "외부 판별의 A′(수출신고필증 대조 요소)"],
+      "convergence": 4,
+      "core": "포워더 문서 담당이 선사 Draft를 승인하기 전에 SI 개정 버전 원장, Draft MBL, 자사 HBL·적하목록 초안, 수출신고필증 핵심 필드를 대조한다. 숫자·번호·단위는 규칙, 서식이 제각각인 PDF의 필드·원문 위치 추출과 품명·상호의 의미 동일성 후보는 AI가 맡는다. DCSA 필드 출처(Booking/SI/운송인) 매핑으로 정상 변경을 오탐하지 않게 하고, 차이마다 '지금 무료 / 세관 제출·출항 후 유료 정정 / 사전신고국 정정' 비용·시점 라벨을 붙인다. 판정·발신은 사람.",
+      "evidence_highlights": ["DCSA BL 3.0: Draft 직접 수정 불가, SI 수정→재발행, 표준에 SI–Draft 차이 대조 장치 없음", "선사 정정 수수료 공개 사례(Hamburg Süd USD 95, Hapag-Lloyd 한국 요율표의 세관 제출 후 정정 항목)", "관세법 제251조(수리 후 30일 내 적재), 제277조(적재화물목록 관련 과태료)"],
+      "open_risks": ["R대리·IQAX×CargoNPay 등 문서 AI와 겹친다는 지적", "국내 정정 빈도·비용 통계 부재", "KOBC 사업화 대상에 포워더 포함 여부", "공개 응모작 중 유사작 여부 미확인"]
+    },
+    {
+      "id": "M2",
+      "title": "B/L 정정 반영·연쇄 검증기: 정정 요청한 것만, 연결 문서(MBL·HBL·적하목록·해외 사전신고)까지 바뀌었는가",
+      "track": "해운 AX",
+      "merged_from": ["ai-engineer-1", "shipping-ops-2"],
+      "convergence": 2,
+      "core": "화주의 자유문 정정 요청을 LLM이 필드 단위 기대 변경으로 구조화(원문 인용 필수)하고, 이전·재발행 Draft의 차이와 MBL·HBL·House 적하목록 공통 필드 일치는 규칙으로 계산한다. 미반영·요청 외 변경·표기만 다름을 근거와 함께 보여주고, '필드×단계×목적지 사전신고' 표로 적재화물목록 정정·해외 사전신고 정정·원본 회수·수수료 후속 조치를 산출한다.",
+      "evidence_highlights": ["DCSA eBL 정정 절차(반환→무효화→재발행)", "선사 정정 수수료 사례(Maersk USD 100 등)", "관세법 제135조 제2항 입항 전 적재화물목록 제출", "EU ICS2 하우스 신고 의무"],
+      "open_risks": ["포워딩 ERP·선사 포털 버전 비교 기능 존재 여부 미확인", "대형 선사의 구조화 웹 정정 전환으로 적용 지점 축소", "국가별 사전신고 규칙표 유지 부담"]
+    },
+    {
+      "id": "M3",
+      "title": "선적 변경 연쇄 점검: 모선·항차·컷오프 변경이 만드는 서류·신고 재작업 누락 방지",
+      "track": "해운 AX",
+      "merged_from": ["shipping-ops-1", "후보 B의 추적 개념"],
+      "convergence": 1,
+      "core": "선사의 모선·항차·컷오프 변경 통지를 AI가 구조화하고, 규칙 엔진이 영향받는 부킹마다 다시 할 일(화주 통지, SI·VGM 마감, Draft B/L 반영, 하우스 적재화물목록·해외 사전신고 정정, 수출신고 적재기간 30일 초과 위험)을 기한·담당과 함께 생성한다. 담당자가 확인·처리.",
+      "evidence_highlights": ["2026년 7월 스케줄 신뢰도 56.4%·평균 지연 6.06일(공개 보도, 재확인 필요)", "관세법 제251조 적재기간·제277조 과태료", "DCSA 변경 후 Draft 재게시 절차"],
+      "open_risks": ["가시성 플랫폼·통합 TMS(CargoWise 등)와의 경계", "국내 빈도·비용 통계 부재", "실무 업무 순서 미검증"]
+    },
+    {
+      "id": "M4",
+      "title": "보세운송 차량·기사 신고 정합성 게이트: 반출 전 세관 차량신고·실제 배차·COPINO 대조로 건당 50만원 과태료 예방",
+      "track": "물류 AX",
+      "merged_from": ["logistics-data-architect-1", "business-strategist-2", "regulation-esg-1", "후보 B를 법정 인계로 바꾼 형태"],
+      "convergence": 3,
+      "core": "배차 확정 뒤 메신저·엑셀로 생긴 기사·차량 변경을 AI가 구조화하고, 세관 차량신고 내역·터미널 반출예정정보(COPINO)와 컨테이너 단위로 대조해 미신고·순서 역전·변경 미반영을 출차 전에 경보한다. 과태료 소명용 시간순 근거를 정리하고, 다음 날 공공 반출입 API로 사후 누락을 점검한다. 신고는 사람이 UNI-PASS에서 한다.",
+      "evidence_highlights": ["2026년 본격 적용, 건당 50만원 과태료, 3개월 약 1,000만원 누적 사례, 업계의 전산 연동·사전 예방 요구(뉴시스 2026-04-18, 2026-06-05·06)", "해수부 외항컨테이너반출입정보 공공 API(B/L 번호 포함)"],
+      "open_risks": ["엠투코리아 '스마트 보세운송 서비스'(2024-11 상용화 진행 보도)와 중복", "관세청 유예·제도 개선·COPINO 자동 연계 시 수요 감소", "규칙 중심이라 AI 역할이 얇다는 반론", "해양 AX 적합성(육상 운송) 중간", "고시 원문·신고 시점 정의 미확인"]
+    },
+    {
+      "id": "M5",
+      "title": "하역사 총괄 안전관리 지원: 협력업체 동시작업 충돌 사전 점검과 당일 작업 맞춤 TBM 근거 브리핑",
+      "track": "항만 AX",
+      "merged_from": ["port-terminal-1", "port-terminal-3"],
+      "convergence": 1,
+      "core": "하역계획과 협력업체(수리·검수·줄잡이·화물차·급유)의 작업·출입 신청을 AI가 구역·시간으로 구조화해 사업장 위험 조합 규칙으로 계획 단계 충돌을 찾고, 당일 작업 정보로 위험 요인 후보를 근거 조항·재해사례와 함께 TBM 초안으로 만든다. 결정은 안전관리자·작업반장.",
+      "evidence_highlights": ["항만 하역 재해 2022~2024년 1,016명, 2025년 사망 7명(국회 제출 자료 보도)", "항만안전특별법상 하역사의 출입 근로자 전체 총괄 안전관리 의무", "해수부 2030년 재해 50% 감축 목표"],
+      "open_risks": ["BPA AI 위험성평가·TBM 도구, 해수부 재해 예측 시스템과 유사", "협력업체 데이터 확보·현장 협조", "TBM 형식화·동시작업 조정 실태는 가설", "안전 영역에서 AI 판단 책임"]
+    },
+    {
+      "id": "M6",
+      "title": "EU행 하우스 화물 품명·HS 사전 게이트(ICS2): 거절되기 전에 화주에게 묻는다",
+      "track": "물류 AX",
+      "merged_from": ["regulation-esg-2", "ai-engineer-2"],
+      "convergence": 2,
+      "core": "공개 금지 일반 품명(Stop word)과 필수 필드는 규칙으로, 목록에 없는 모호한 품명과 품명·HS 6단위·인보이스 정합성은 LLM이 EU 예시를 근거로 판정한다. 품명·HS를 대신 만들지 않고 화주에게 보낼 보완 질문 초안만 만든다.",
+      "evidence_highlights": ["EU ICS2 하우스 ENS 적재 전 제출, 모호한 품명은 반려·적재 금지 가능", "집행위 가이드: 금지 용어 목록은 망라적이지 않고 계속 변경", "FIATA 2025-07-24 경고"],
+      "open_risks": ["Zonos·iCustoms 등 HS·품명 AI와 기술 겹침", "국내 반려 빈도 통계 부재", "EU 규정이라 국내 해양 AX 적합성 중간", "의무화 시점 출처 불일치"]
+    },
+    {
+      "id": "M7",
+      "title": "선석 변경 한 건, 항만서비스 오더 전부: 선박대리점용 입항 서비스 연쇄 재확인",
+      "track": "항만 AX",
+      "merged_from": ["port-terminal-2", "후보 B"],
+      "convergence": 1,
+      "core": "ETA·선석 변경 통지를 AI가 구조화하면 규칙이 영향받는 도선·예선·줄잡이·급유 오더와 새 요청 시각을 계산하고, AI가 업체별 변경 요청 초안을 만들며, 담당자 발송 후 확인 상태를 끝까지 추적한다. 후보 B의 가장 강한 형태로 비교용 유지.",
+      "evidence_highlights": ["IMO JIT 가이드(정박지 대기가 운항시간의 최대 9%)", "IALA S-211·PortCDM 이벤트 모델", "울산항 선석배정 공개 데이터"],
+      "open_risks": ["국내 대리점 변경 전파 누락 통계·보도 부재", "실무자 없이 선행시간 규칙 정의", "Port-i·PortCDM 계열과 유사"]
+    }
+  ],
+  "dropped": [
+    {"id": "logistics-data-architect-2", "title": "선박 입출항 4개 기관 신고 데이터 원장", "reason": "해수부가 2026-08 통합 신고체계 연구용역에 착수해 정부 사업과 중복으로 보일 위험, 선원 고유식별정보 처리 부담."},
+    {"id": "business-strategist-1", "title": "공표 운임·부대비용 견적·청구 정합성", "reason": "미준수 빈도·비용 근거 부재, 현행 운임공표 규정 미확인."},
+    {"id": "regulation-esg-3", "title": "용선계약 탄소비용 정산 대조", "reason": "Veson IMOS 등 상용 기능과 중복, 국내 중소선사 근거 부재, 기밀 데이터."},
+    {"id": "shipping-ops-3", "title": "화물 사고 이중 기한 관리", "reason": "클레임 관리 상용 제품 존재, 해양 AX 적합성·효과성 약함(제안자 스스로 예비안)."},
+    {"id": "ai-engineer-3", "title": "문서 AI 도입 전 자가 검증 세트", "reason": "현장 QCD 효과가 간접적인 메타 도구. M1·M2의 2.6 성과지표·평가 설계로 흡수."},
+    {"id": "후보 B(원안)", "title": "인수인계 미처리 항목 추적", "reason": "Tandom·Wove·Expedock과 중복, 항만 인계로 좁히면 2026 냉동컨테이너 인계 응모작과 유사. M4(법정 인계)·M7(입항 서비스)로 변형 흡수."}
+  ],
+  "round2_plan": {
+    "cross_review": "전문가 6명이 M1~M7을 공식 배점(실현 30·효과 30·문제정의 20·적합 10·혁신 10, 프로토타입 가점 10)으로 채점하고 강화 방안·탈락 사유·상위 3개를 남긴다.",
+    "duplication_check": "industry-researcher가 kobcax 공개 응모작 게시판 전체 제목·공개 본문, KOBC 실증 과제, 국내외 제품과 각 후보의 유사성을 반박 관점으로 검증한다.",
+    "fact_check": "별도 사실 확인 담당이 각 후보 핵심 근거(과태료·조문·요율·통계)를 원문으로 재확인한다.",
+    "judge": "judge-panel(KOBC 해양 산업 자문위원단 5명 관점)이 독립 채점한다."
+  }
+}

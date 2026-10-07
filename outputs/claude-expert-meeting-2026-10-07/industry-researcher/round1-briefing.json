@@ -1,0 +1,711 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "round": 1,
+  "round_name": "브리핑",
+  "date": "2026-10-07",
+  "expert": {
+    "slug": "industry-researcher",
+    "role": "해운·항만·물류 AX 산업 현황 조사관",
+    "lens": "공개 1차·언론 자료로 정책 방향, 현장 문제 근거, 기존 제품, 개인이 쓸 수 있는 공개 데이터를 구분해 지도화한다. 수치는 출처가 있을 때만 쓰고, 가설·추론은 별도 표시한다."
+  },
+  "policy_context": [
+    {
+      "topic": "KOBC 설립 목적·업무",
+      "fact": "2018년 설립된 해양수산부 산하 공공기관으로 해운 경쟁력 강화가 목적이며 선박·항만터미널 투자·보증, 해운시황 정보, 친환경·디지털 전환 지원 등을 수행한다는 검색 요약. 한국해양진흥공사법 원문은 이번 조사에서 열람하지 않음.",
+      "status": "unverified",
+      "source_url": "https://www.dailian.co.kr/news/view/1038165/",
+      "source_date": "미확인"
+    },
+    {
+      "topic": "KOBC 해양산업 AI 3개년 계획",
+      "fact": "3대 전략(해양기업 AI 역량 제고, 해양산업 AI 기술 육성, AI 기반 미래 대응). 2025 원스톱 AI 종합지원체계 구축, 2026 AI 플랫폼·패키지 서비스, 2027 AI 융합·통합 솔루션. 2025년 과제로 AI 에이전트 개발, 오픈랩(GPU·학습데이터 공유), AI Quick Innovation, 플랫폼 개발.",
+      "status": "fact",
+      "source_url": "https://www.metroseoul.co.kr/article/20250408500769",
+      "source_date": "2025-04-09"
+    },
+    {
+      "topic": "KOBC 디지털 성숙도 조사",
+      "fact": "2024년 10월 해운·항만기업 30곳 조사: 디지털 성숙도 중소기업 평균 19점, 대기업 46점. AI 필요성 인지 74%, 실제 도입·정착 14%(도입 12%, 정착 2%).",
+      "status": "fact",
+      "source_url": "https://www.dailian.co.kr/news/view/1483311/",
+      "source_date": "2025-04-10"
+    },
+    {
+      "topic": "KOBC AX·DX 종합지원 사업과 kobcax 플랫폼",
+      "fact": "2025-09-15 AX·DX 종합지원 사업 착수 공지(국적선사·항만물류 업계 대상, LG CNS 협력). kobcax.com에 AX·DX 실행력 진단, 선박AX 준비도 진단, 25·26년 AX Discovery, AI 교육, 솔루션 카탈로그(정회원 전용) 메뉴가 있음.",
+      "status": "fact",
+      "source_url": "https://kobcax.com/",
+      "source_date": "2026-10-07 열람"
+    },
+    {
+      "topic": "KOBC·LG CNS 2025 AX 4대 실증사례",
+      "fact": "2025년 10월 착수 실증 4건 공개: (1) 위험물 예약 시 출발지·도착지·화물정보 입력으로 선적 가능 여부 판단 챗봇(HMM·팬오션·남성해운·현대LNG해운) (2) 터미널 원시데이터 자연어 통계 분석·보고서 자동 생성(한진부산컨테이너터미널) (3) 컨테이너 손상 유형 비전AI 분류·수리견적 검증(한진부산컨테이너터미널) (4) 국제기구 개정 지침과 기존 해사 사이버보안 문서 비교·갱신 GenAI(해진공). 2026년에는 AI 서비스 플랫폼 구축, 지원 대상을 컨테이너 선사에서 벌크 선사로 확대 계획.",
+      "status": "fact",
+      "source_url": "https://biz.newdaily.co.kr/site/data/html/2025/12/18/2025121800327.html",
+      "source_date": "2025-12-18"
+    },
+    {
+      "topic": "2026년 중소선사 AI 진단·실증",
+      "fact": "2026 제2차 해양산업 AI 전환 실무협의회(중견선사 및 중소선사 16개사 등 약 50명). 8월부터 LG CNS와 중소선사 AI 수준 진단·컨설팅·PoC 추진, LG AI연구원 엑사원 협력, 해양산업 AX 플랫폼으로 확대 계획.",
+      "status": "fact",
+      "source_url": "https://view.asiae.co.kr/article/2026072314175095375",
+      "source_date": "2026-07-23"
+    },
+    {
+      "topic": "KOBC 해양산업 AI 가이드라인",
+      "fact": "AI 시장·규제 동향, AI 도입 단계별 검토사항, 실무 체크리스트로 구성된 가이드라인 PDF 배포. 기획서 2.7 리스크·대응 절의 참고 기준으로 쓸 수 있음(PDF 본문은 미열람).",
+      "status": "fact",
+      "source_url": "https://kobcax.com/notice/%ea%b3%b5%ec%9c%a0-%ed%95%b4%ec%96%91%ec%82%b0%ec%97%85-%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5ai-%ea%b0%80%ec%9d%b4%eb%93%9c%eb%9d%bc%ec%9d%b8-%eb%b0%b0%ed%8f%ac/",
+      "source_date": "2026-01-06"
+    },
+    {
+      "topic": "AX Discovery Workshop 방식",
+      "fact": "2026년 8월 서울·부산 워크숍: 현재 업무 프로세스 분석, Pain Point 파악, 서비스 시나리오 정의, QA Set 작성. KOBC가 현장 문제→시나리오→질문셋 순서로 과제를 정의한다는 신호.",
+      "status": "fact",
+      "source_url": "https://kobcax.com/notice/%ea%b3%b5%ec%9c%a0-ax-discovery-workshop%ec%97%90-%ec%b4%88%eb%8c%80%ed%95%a9%eb%8b%88%eb%8b%a4/",
+      "source_date": "2026-07-15"
+    },
+    {
+      "topic": "2025 공모전과 수상작",
+      "fact": "2025 공모전은 2025-09-22~11-07 접수, 시상식 2025-12-11, 상금 구조는 2026과 동일. 수상자 발표 공지(2025-11-19)는 개별 메일 통보만 밝혀 수상작 주제는 공개자료에서 확인되지 않음.",
+      "status": "unverified",
+      "source_url": "https://kobcax.com/contest/?sbr2_action=view&id=933&sbr2_page=1&page=1",
+      "source_date": "2025-11-19"
+    },
+    {
+      "topic": "2026 공모 게시판 공개 응모 현황",
+      "fact": "kobcax 공모전 게시판에 2026년 응모 게시물이 2026-10-07 기준 게시판 번호로 약 50건 등록(2025년은 약 40건). 제목에 주제가 드러난 2026 응모작: '장기체화 컨테이너 AI 구조대'(10-05), '[ITT-Slot] 선석계획 변경 위험을 반영한 부산 신항 타부두 환적 장치계획 AI'(10-01), '[항만 AX] 냉동컨테이너 이동 후 전원 인계 완료 확인 및 이상 대응'(09-29), '벌크선화물창합격판정AI'(09-20). 본문은 열람하지 않음. 요강의 '동일·유사 내용은 먼저 응모한 건 우선' 조항과 직결됨.",
+      "status": "fact",
+      "source_url": "https://kobcax.com/contest/?sbr2_page=2",
+      "source_date": "2026-10-07 열람"
+    },
+    {
+      "topic": "해수부 피지컬 AI 항만 전략",
+      "fact": "진해신항 1단계(2032)에 피지컬 AI 항만 선도모델, 2단계 2040. 4대 전략(기술 기반 확보, 항만·배후단지 혁신, 산업 생태계, 제도 정비). 해양수산 빅데이터 플랫폼을 AI 학습 기반으로 고도화, 소버린 AI 운영시스템, 자율주행로봇 기반 스마트 공동물류센터 확대. 해수부 보도자료 원문 페이지는 열람 실패해 언론 기사로 확인.",
+      "status": "fact",
+      "source_url": "https://www.mt.co.kr/economy/2026/07/23/2026072310160529158",
+      "source_date": "2026-07-23"
+    },
+    {
+      "topic": "광양항 항만자동화 테스트베드",
+      "fact": "2026-07-30 착공, 2029년까지 총 7,724억원 투입해 국산 장비·AI 적용 완전자동화 컨테이너 항만 조성, 성과를 진해신항에 적용.",
+      "status": "fact",
+      "source_url": "https://www.newsis.com/view/NISX20260730_0003730465",
+      "source_date": "2026-07-30"
+    },
+    {
+      "topic": "BPA 부산항 AI 대전환",
+      "fact": "2030년까지 8,921억원, 컨테이너 터미널 생산성 30% 향상·인명사고 제로 목표. 'Port-i' 선박 도착 예측·대체선박 추천, 부산항 물류통합플랫폼 AX, 트럭기사 앱 '올컨e' 음성AI·자동예약·방문시간 추천, AI 영상 안전 모니터링·충돌위험 예측, 항만 건설·안전 특화 AI 챗봇·업무 보조 에이전트. 12대 중점과제 38개 세부과제.",
+      "status": "fact",
+      "source_url": "https://view.asiae.co.kr/article/2026021215043074653",
+      "source_date": "2026-02-12"
+    },
+    {
+      "topic": "자율운항선박법",
+      "fact": "자율운항선박 개발 및 상용화 촉진에 관한 법률 2025-01-03 시행(시행령 2024-12-24 국무회의 의결). 지정 운항해역 안에서 안전성 평가 후 선박안전법·선박직원법 등 규제 특례.",
+      "status": "fact",
+      "source_url": "https://www.newsseoul.co.kr/news/view/1065579620501557",
+      "source_date": "2024-12-24"
+    },
+    {
+      "topic": "자율운항선박 AI 데이터 플랫폼",
+      "fact": "해수부·산업부 2026~2029년 총 346억600만원(국비 300억), 25개 기업·기관 참여 의향, 항해·기관·원격관제·해상교통·기상·안전보안 등 약 100종 데이터 수집, 6,000억원 규모 AI 완전자율운항 기술개발 사업과 연계.",
+      "status": "fact",
+      "source_url": "https://www.heraldk.com/article/2026050618000058844",
+      "source_date": "2026-05-06"
+    },
+    {
+      "topic": "해수부 스마트 해운물류×ICT 멘토링",
+      "fact": "해수부·울산항만공사가 청년 193명 50팀 선발, 10월까지 현장 애로 해결 프로젝트 수행 후 12월 성과발표. 전년도 우수사례로 친환경 선박 시뮬레이터, AI 기반 선박 계류 상태 관리시스템 언급.",
+      "status": "fact",
+      "source_url": "https://www.dailian.co.kr/news/view/1659272/",
+      "source_date": "2026-06-24"
+    },
+    {
+      "topic": "항만사업장 안전사고 예방 강화대책",
+      "fact": "2030년까지 항만사업장 재해 330건→165건(50%) 감축 목표, 항만안전점검관 11→22명, 신규 근로자 교육 14→20시간, 작업환경·기상·재해 데이터 기반 항만재해 예측 AI 시스템 개발.",
+      "status": "fact",
+      "source_url": "https://www.dailian.co.kr/news/view/1574437/",
+      "source_date": "2025-11-18"
+    },
+    {
+      "topic": "IMO Net-Zero Framework",
+      "fact": "2025-10-17 MEPC 특별회기(ES.2)에서 채택 표결을 1년 연기(찬성 57, 반대 49). MEPC 84(2026-04-27~05-01)에서 협상 지속, MEPC 85는 2026-11-30~12-03, 특별회기 재개 2026-12-04 예정. 2026-09-10 기준 채택 여부 미정.",
+      "status": "fact",
+      "source_url": "https://natlawreview.com/article/imo-net-zero-framework-mepc-84-advances-negotiations-amid-political-headwinds",
+      "source_date": "2026-09-10"
+    },
+    {
+      "topic": "EU ETS 해운 적용",
+      "fact": "배출권 반납 비율 2024년 배출분 40%, 2025년 70%, 2026년 100%. 2026년부터 CH4·N2O 포함. EU 역내 항해 100%, 역내외 항해 50%, EU 항만 정박 중 100%. 5,000GT 이상 화물·여객선.",
+      "status": "fact",
+      "source_url": "https://www.ukpandi.com/news-and-resources/news/article/eu-ets-and-shipping-from-1-january-2026/",
+      "source_date": "2026-01 (기사 게시일 정확 미확인)"
+    },
+    {
+      "topic": "FuelEU Maritime",
+      "fact": "2025-01-01 시행. 2025~2029년 선내 사용 에너지 GHG 집약도 2020 기준 대비 2% 감축(89.34 gCO2e/MJ 이하). 2025년분 보고 2026-01-31, 벌금 납부·DoC 2026-06-30. 2기간 연속 미준수 시 EU 항만 입항 제한 가능.",
+      "status": "fact",
+      "source_url": "https://transport.ec.europa.eu/news-events/news/new-eu-rules-aiming-decarbonise-maritime-sector-take-effect-2025-01-10_en",
+      "source_date": "2025-01-10"
+    },
+    {
+      "topic": "IMO CII",
+      "fact": "2023-01-01 시행, A~E 등급. D 3년 연속 또는 E 등급 선박은 시정조치계획 제출. MARPOL 부속서 VI에 따라 2026-01-01 전 효과성 검토 규정.",
+      "status": "fact",
+      "source_url": "https://wwwcdn.imo.org/localresources/en/MediaCentre/HotTopics/Documents/EEXI%20and%20CII%20Sheets/Infographic%2003_CII.pdf",
+      "source_date": "미확인(IMO 인포그래픽)"
+    },
+    {
+      "topic": "보세운송 차량·기사 사전신고",
+      "fact": "2017년 신설된 보세화물 운송 차량·운전기사 정보 세관 사전신고 의무가 2026년부터 본격 적용, 미신고 시 건당 과태료 50만원.",
+      "status": "fact",
+      "source_url": "https://mobile.newsis.com/view/NISX20260417_0003596310",
+      "source_date": "2026-04-18"
+    }
+  ],
+  "field_pain_evidence": [
+    {
+      "area": "중소기업 디지털 역량 격차",
+      "pain": "중소 해운·항만기업의 디지털 성숙도와 AI 도입률이 낮다.",
+      "evidence": "KOBC 2024-10 조사(30곳): 중소 19점 vs 대기업 46점, AI 도입·정착 14%, 필요성 인지 74%.",
+      "source_url": "https://www.dailian.co.kr/news/view/1483311/",
+      "source_date": "2025-04-10",
+      "status": "fact"
+    },
+    {
+      "area": "해양 데이터 유통",
+      "pain": "공공데이터는 개방이 진전됐지만 민간·산업계 데이터 유통이 부족해 AI 학습·실증 데이터 확보가 어렵다.",
+      "evidence": "KIOST 해양빅데이터·AI연구센터장 인터뷰: 해양수산 분야 데이터 시장 성숙도가 타 산업 대비 매우 낮다는 주장, 연안 빅데이터 플랫폼 개방 데이터 452종(2022~2024).",
+      "source_url": "https://newstomato.com/ReadNews.aspx?no=1285469",
+      "source_date": "2025-12-22",
+      "status": "fact"
+    },
+    {
+      "area": "보세운송 신고·과태료",
+      "pain": "새로 본격 적용된 보세운송 차량·기사 사전신고에서 신고 순서 오류·전산 지연으로 과태료가 누적되고 중소 물류기업 부담이 커졌다.",
+      "evidence": "건당 50만원, 일부 기업에서 3개월간 약 1,000만원 과태료 누적 사례 보도, 업계는 유예·계도 운영 요청.",
+      "source_url": "https://mobile.newsis.com/view/NISX20260417_0003596310",
+      "source_date": "2026-04-18",
+      "status": "fact"
+    },
+    {
+      "area": "운송서류(신용장 하자)",
+      "pain": "무역 서류가 최초 제시에서 하자로 거절되는 비율이 높다(운송서류만의 비율은 아님).",
+      "evidence": "ICC TAB-3 브리핑(2022-06-27): 신용장 서류 최초 제시 시 65~80% 하자 거절, 주된 원인은 기한 관련 문제와 부실 작성 서류. 한국 한정 통계는 미발견.",
+      "source_url": "https://www.tradefinanceglobal.com/posts/icc-briefing-addresses-the-topic-of-reducing-discrepancy-rates/",
+      "source_date": "2022-06-27",
+      "status": "fact"
+    },
+    {
+      "area": "B/L 정정 비용",
+      "pain": "B/L 발행 후 정정은 수수료가 붙고 절차가 번거롭다.",
+      "evidence": "예: Hamburg Süd 미국·캐나다 수출 B/L 정정 수수료 2020-06-01부터 건당 75달러→95달러(선사 귀책은 제외). 국내 선사·포워더의 정정 수수료와 정정 건수 통계는 이번 조사에서 확인하지 못함.",
+      "source_url": "https://www.ajot.com/news/hamburg-sued-export-correction-fee-from-united-states-and-canada",
+      "source_date": "2020",
+      "status": "fact"
+    },
+    {
+      "area": "SI–Draft B/L 절차 표준",
+      "pain": "Draft 운송서류는 직접 수정할 수 없고 SI 업데이트→승인→Draft 재발행을 거쳐야 하므로 버전이 여러 개 생긴다.",
+      "evidence": "DCSA Bill of Lading 3.0 사용자 스토리: 포장 수·Seal 번호 수정은 SI 업데이트(UC3)→승인(UC4)→Draft TD 발행(UC6), 위험물·냉동 속성은 부킹 수정(UC7→UC8)으로만 변경, eBL 정정은 반환→무효화→재발행. Draft와 SI 상세 대조·변경 이력 메커니즘은 표준 문서에 명시되지 않음.",
+      "source_url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories",
+      "source_date": "2024 (BL 3.0)",
+      "status": "fact"
+    },
+    {
+      "area": "사전신고 데이터 품질(EU ICS2)",
+      "pain": "EU향 해상화물은 하우스 레벨 사전신고 데이터(품명·당사자·HS)가 부정확하면 거절·선적 불가 위험이 있다.",
+      "evidence": "ICS2 Release 3 해상 하우스 신고 의무화 2025-04-01(유예 2025-09-01까지), HBL 발행 포워더 책임, 모호한 품명·HS 누락 시 ENS 거절·No-load 가능.",
+      "source_url": "https://blogs.tradlinx.com/ics2-release-3-for-ocean-house-filers-what-lsps-must-change-in-october-november",
+      "source_date": "2025",
+      "status": "fact"
+    },
+    {
+      "area": "적하목록 정정",
+      "pain": "적하목록 정정 신청 주체가 B/L 계층에 따라 나뉘어 선사·포워더 간 조율이 필요하다.",
+      "evidence": "Master B/L 정정은 선사, House B/L 정정은 포워더가 신청한다는 업계 블로그 설명. 관세청 고시 원문, 정정 기한·과태료 기준은 미확인.",
+      "source_url": "https://www.tradlinx.com/blog/guide/적하목록-cargo-manifest/",
+      "source_date": "미확인",
+      "status": "unverified"
+    },
+    {
+      "area": "부산항 물동량·환적",
+      "pain": "환적 물동량 증가로 부두 간 환적 운송·장치 계획 부담이 커진다(추론).",
+      "evidence": "2025년 부산항 2,488만TEU 역대 최대, 환적 1,410만TEU(+4.4%), 수출입 1,078만TEU(-1.1%). 환적 비중 약 57%는 기사 수치로 계산한 값.",
+      "source_url": "https://v.daum.net/v/20260129110326732",
+      "source_date": "2026-01-29",
+      "status": "fact"
+    },
+    {
+      "area": "환적 운송 효율",
+      "pain": "환적 운송 시스템 이용을 늘리기 위해 인센티브까지 필요한 상황이다.",
+      "evidence": "BPA가 2026년 7~9월 전 부두 대상 환적운송시스템(차량 진입 시 컨테이너 자동 배정) 집중운영, 실적 우수 운송사에 4억원 규모 인센티브.",
+      "source_url": "https://news.knn.co.kr/news/article/189558",
+      "source_date": "2026-07-02",
+      "status": "fact"
+    },
+    {
+      "area": "부산신항 장치율",
+      "pain": "장치장 포화로 수출화물 반입 시기를 제한한다.",
+      "evidence": "장치율 90% 이상, 수출화물 접안 5일 전부터 반입 제한이라는 블로그 설명. 게시 시점과 2026년 현재 수치는 미확인.",
+      "source_url": "https://www.tradlinx.com/blog/?p=2606",
+      "source_date": "미확인",
+      "status": "unverified"
+    },
+    {
+      "area": "체화료·지체료(D&D)",
+      "pain": "D&D 청구·이의제기 절차가 분쟁 대상이 되어 미국은 청구서 규칙을 별도로 만들었다.",
+      "evidence": "미국 FMC D&D 청구 규칙 2024-05-28 시행: 청구서 최소 기재 정보, 발생 후 30일 내 청구, 30일 내 이의제기, 30일 내 해결. 한국의 D&D 비용 공식 통계·규제는 미확인.",
+      "source_url": "https://www.fmc.gov/fmc-publishes-final-rule-on-detention-and-demurrage-billing-practices/",
+      "source_date": "2024-02",
+      "status": "fact"
+    },
+    {
+      "area": "항만 하역 안전",
+      "pain": "항만 하역 재해가 매년 300명 이상 발생하고 통계가 사업체 업종 기준이라 실제 항만 사고가 누락된다.",
+      "evidence": "2022년 351명(사망 2), 2023년 335명(사망 4), 2024년 330명(사망 4), 2025년 연초 이후 사망 7명. 유형은 업무상 질병 20.7%, 부딪힘 15.8%, 떨어짐 15.5% 순. 윤준병 의원실이 해수부에서 받은 자료.",
+      "source_url": "https://www.segye.com/newsView/20251015514233",
+      "source_date": "2025-10-15",
+      "status": "fact"
+    },
+    {
+      "area": "선원 인력",
+      "pain": "한국인 선원 감소·고령화와 외국인 선원 증가가 동시에 진행된다.",
+      "evidence": "2026 한국선원통계연보: 한국인 선원 27,372명(전년比 -1,359), 외국인 선원 33,171명(+650), 60세 이상 43.9%. 2023 선원 일자리 혁신방안 인용: 2032년 외항상선 해기사 수요 14,728명 대비 공급 6,128명.",
+      "source_url": "https://www.dailian.co.kr/news/view/1663844/",
+      "source_date": "2026-07-07",
+      "status": "fact"
+    },
+    {
+      "area": "탈탄소 규제 비용",
+      "pain": "IMO·EU ETS·FuelEU 중복 규제로 국내 선사 비용 부담이 늘어날 전망이다.",
+      "evidence": "한국해운협회 상근부회장 기고: 2028년 EU 기항 국내 선박 206척 기준 IMO 약 6,310만달러, EU ETS 약 7,660만달러, FuelEU 약 3,420만달러, 합계 약 1.74억달러 추정. 산출 근거는 기사에서 확인 불가.",
+      "source_url": "https://www.sidae.com/article/2025070410125624833",
+      "source_date": "2025-07-07",
+      "status": "unverified"
+    },
+    {
+      "area": "eBL 전환",
+      "pain": "종이 B/L 중심 업무가 eBL로 바뀌는 과도기여서 문서 데이터 품질 요구가 커진다(추론).",
+      "evidence": "DCSA 회원 선사 CEO들이 5년 내 50%, 2030년 100% eBL 발행을 약속. 국내 eBL 이용률 통계는 미확인.",
+      "source_url": "https://dcsa.org/100-percent-ebl/",
+      "source_date": "미확인(페이지 날짜 없음)",
+      "status": "fact"
+    },
+    {
+      "area": "KOBC가 보는 AI 적용 단계",
+      "pain": "KOBC는 자동화→상황 파악→판단 지원 순서로 AI 활용이 고도화된다고 본다.",
+      "evidence": "KOBC 칼럼: 운항지침·안전규정·정비매뉴얼 검색·요약, 문의 분류→예외관리 우선순위 제안, 항로 대안별 지연·연료비 비교, 정비 우선순위 판단 예시.",
+      "source_url": "https://kobcax.com/report/%ec%b9%bc%eb%9f%bc-%ed%95%b4%ec%96%91%ec%82%b0%ec%97%85-%ec%97%85%eb%ac%b4%ec%97%90-ai%eb%8a%94-%ec%96%b4%eb%96%bb%ea%b2%8c-%eb%93%a4%ec%96%b4%ec%98%a4%eb%8a%94%ea%b0%80-%eb%b0%98%eb%b3%b5/",
+      "source_date": "2026-08-07",
+      "status": "fact"
+    }
+  ],
+  "existing_products": [
+    {
+      "name": "Port-MIS(해운항만물류정보시스템)",
+      "region": "국내(해수부)",
+      "what_it_does": "전국 무역항의 입출항 신고, 항만시설 사용, 관제, 화물 반출입, 세입 징수 등 항만 운영·민원 업무 처리. 공식 사이트가 동적 페이지라 기능 설명은 2차 자료 기준.",
+      "source_url": "https://new.portmis.go.kr/"
+    },
+    {
+      "name": "KL-Net 물류 EDI·PLISM",
+      "region": "국내",
+      "what_it_does": "항만물류 EDI 중계, 입출항 신고·화물 반출입·위험물 신고 등 항만물류 업무 통합 처리. 기능 설명은 2차 자료 기준.",
+      "source_url": "https://www.klnet.co.kr/"
+    },
+    {
+      "name": "관세청 UNI-PASS",
+      "region": "국내",
+      "what_it_does": "전자통관 시스템, B/L 기반 화물통관진행정보 조회와 오픈API 제공.",
+      "source_url": "https://unipass.customs.go.kr/"
+    },
+    {
+      "name": "BPA Port-i·올컨e·환적운송시스템",
+      "region": "국내(부산항만공사)",
+      "what_it_does": "선박 도착 예측·대체선박 추천(Port-i), 트럭기사 앱 자동예약·방문시간 추천(올컨e), 부두 진입 차량에 환적 컨테이너 자동 배정(환적운송시스템).",
+      "source_url": "https://view.asiae.co.kr/article/2026021215043074653"
+    },
+    {
+      "name": "KOBC·LG CNS 실증 4종",
+      "region": "국내",
+      "what_it_does": "위험물 선적 가능 여부 챗봇, 터미널 통계 자연어 분석, 컨테이너 손상 비전AI·수리견적 검증, 사이버보안 지침 개정-기존 문서 비교 GenAI.",
+      "source_url": "https://biz.newdaily.co.kr/site/data/html/2025/12/18/2025121800327.html"
+    },
+    {
+      "name": "포스코DX R대리",
+      "region": "국내",
+      "what_it_does": "선적서류 전용 LLM 기반 OCR과 RPA(A.WORKS)로 B/L·Invoice·Shipping Request 데이터 추출→시스템 입력→비용정산·세금계산서 발행 자동화, 중소 포워더·해운대리점 대상 SaaS.",
+      "source_url": "https://newsroom.posco.com/kr/?p=129180"
+    },
+    {
+      "name": "트레드링스 Ocean Visibility·ShipGo(쉽고)",
+      "region": "국내",
+      "what_it_does": "B/L 번호 기반 컨테이너 이동 추적, AI 기반 도착시간 예측·지연 예방, BI 분석, D&D 계산 체크포인트 안내.",
+      "source_url": "https://www.tradlinx.com/blog/?p=18376"
+    },
+    {
+      "name": "씨벤티지(SeaVantage)",
+      "region": "국내",
+      "what_it_does": "AIS·기상·항만 데이터 기반 선박 실시간 추적, 도착 예측, 부킹·M-B/L·컨테이너 단위 화물 추적, 항만 혼잡 모니터링.",
+      "source_url": "https://www.seavantage.com/kr/pricing"
+    },
+    {
+      "name": "쉽다(셀러노트)",
+      "region": "국내",
+      "what_it_does": "중소 수입기업용 디지털 포워딩: 온라인 견적·예약, 운송·통관 실시간 확인, 풀필먼트까지 일괄 제공.",
+      "source_url": "https://byline.network/2024/03/0315-2/"
+    },
+    {
+      "name": "더아머베어러",
+      "region": "국내",
+      "what_it_does": "AI OCR 수출입 서류 처리와 블록체인 거래기록 보관을 내세우는 물류테크(정확도 수치는 회사 홍보문구라 미검증).",
+      "source_url": "https://www.jobplanet.co.kr/companies/500064/info/(주)더아머베어러"
+    },
+    {
+      "name": "Raft",
+      "region": "해외",
+      "what_it_does": "포워더·관세사용 AI: AP 인보이스 추출·매칭·검증, 통관 신고 초안 작성, 비정형 물류 문서 처리, TMS·ERP 연동.",
+      "source_url": "https://www.raft.ai/"
+    },
+    {
+      "name": "CargoWise(WiseTech) + Shipamax",
+      "region": "해외",
+      "what_it_does": "포워딩·통관·창고 통합 물류 ERP. 인수한 Shipamax로 이메일·PDF·스캔 문서를 자동 추출해 포워딩·통관 잡과 AP 인보이스 처리.",
+      "source_url": "https://cargowise.com/news/wisetech-global-acquires-industry-leading-data-entry-automation-business-shipamax/"
+    },
+    {
+      "name": "IQAX × CargoNPay",
+      "region": "해외(중국)",
+      "what_it_does": "AI가 고객 문서에서 선하지시(SI) 데이터를 추출·검증해 eBL 신청 정보를 만들고 IQAX eBL로 발행(2025-10-30 발표).",
+      "source_url": "https://www.aap.com.au/aapreleases/cision20251029ae08768"
+    },
+    {
+      "name": "Kognitos(BOL 검증 use case)",
+      "region": "해외",
+      "what_it_does": "BOL 데이터를 PO·운송계약·실제 선적과 대조해 불일치 플래그와 컴플라이언스 감사를 하는 자동화 사례 제시.",
+      "source_url": "https://www.kognitos.com/use-case/bill-of-lading-bol-verification-and-compliance-audit/"
+    },
+    {
+      "name": "Expedock(Freya)·Tandom·Wove",
+      "region": "해외",
+      "what_it_does": "물류 메일함을 읽어 선적 정보 등록·업데이트, 긴급도 분류, 미도착 서류 태스크 생성·독촉 메일 발송(Tandom), RFQ·서류·운임 메일 자동 처리(Wove).",
+      "source_url": "https://www.tandom.ai/products/email"
+    },
+    {
+      "name": "Portchain",
+      "region": "해외",
+      "what_it_does": "선사-터미널 실시간 데이터 교환으로 기항 일정 정렬(Connect), 터미널 선석 계획 시나리오 최적화(Quay).",
+      "source_url": "https://www.portchain.com/"
+    },
+    {
+      "name": "Dockflow",
+      "region": "해외",
+      "what_it_does": "120개 이상 선사 컨테이너 추적, free time 만료·지연 등 예외 자동 알림, demurrage 비용 감소 지원.",
+      "source_url": "https://www.dockflow.com/"
+    },
+    {
+      "name": "Windward",
+      "region": "해외",
+      "what_it_does": "AIS·위성영상·RF 융합 해상 리스크, 제재 준수, 이상 행동 탐지 인텔리전스.",
+      "source_url": "https://windward.ai/"
+    },
+    {
+      "name": "Kpler",
+      "region": "해외",
+      "what_it_does": "원자재 흐름·선박 추적·시장 데이터 플랫폼.",
+      "source_url": "https://www.kpler.com/"
+    },
+    {
+      "name": "ZIM 위험물 오신고 탐지 AI·Hazcheck Detect",
+      "region": "해외",
+      "what_it_does": "NLP·ML로 선적 서류를 분석해 미신고·오신고 위험물을 탐지.",
+      "source_url": "https://maritime-executive.com/article/ai-based-system-detects-cargo-misdeclarations-to-enhance-safety"
+    },
+    {
+      "name": "K Line CHRONUS·Marcura 체선료 소프트웨어",
+      "region": "해외",
+      "what_it_does": "벌크선 Statement of Facts를 AI-OCR로 읽어 laytime statement와 체선료·조출료를 자동 계산.",
+      "source_url": "https://www.drybulkmagazine.com/dry-bulk/26102023/development-of-chronus-system-for-automatic-creation-of-laytime-statements-on-dry-bulk-carriers/"
+    }
+  ],
+  "open_data_sources": [
+    {
+      "name": "해양수산부_외항컨테이너반출입정보",
+      "what": "항만명, 호출부호, 입항횟수, 수출입구분, 컨테이너번호·규격, 반출입장소, B/L 번호, TEU. 실시간, 이용허락 제한 없음.",
+      "access": "공공데이터포털 회원가입·활용신청 후 인증키(개발계정 1만회/일). 신청은 사용자가 직접 해야 함.",
+      "url": "https://www.data.go.kr/data/15057599/openapi.do"
+    },
+    {
+      "name": "해양수산부_내항컨테이너반출입정보",
+      "what": "연안(내항) 컨테이너 반출입 정보.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15058585/openapi.do"
+    },
+    {
+      "name": "해양수산부_선박운항정보",
+      "what": "항구·기간·호출부호로 입출항시간, 선박명, 국가, 총톤수, 출항지·차항지 조회.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15006353/openapi.do"
+    },
+    {
+      "name": "해양수산부_관제정보",
+      "what": "무역항 입출항 선박 관제 교신 현황.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15006354/openapi.do"
+    },
+    {
+      "name": "해양수산부_항만별 선박입출항실적 통계정보",
+      "what": "항만별 연·월 입출항 선박 수·총톤수 통계.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15059059/openapi.do"
+    },
+    {
+      "name": "해양수산부_선박위치정보(연안AIS) 통계정보",
+      "what": "연안 AIS 기반 선박 위치 통계.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15084033/openapi.do"
+    },
+    {
+      "name": "해양수산부_선박 AIS 동적정보",
+      "what": "2018-09-01~2023-03-04 선박 운항 경로·위치, MMSI 특수문자로 비식별. 메타데이터 형식이 JPG로 표기돼 실제 내용 형태 확인 필요.",
+      "access": "파일·API 제공, 이용허락 제한 없음",
+      "url": "https://www.data.go.kr/data/15129186/fileData.do"
+    },
+    {
+      "name": "울산항만공사_체선정보",
+      "what": "선석코드, 선종, 대기선박 척수, 접안시간, 대기시간, 체선통계.",
+      "access": "공공데이터포털(JSON·XML)",
+      "url": "https://www.data.go.kr/data/15035853/openapi.do"
+    },
+    {
+      "name": "인천항만공사_인천항 컨테이너 정보 조회 서비스",
+      "what": "컨테이너 선적정보, 입항정보, 분석항만정보. 실시간, 이용허락 제한 없음.",
+      "access": "공공데이터포털 활용신청",
+      "url": "https://www.data.go.kr/data/15157724/openapi.do"
+    },
+    {
+      "name": "관세청_화물운송주선업자부호 업체명",
+      "what": "포워더 부호와 국문·영문 업체명. 합성 SI·B/L 샘플의 당사자 코드 형식 참고용.",
+      "access": "자동승인 API, 이용허락 제한 없음",
+      "url": "https://www.data.go.kr/data/15158862/openapi.do"
+    },
+    {
+      "name": "관세청 UNI-PASS 오픈API",
+      "what": "B/L 기반 화물통관진행정보 조회 등.",
+      "access": "UNI-PASS 인증키 신청 필요(사용자 직접)",
+      "url": "https://unipass.customs.go.kr/"
+    },
+    {
+      "name": "DCSA 표준(Bill of Lading 3.0, Booking 2.0, Track & Trace, JIT Port Call)",
+      "what": "SI·Draft·발행·Surrender 상태 전이, 사용자 스토리, 데이터 항목 개요 XLSX, OpenAPI 명세. 합성 SI/B/L 스키마 설계에 직접 사용 가능.",
+      "access": "무료 공개(GitHub·SwaggerHub·developer.dcsa.org)",
+      "url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading"
+    },
+    {
+      "name": "DCSA OpenAPI GitHub",
+      "what": "DCSA 인터페이스 표준 OpenAPI 문서 저장소.",
+      "access": "무료 공개",
+      "url": "https://github.com/dcsaorg/DCSA-OpenAPI"
+    },
+    {
+      "name": "NOAA MarineCadastre AIS",
+      "what": "미국 해역 AIS 연도별 데이터.",
+      "access": "무료 다운로드",
+      "url": "https://marinecadastre.gov/ais/"
+    },
+    {
+      "name": "Danish Maritime Authority AIS 이력 데이터",
+      "what": "덴마크 해역 과거 AIS CSV(2006년 이후).",
+      "access": "무료 다운로드",
+      "url": "https://safety4sea.com/more-historical-danish-ais-data-available"
+    },
+    {
+      "name": "Tokyo MOU PSC 점검 데이터",
+      "what": "아태 항만국통제 점검·결함·억류 조회, 반복 억류 선박 목록, 결함 코드.",
+      "access": "공개 조회(면책 동의 화면 경유)",
+      "url": "https://www.tokyo-mou.org/inspections-detentions/"
+    },
+    {
+      "name": "KOBC 해양산업 AI 가이드라인",
+      "what": "AI 도입 단계별 검토사항·체크리스트. 데이터가 아니라 리스크 절 작성 기준.",
+      "access": "kobcax 공지 첨부 PDF",
+      "url": "https://kobcax.com/notice/%ea%b3%b5%ec%9c%a0-%ed%95%b4%ec%96%91%ec%82%b0%ec%97%85-%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5ai-%ea%b0%80%ec%9d%b4%eb%93%9c%eb%9d%bc%ec%9d%b8-%eb%b0%b0%ed%8f%ac/"
+    }
+  ],
+  "underserved_problems": [
+    {
+      "problem": "[가설] 보세운송 차량·기사 사전신고의 누락·순서 오류 사전 점검(중소 운송·포워딩사 담당자)",
+      "why_promising": "2026년 본격 적용된 신규 의무, 건당 50만원 과태료, 3개월 1,000만원 누적 사례 보도로 문제·사용자·비용(Q·C) 근거가 공개자료로 확인됨. 이번 조사에서 이 신고 전용 AI·점검 도구는 찾지 못함(기존 제품 여부 미확인). 신고 절차가 정형이라 합성 데이터 웹 프로토타입이 쉬움. 위험: UNI-PASS 자체 검증과 겹칠 수 있고 고시 원문·전산 흐름은 미확인, AI 필요성이 규칙검사보다 약할 수 있음.",
+      "evidence_url": "https://mobile.newsis.com/view/NISX20260417_0003596310"
+    },
+    {
+      "problem": "[가설] 발행 전 SI 버전 이력과 Draft B/L 간 변경 추적·검토 기록(후보 A의 좁힌 형태)",
+      "why_promising": "DCSA 표준상 Draft는 SI 업데이트→승인→재발행으로만 바뀌어 버전이 쌓이지만 표준에는 상세 대조·변경 이력 메커니즘이 없음. 정정은 수수료·eBL 재발행·적하목록 정정 부담으로 이어짐. 다만 문서 추출·입력(포스코DX R대리, Raft, Shipamax)과 SI 검증(IQAX×CargoNPay, 중국)은 이미 있으므로 차별점은 추출이 아니라 '버전 간 차이·승인자 판단 기록'에 둬야 함. 국내 오류율·정정 건수 통계는 없어 효과는 측정 계획으로만 제시 가능.",
+      "evidence_url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories"
+    },
+    {
+      "problem": "[가설] 국내 중소 벌크선사 대상 경량 AX(2026년 KOBC 지원 대상 확대 방향)",
+      "why_promising": "KOBC가 2026년 지원 대상을 컨테이너 선사에서 벌크 선사로 넓힌다고 밝혀 Fit 점수에 유리. 단 SOF·laytime 계산은 K Line CHRONUS·Marcura가 이미 하고, 2026 응모작에 '벌크선 화물창 합격판정 AI'가 있어 세부 주제 선택이 중요. 벌크 실무 근거 확보 경로가 없으면 문제정의 점수가 약해짐.",
+      "evidence_url": "https://v.daum.net/v/20251218150235183"
+    },
+    {
+      "problem": "[가설] 항만 하역 재해를 사고 장소 기준으로 재분류·보고하는 정합성 지원",
+      "why_promising": "업종 기준 산재 통계 때문에 항만 사고가 누락된다는 국회 제출 자료가 있음. 정부는 재해 '예측' AI를 개발 예정이라 예측형은 중복이지만 '보고·분류 정합성'은 이번 조사에서 기존 제품을 찾지 못함(미확인). 실제 재해 데이터는 개인정보·민감정보라 합성 데이터로만 시연해야 함.",
+      "evidence_url": "https://www.segye.com/newsView/20251015514233"
+    },
+    {
+      "problem": "[가설] 국내 중소 포워더의 EU ICS2 등 사전신고용 화물 정보 품질 사전 점검(한국어 업무 흐름)",
+      "why_promising": "하우스 레벨 신고 의무화와 거절·선적불가 위험이 명확. 해외 제품(CargoWise 등)은 있으나 국내 중소 포워더용 한국어 점검 도구 여부는 미확인. 한국 포워더의 EU향 비중·거절 빈도 통계가 없어 효과 근거가 약함.",
+      "evidence_url": "https://blogs.tradlinx.com/ics2-release-3-for-ocean-house-filers-what-lsps-must-change-in-october-november"
+    },
+    {
+      "problem": "[가설] 외국인 선원 비중 증가 속 승선 교대 인수인계 품질(후보 B의 해운 변형)",
+      "why_promising": "외국인 선원이 한국인보다 많고 한국인 선원 60세 이상 43.9%라 교대 시 지식 전달 문제가 생길 수 있다는 추론. 선박관리 소프트웨어의 인수인계 기능 여부는 미확인. 선상 데이터 접근이 어려워 개인 프로토타입·근거 확보 난도가 높음.",
+      "evidence_url": "https://www.dailian.co.kr/news/view/1663844/"
+    }
+  ],
+  "duplication_risk_map": [
+    {
+      "common_idea": "위험물 선적 가능 여부 판단 챗봇·위험물 오신고 탐지",
+      "why_risky": "KOBC·LG CNS가 2025년 HMM 등 4개 선사와 실증 완료, 해외에도 ZIM·Hazcheck Detect 존재.",
+      "evidence_url": "https://biz.newdaily.co.kr/site/data/html/2025/12/18/2025121800327.html"
+    },
+    {
+      "common_idea": "컨테이너 손상 비전AI·수리견적 검증",
+      "why_risky": "KOBC 실증(한진부산컨테이너터미널)으로 이미 공개.",
+      "evidence_url": "https://biz.newdaily.co.kr/site/data/html/2025/12/18/2025121800327.html"
+    },
+    {
+      "common_idea": "터미널·운영 통계 자연어 분석, 보고서 자동 생성",
+      "why_risky": "KOBC 실증과 동일 계열, BPA도 행정 AI 챗봇·업무 보조 에이전트 추진.",
+      "evidence_url": "https://view.asiae.co.kr/article/2026021215043074653"
+    },
+    {
+      "common_idea": "규정·지침 개정본과 기존 문서 비교 에이전트",
+      "why_risky": "KOBC 사이버보안 문서 비교 실증과 패턴이 같아, 문서 대조형 아이디어(후보 A 포함)는 이 사례와 비교됨.",
+      "evidence_url": "https://v.daum.net/v/20251218150235183"
+    },
+    {
+      "common_idea": "선박 ETA·항만 혼잡 예측",
+      "why_risky": "씨벤티지, 트레드링스, BPA Port-i, Portchain 등 국내외 상용·공공 서비스 다수.",
+      "evidence_url": "https://www.seavantage.com/kr/pricing"
+    },
+    {
+      "common_idea": "트럭 반출입 예약·방문시간 추천",
+      "why_risky": "BPA 올컨e·물류통합플랫폼 AX에서 추진 중.",
+      "evidence_url": "https://view.asiae.co.kr/article/2026021215043074653"
+    },
+    {
+      "common_idea": "항만 안전 CCTV AI·재해 예측",
+      "why_risky": "해수부 항만재해 예측 시스템 개발 계획, BPA AI 영상 안전 모니터링 추진.",
+      "evidence_url": "https://www.dailian.co.kr/news/view/1574437/"
+    },
+    {
+      "common_idea": "선적서류 OCR·데이터 추출·시스템 입력 자동화",
+      "why_risky": "포스코DX R대리(국내 SaaS), 더아머베어러, Raft, CargoWise+Shipamax 등 포화.",
+      "evidence_url": "https://newsroom.posco.com/kr/?p=129180"
+    },
+    {
+      "common_idea": "SI 데이터 추출·검증 후 eBL 발행",
+      "why_risky": "IQAX×CargoNPay가 2025-10 발표(중국 포워더 대상). 후보 A는 추출·검증 자체로는 차별성이 약함.",
+      "evidence_url": "https://www.aap.com.au/aapreleases/cision20251029ae08768"
+    },
+    {
+      "common_idea": "이메일·메신저에서 할 일·담당·기한 추출과 독촉(후보 B 일반형)",
+      "why_risky": "Tandom(태스크 생성·독촉), Wove, Expedock Freya, Parabola 등 물류 특화 제품이 이미 존재.",
+      "evidence_url": "https://www.tandom.ai/products/email"
+    },
+    {
+      "common_idea": "항만 인계 완료 확인(냉동컨테이너 전원 인계 등)",
+      "why_risky": "2026 응모작 '[항만 AX] 냉동컨테이너 이동 후 전원 인계 완료 확인 및 이상 대응'이 2026-09-29 게시. 요강상 동일·유사 내용은 먼저 응모한 건 우선이라 후보 B를 항만 인계로 좁힐 때 충돌 위험.",
+      "evidence_url": "https://kobcax.com/contest/?sbr2_page=2"
+    },
+    {
+      "common_idea": "장기 체화·D&D free time 관리",
+      "why_risky": "Dockflow·트레드링스가 free time 알림·D&D 계산 제공, 2026 응모작 '장기체화 컨테이너 AI 구조대'(10-05) 게시.",
+      "evidence_url": "https://kobcax.com/contest/"
+    },
+    {
+      "common_idea": "부산신항 타부두 환적(ITT) 장치·운송 계획",
+      "why_risky": "BPA 환적운송시스템 집중운영 중, 2026 응모작 'ITT-Slot'(10-01) 게시.",
+      "evidence_url": "https://kobcax.com/contest/?sbr2_page=2"
+    },
+    {
+      "common_idea": "벌크선 화물창 검사 판정·laytime 계산",
+      "why_risky": "2026 응모작 '벌크선화물창합격판정AI'(09-20), K Line CHRONUS·Marcura 상용.",
+      "evidence_url": "https://kobcax.com/contest/?sbr2_page=3"
+    },
+    {
+      "common_idea": "자율운항·선박 계류 관리·친환경 선박 시뮬레이터",
+      "why_risky": "정부 대형 R&D(자율운항 데이터 플랫폼 346억원 등)와 해수부 멘토링 전년 우수작에 이미 등장, 개인 단기 실현성도 낮음.",
+      "evidence_url": "https://www.heraldk.com/article/2026050618000058844"
+    },
+    {
+      "common_idea": "CII·EU ETS·FuelEU 탄소 계산·보고 대시보드",
+      "why_risky": "규제 대응 상용 도구가 많다는 판단이나 이번 조사에서 개별 제품을 검증하지 않음[미확인]. 선박 연료 실데이터 없이 효과를 보이기 어려움.",
+      "evidence_url": "https://transport.ec.europa.eu/news-events/news/new-eu-rules-aiming-decarbonise-maritime-sector-take-effect-2025-01-10_en"
+    }
+  ],
+  "sources_checked": [
+    {"title": "KOBC 2026 공모전 공고", "url": "https://kobcax.com/contest/?id=1821&sbr2_action=view&sbr2_page=1", "accessed": "2026-10-07"},
+    {"title": "kobcax 공모전 게시판(1~10쪽, 제목만)", "url": "https://kobcax.com/contest/", "accessed": "2026-10-07"},
+    {"title": "2025 공모전 수상자 발표 안내", "url": "https://kobcax.com/contest/?sbr2_action=view&id=933&sbr2_page=1&page=1", "accessed": "2026-10-07"},
+    {"title": "2025 공모전 공지", "url": "https://kobcax.com/notice/2025-%ed%95%b4%ec%9a%b4%c2%b7%ed%95%ad%eb%a7%8c%c2%b7%eb%ac%bc%eb%a5%98-axai-transformation-%ea%b3%b5%eb%aa%a8%ec%a0%84/", "accessed": "2026-10-07"},
+    {"title": "kobcax 메인·공지·리포트 목록", "url": "https://kobcax.com/notice/", "accessed": "2026-10-07"},
+    {"title": "kobcax 25년 AX Discovery", "url": "https://kobcax.com/ai-bp/", "accessed": "2026-10-07"},
+    {"title": "KOBC 해양산업 AI 가이드라인 공지", "url": "https://kobcax.com/notice/%ea%b3%b5%ec%9c%a0-%ed%95%b4%ec%96%91%ec%82%b0%ec%97%85-%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5ai-%ea%b0%80%ec%9d%b4%eb%93%9c%eb%9d%bc%ec%9d%b8-%eb%b0%b0%ed%8f%ac/", "accessed": "2026-10-07"},
+    {"title": "KOBC 칼럼 해양 AI: 반복 업무에서 운영 판단까지", "url": "https://kobcax.com/report/%ec%b9%bc%eb%9f%bc-%ed%95%b4%ec%96%91%ec%82%b0%ec%97%85-%ec%97%85%eb%ac%b4%ec%97%90-ai%eb%8a%94-%ec%96%b4%eb%96%bb%ea%b2%8c-%eb%93%a4%ec%96%b4%ec%98%a4%eb%8a%94%ea%b0%80-%eb%b0%98%eb%b3%b5/", "accessed": "2026-10-07"},
+    {"title": "뉴데일리 해진공 AX 4대 실증사례", "url": "https://biz.newdaily.co.kr/site/data/html/2025/12/18/2025121800327.html", "accessed": "2026-10-07"},
+    {"title": "아이뉴스24(다음) 해진공 AI 실증", "url": "https://v.daum.net/v/20251218150235183", "accessed": "2026-10-07"},
+    {"title": "아시아경제 해진공 8월 진단·실증 착수", "url": "https://view.asiae.co.kr/article/2026072314175095375", "accessed": "2026-10-07"},
+    {"title": "데일리안 해운·항만기업 디지털 이해도", "url": "https://www.dailian.co.kr/news/view/1483311/", "accessed": "2026-10-07"},
+    {"title": "메트로신문 해진공 AI 전략", "url": "https://www.metroseoul.co.kr/article/20250408500769", "accessed": "2026-10-07"},
+    {"title": "뉴스토마토 해진공 AI 바우처", "url": "https://newstomato.com/ReadNews.aspx?no=1258541", "accessed": "2026-10-07"},
+    {"title": "머니투데이 피지컬 AI 항만 전략", "url": "https://www.mt.co.kr/economy/2026/07/23/2026072310160529158", "accessed": "2026-10-07"},
+    {"title": "아시아경제 BPA 부산항 AI 대전환", "url": "https://view.asiae.co.kr/article/2026021215043074653", "accessed": "2026-10-07"},
+    {"title": "헤럴드경제 자율운항선박 데이터 플랫폼", "url": "https://www.heraldk.com/article/2026050618000058844", "accessed": "2026-10-07"},
+    {"title": "데일리안 해운물류 AX 인재 193명", "url": "https://www.dailian.co.kr/news/view/1659272/", "accessed": "2026-10-07"},
+    {"title": "데일리안 항만사업장 안전대책", "url": "https://www.dailian.co.kr/news/view/1574437/", "accessed": "2026-10-07"},
+    {"title": "세계일보 항만 하역 재해 통계", "url": "https://www.segye.com/newsView/20251015514233", "accessed": "2026-10-07"},
+    {"title": "데일리안 해기사 현실진단(선원통계연보)", "url": "https://www.dailian.co.kr/news/view/1663844/", "accessed": "2026-10-07"},
+    {"title": "뉴시스 보세운송 차량신고 과태료", "url": "https://mobile.newsis.com/view/NISX20260417_0003596310", "accessed": "2026-10-07"},
+    {"title": "부산일보(다음) 2025 부산항 물동량", "url": "https://v.daum.net/v/20260129110326732", "accessed": "2026-10-07"},
+    {"title": "KNN 부산항 환적운송시스템 집중운영", "url": "https://news.knn.co.kr/news/article/189558", "accessed": "2026-10-07"},
+    {"title": "뉴스토마토 KIOST 인터뷰", "url": "https://newstomato.com/ReadNews.aspx?no=1285469", "accessed": "2026-10-07"},
+    {"title": "시대일보 해운 탄소비용 기고", "url": "https://www.sidae.com/article/2025070410125624833", "accessed": "2026-10-07"},
+    {"title": "National Law Review IMO NZF MEPC 84", "url": "https://natlawreview.com/article/imo-net-zero-framework-mepc-84-advances-negotiations-amid-political-headwinds", "accessed": "2026-10-07"},
+    {"title": "UK P&I EU ETS 2026", "url": "https://www.ukpandi.com/news-and-resources/news/article/eu-ets-and-shipping-from-1-january-2026/", "accessed": "2026-10-07"},
+    {"title": "EC FuelEU Maritime 시행", "url": "https://transport.ec.europa.eu/news-events/news/new-eu-rules-aiming-decarbonise-maritime-sector-take-effect-2025-01-10_en", "accessed": "2026-10-07"},
+    {"title": "FMC D&D 최종 규칙", "url": "https://www.fmc.gov/fmc-publishes-final-rule-on-detention-and-demurrage-billing-practices/", "accessed": "2026-10-07"},
+    {"title": "Trade Finance Global ICC 하자율 브리핑", "url": "https://www.tradefinanceglobal.com/posts/icc-briefing-addresses-the-topic-of-reducing-discrepancy-rates/", "accessed": "2026-10-07"},
+    {"title": "DCSA BL 3.0 문서·사용자 스토리", "url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories", "accessed": "2026-10-07"},
+    {"title": "DCSA 100% eBL", "url": "https://dcsa.org/100-percent-ebl/", "accessed": "2026-10-07"},
+    {"title": "포스코 뉴스룸 R대리", "url": "https://newsroom.posco.com/kr/?p=129180", "accessed": "2026-10-07"},
+    {"title": "IQAX·CargoNPay 발표", "url": "https://www.aap.com.au/aapreleases/cision20251029ae08768", "accessed": "2026-10-07"},
+    {"title": "Raft / CargoWise / Portchain / Dockflow / Windward / Kpler 홈페이지", "url": "https://www.raft.ai/", "accessed": "2026-10-07"},
+    {"title": "WiseTech Shipamax 인수", "url": "https://cargowise.com/news/wisetech-global-acquires-industry-leading-data-entry-automation-business-shipamax/", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털 외항컨테이너반출입정보", "url": "https://www.data.go.kr/data/15057599/openapi.do", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털 화물운송주선업자부호", "url": "https://www.data.go.kr/data/15158862/openapi.do", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털 선박 AIS 동적정보", "url": "https://www.data.go.kr/biz/dcat/metadata/15129186.do", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털 인천항 컨테이너 정보", "url": "https://www.data.go.kr/data/15157724/openapi.do", "accessed": "2026-10-07"},
+    {"title": "로컬 공식 공고 HWP 추출문", "url": "C:/dev/maritime-ax-idea/work/notice-native-hwp.txt", "accessed": "2026-10-07"}
+  ],
+  "not_done": [
+    "KOBC 솔루션 카탈로그(정회원 전용)와 26년 AX Discovery 사례(로그인 필요)는 가입 금지 규칙에 따라 열람하지 않음.",
+    "2025 공모전 수상작 주제는 공개 게시물이 없어(개별 메일 통보) 확인하지 못함.",
+    "2026 응모 게시물은 제목만 확인했고 본문·첨부는 열람하지 않음. 작성자 이름은 기록하지 않음.",
+    "해양수산부 보도자료 원문(mof.go.kr) 페이지가 열람 실패(404)해 언론 기사로 대체함.",
+    "Port-MIS·KL-Net 공식 사이트는 동적 페이지라 내용을 읽지 못했고 기능 설명은 2차 자료 기준.",
+    "관세법·관세청 고시의 적하목록 정정 기한·과태료 기준과 보세운송 신고 고시 원문을 확인하지 못함.",
+    "국내 B/L·SI 오류율, 적하목록 정정 건수, D&D 비용, 국내 eBL 이용률 공식 통계를 찾지 못함.",
+    "국내 포워더 수(5,055개)·디지털 전환 설문 수치는 원 블로그 접근 실패로 출처 검증 불가해 제외함.",
+    "부산신항 2026년 장치율·체선 최신 수치를 확인하지 못함.",
+    "Container xChange D&D 수치, 벤더 블로그(imagetotable 등)의 B/L 오류율 수치는 출처 신뢰도가 낮아 제외함.",
+    "공공데이터포털 일부 메타데이터 페이지가 시간 초과로 열리지 않음. API 인증키 발급·호출 테스트는 하지 않음.",
+    "탄소규제 대응 상용 제품(ZeroNorth 등)과 선박관리 소프트웨어의 인수인계 기능은 개별 검증하지 않음.",
+    "외부 문의·가입·API 신청·게시·메시지 발송은 하지 않음."
+  ]
+}

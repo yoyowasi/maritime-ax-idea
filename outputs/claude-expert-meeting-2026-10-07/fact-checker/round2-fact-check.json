@@ -1,0 +1,324 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 아이디어 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "round": 2,
+  "round_name": "사실 재확인",
+  "date": "2026-10-07",
+  "expert": {"slug": "fact-checker", "role": "사실 확인 담당"},
+  "scope_note": "M1~M7의 evidence_highlights와 원 아이디어 problem_evidence 중 기획서 핵심 주장을 법령 원문(국가법령정보센터 본문·별표, 케이스노트 법령 미러), 관세청 고시 원문, 선사 공식 요율표·공지, DCSA 공식 GitHub 명세, Sea-Intelligence 보도자료 원문, EU 집행위 공식 페이지로 재확인했다. 원문이 열리지 않은 것은 secondary_only 또는 unverified로 표시했다. 독립성 규칙에 따라 codex 회의 산출물, topic-comparison-v1.md, independent-review-v1.md, work/ 개인정보 파일은 읽지 않았다. 공개 웹 열람·검색만 했고 문서는 읽기 목적으로 스크래치 폴더에 받아 텍스트만 추출했다.",
+  "results": [
+    {
+      "id": "M1",
+      "claims": [
+        {
+          "claim": "DCSA BL 3.0에서 화주는 Draft를 직접 고칠 수 없고 SI 수정→재발행 경로만 있으며, 표준에 SI–Draft 차이 대조 장치가 없다.",
+          "status": "corrected",
+          "correct_statement": "BL 3.0 사용자 스토리(표준 문서)는 지금도 '화주는 Draft를 직접 수정할 수 없고 SI 업데이트를 요청한다'고 쓴다. 그러나 DCSA eBL API v3.0.3(2026-04-14 릴리스)이 선택 구현 사항으로 '직접 운송서류 정정(Direct Transport Document amendment, UseCase 17)'을 추가했다. PUT /v3/transport-documents/{ref}/amendment로 DRAFT·ISSUED·PENDING_SURRENDER_FOR_AMENDMENT 상태의 TD를 소비자가 직접 고칠 수 있고, 어떤 필드를 허용할지는 운송인이 정한다. v3.0.2 이하 운송인은 이 경로를 쓰면 안 된다. 같은 버전에 shippingInstructionsRevisionNumber(SI 개정 번호)도 추가됐다. 요청한 변경과 결과 Draft를 대조하는 기능은 사용자 스토리와 API 명세 모두에 없고, 명세는 '허용되는 변경과 시점은 정의하지 않는다'고 밝힌다. 기획서에는 '기본 흐름은 SI 수정→Draft 재게시, 2026-04 v3.0.3부터 선택적 직접 정정 경로 추가, 어느 경로든 요청 대비 결과 대조는 표준 범위 밖'으로 써야 한다.",
+          "source_url": "https://github.com/dcsaorg/DCSA-OpenAPI/tree/master/ebl/v3 (README v3.0.3 릴리스 노트, EBL_v3.0.3.yaml) / https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories",
+          "source_date": "2026-04-14(v3.0.3 릴리스), 사용자 스토리 페이지 날짜 표시 없음"
+        },
+        {
+          "claim": "Hamburg Süd의 미국·캐나다 수출 B/L 정정 수수료가 USD 75에서 USD 95로 올랐다(출항 전·후 비용 차이 사례).",
+          "status": "verified",
+          "correct_statement": "AJOT 2020-04-27 기사 기준으로 2020-06-01부터 미국·캐나다 수출 B/L 정정 수수료가 건당 USD 75에서 USD 95로 올랐다. 적용 조건은 '선적항 출항 후 1영업일이 지나 접수된 정정 요청'이다. 다만 6년 전 자료이고, Hamburg Süd 브랜드는 2023년 Maersk로 통합돼 정리됐다(Maritime Executive 2023-08-31). 현행 요율로 제시하면 안 되며, 현행 한국 사례는 아래 Hapag-Lloyd와 M2의 Maersk Korea 항목을 쓴다.",
+          "source_url": "https://www.ajot.com/news/hamburg-sued-export-correction-fee-from-united-states-and-canada / https://maritime-executive.com/article/hamburg-sued-ceo-steps-down-saying-maersk-integration-is-reaching-conclusion",
+          "source_date": "2020-04-27 / 2023-08-31"
+        },
+        {
+          "claim": "Hapag-Lloyd 한국 요율표에 세관 제출 후 정정 항목이 있다.",
+          "status": "verified",
+          "correct_statement": "Hapag-Lloyd 'South Korea Local Charges / Service Fees'(Aug2026 PDF) 수출 항목: B/L Amendment Fee(MAF) KRW 60,000/정정 1건, 비고 'Amendment after Custom's submission', 2026-07-01 시행. Security Manifest Correction Fee(SMC) USD 40/B/L, 24시간 사전 적하목록 목적지 정정 수수료, 2017-04-15 시행. Late Shipping Instruction Fee(LSI) KRW 60,000/BL(Docs cut-off 이후 SI). M1의 수출신고필증 대조 요소와 직접 관련된 항목도 있다. 위험물 등 민감 화물 오신고(FIO) USD 15,000/컨테이너는 '운송인에게 준 화물 정보가 수출신고 때 당국에 제출한 정보와 같지 않은 경우'를 포함한다(민감 화물 한정, 2020-11-15 시행). Sep·Oct 2026 파일명은 404여서 Aug2026이 확인된 최신본이다.",
+          "source_url": "https://www.hapag-lloyd.com/content/dam/website/downloads/detention_demurrage/South_Korea_local_charges_service_fees_Aug2026.pdf",
+          "source_date": "2026-08(요율표 판), MAF 시행 2026-07-01"
+        },
+        {
+          "claim": "관세법 제251조: 수출신고 수리일부터 30일 이내 적재, 1년 범위 연장, 미적재 시 수리 취소 가능.",
+          "status": "verified",
+          "correct_statement": "현행 제251조 원문과 일치한다. ① 수리일부터 30일 이내 운송수단 적재, 재정경제부령으로 1년 범위 연장승인 가능(2025-10-01 타법개정, 2026-01-02 시행). ② 기간 내 미적재 물품은 세관장이 수리를 취소할 수 있다. 과태료 수준은 M3 항목 참조(실제 부과기준 10만~50만원).",
+          "source_url": "https://casenote.kr/법령/관세법/제251조 (국가법령정보센터 https://www.law.go.kr/법령/관세법 과 동일 본문)",
+          "source_date": "2026-01-02 시행본(관세법 전체 최신 시행본 2026-08-11, 법률 제21858호에서도 동일)"
+        },
+        {
+          "claim": "관세법 제277조: 적재화물목록 관련 과태료.",
+          "status": "corrected",
+          "correct_statement": "적재화물목록 관련 과태료는 둘로 나뉜다. (1) 적재물품과 일치하지 않는 적재화물목록을 작성·제출한 자는 제277조제7항제1호(100만원 이하)다. 시행령 별표5 제3호 자목의 실제 부과기준은 1년간 편명별 위반 횟수 구간에 따라 10만·20만·30만원이고, 해당 목록의 오류 B/L이 11~50건이면 2배, 51건 이상이면 3배다. 대상에는 '명백한 품명 기재 오류'와 '관세청장이 정하는 정정 의무기간을 지나 정정하는 오류'가 들어 있다. (2) 입항 전 적재화물목록 제출(제135조제2항)과 출항허가 신청 전 제출(제136조제3항) 위반은 제277조제6항제2호(200만원 이하)이며, 별표5 기준은 1차 60만원, 2차 100만원, 3차 이상 200만원이다. '200만원 이하'는 법정 상한일 뿐 건별 부과액이 아니다.",
+          "source_url": "https://casenote.kr/법령/관세법/제277조 / 관세법 시행령 [별표 5] 과태료의 부과기준(국가법령정보센터 https://www.law.go.kr/법령/관세법시행령 첨부 HWP)",
+          "source_date": "관세법 2026-08-11 시행본, 시행령 별표5 2026-02-27 개정본"
+        },
+        {
+          "claim": "적하목록 정정은 Master B/L이면 선사, House B/L이면 포워더가 신청한다(2차 자료, 고시 원문 미확인).",
+          "status": "verified",
+          "correct_statement": "「보세화물 입출항 하선 하기 및 적재에 관한 고시」(관세청고시 제2026-53호, 2026-08-28 시행) 원문으로 확인했다. 제2조3호: 마스터적재화물목록 작성책임자는 운항선사(공동배선이면 용선선사), 하우스적재화물목록 작성책임자는 화물운송주선업자다. 출항 쪽은 다음과 같다. 제43조: 해상화물은 적재 24시간 전까지 제출한다. 근거리 지역은 적재 전까지 제출하되 출항 30분 전 최종 마감한다. 적재계획 변경 등으로 예정대로 싣지 못하면 출항 다음 날 18시까지 1회에 한해 일부 삭제·정정할 수 있다. 같은 조 ⑤에 따라 선사가 포워더 하우스 목록을 최종 취합해 제출한다. 제44조: 작성책임자가 출항지 세관장에게 정정신청해 승인받고, 기한은 출항일부터 해상 90일이다. 입항 쪽은 다음과 같다. 제12조: 하선결과·반입이상 보고 물품은 보고일부터 15일, 그 밖의 사유는 입항일부터 60일이다.",
+          "source_url": "https://www.law.go.kr/행정규칙/보세화물입출항하선하기및적재에관한고시",
+          "source_date": "2026-08-25 개정, 2026-08-28 시행"
+        },
+        {
+          "claim": "ICC TAB-3: 신용장 서류의 65~80%가 최초 제시에서 하자로 거절된다(B/L만의 비율 아님).",
+          "status": "secondary_only",
+          "correct_statement": "Trade Finance Global(2022-08-11)이 ICC TAB-3(2022-06-27)을 인용한 문구다. '서류의 65~80%'가 아니라 '신용장(documentary credits)의 65~80%가 최초 제시에서 하자로 거절된다'로 써야 한다. B/L에 한정한 비율이 아니며, ICC 원문은 직접 열람하지 않았다.",
+          "source_url": "https://www.tradefinanceglobal.com/posts/icc-briefing-addresses-the-topic-of-reducing-discrepancy-rates/",
+          "source_date": "2022-08-11(TAB-3 발간 2022-06-27)"
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "claims": [
+        {
+          "claim": "DCSA eBL 정정 절차는 반환→무효화→재발행이다.",
+          "status": "verified",
+          "correct_statement": "BL 3.0 사용자 스토리에 따르면 화주가 정정용 반환(surrender for amendment)을 요청하고, 운송인이 승인한 뒤 기존 eBL을 무효화하고 정정본을 발행한다. 덧붙여 v3.0.3(2026-04-14)부터는 ISSUED·PENDING_SURRENDER_FOR_AMENDMENT 상태 TD에 대한 직접 정정 요청 경로가 선택 사항으로 추가됐다.",
+          "source_url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories / https://github.com/dcsaorg/DCSA-OpenAPI/tree/master/ebl/v3",
+          "source_date": "사용자 스토리 날짜 표시 없음 / 2026-04-14"
+        },
+        {
+          "claim": "Maersk는 B/L 발행 후 수하인·인도지 변경 시 USD 100 정정 수수료를 부과한다(2023-03-09 시행).",
+          "status": "refuted",
+          "correct_statement": "인용 출처(Maersk 2023-03 FAQ PDF와 2023-03-09 공지)는 Maersk 벨기에 공지다. 내용은 '2023-04-03부터 디지털(maersk.com, EDI, Inttra)이 아닌 이메일로 보낸 B/L 정정에 건당 EUR 50'이며, 디지털 정정은 횟수와 관계없이 무료다. USD 100이나 수하인·인도지 변경 조건은 이 출처에 없다. 현행 한국 사례는 머스크 코리아 디지털 뉴스레터(2026-09-16)로 확인했다. 2026-10-12부터 Transport Document Amendment Fee(AME) 적용 방식이 바뀌어, 마지막 컨테이너 선적일(SOB)부터 하루가 지난 뒤 접수된 B/L 정정과 OBL↔SWB 타입 변경에 한국 기준 KRW 55,000을 부과한다. 이메일을 포함해 maersk.com으로 접수된 정정 요청에도 적용된다. 예외는 OOG 화물, 씰 번호 변경, HBL 추가·취소, 스위치·서렌더 B/L 등이다. 뉴스레터는 maily.so에 게시돼 있고, maersk.com 원 공지는 확인하지 못했다.",
+          "source_url": "https://www.maersk.com/news/articles/2023/03/09/e-bl-amendment-communication / https://maersk.com/~/media_sc9/maersk/news/rate-announcements/files/2023/03/faq-bl-amendment-fee.pdf / https://maily.so/maersk.korea/posts/w6ovpmqpok5",
+          "source_date": "2023-03-09 / 2026-09-16(적용 2026-10-12)"
+        },
+        {
+          "claim": "관세법 제135조제2항은 입항 전 적재화물목록 제출을 규정하고 일정 요건의 화물운송주선업자가 직접 제출할 수 있게 하며, 제277조제6항은 위반 시 200만원 이하 과태료를 정한다.",
+          "status": "corrected",
+          "correct_statement": "제135조제2항 본문은 '세관장이 선박회사(그 업무를 대행하는 자 포함)로 하여금 입항 전에 적재화물목록 등을 제출하게 할 수 있다'이다. 단서의 화물운송주선업자 직접 제출은 '제254조의2제1항에 따른 탁송품 운송업자로 한정'된다. 즉 해상 일반 포워더의 하우스 목록 제출 근거는 법 단서가 아니라 고시다. 고시 제2조3호·제48조③에 따라 화물운송주선업자가 하우스적재화물목록을 작성해 제출하며, 해상 입항 제출 시한은 적재항 적재 24시간 전(근거리는 적재항 출항 전)이다(제8조). 위반 과태료 상한은 제277조제6항제2호 200만원이 맞고, 실제 부과기준은 시행령 별표5에서 1차 60만원, 2차 100만원, 3차 이상 200만원이다.",
+          "source_url": "https://casenote.kr/법령/관세법/제135조 / https://www.law.go.kr/행정규칙/보세화물입출항하선하기및적재에관한고시 / 관세법 시행령 [별표 5]",
+          "source_date": "관세법 2026-08-11 시행본 / 고시 2026-08-28 시행 / 별표5 2026-02-27 개정"
+        },
+        {
+          "claim": "EU ICS2 하우스 신고 의무(해상 2025-04 의무화).",
+          "status": "verified",
+          "correct_statement": "UCC Work Programme 개정(집행위 이행결정 (EU) 2023/2879, 2023-12-15)에 따른 Release 3 단계는 다음과 같다. 해상 운송인 배치 기간은 2024-06-03~2024-12-04, 해상 하우스 신고인(포워더·NVOCC)은 2024-12-04~2025-04-01, 도로·철도는 2025-04-01~2025-09-01이다. 배치 기간 안에서 회원국이 사업자별 이행일을 정하는 방식이다. 날짜는 Maersk 2023-12-27 공지(UCC Work Programme 인용)와 이행결정 검색 결과로 확인했고, 집행위 ICS2 페이지 본문에는 날짜가 없었다. 추가로 EU 공식 페이지는 2026-06-01부터 EU에 들어오는 모든 화물에 유효한 ENS가 있어야 한다고 공지했다(NCTS Phase 6 임시 예외 종료).",
+          "source_url": "https://www.maersk.com/news/articles/2023/12/27/new-schedule-of-import-control-system-2-ics2-release-3-regulations / https://eur-lex.europa.eu/eli/dec_impl/2023/2879/oj/eng / https://taxation-customs.ec.europa.eu/customs-4/customs-security/import-control-system-2-ics2-0_en",
+          "source_date": "2023-12-27 / 2023-12-15 / 2026-06-01 공지"
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "claims": [
+        {
+          "claim": "2026년 7월 세계 컨테이너선 스케줄 신뢰도 56.4%로 2026년 최저, 지연 선박 평균 지연 6.06일.",
+          "status": "corrected",
+          "correct_statement": "Sea-Intelligence 원 보도자료(2026-08-26, GLP 180호)로 7월 수치는 확인했다. 전월 대비 -6.1%p로 56.4%였고, 2026년 최저이자 2025년 2월 이후 최저였다. 전년 대비 -8.8%p, 지연 선박 평균 지연은 6.06일로 2024년 1월 이후 최고였다. 다만 '2026년 최저'는 이미 갱신됐다. 같은 회사 2026-09-29 보도자료(GLP 181호)에 따르면 2026년 8월 신뢰도는 49.9%(전월 대비 -5.9%p, 2022년 9월 이후 최저)이고, 평균 지연은 6.81일(전월 대비 +0.60일, 2022년 3월 이후 최고)이다. 6.06+0.60이 6.81과 맞지 않아 7월 지연값이 개정됐을 수 있으나 확인하지 못했다. 기획서에는 최신값인 8월 49.9%를 출처·기준월과 함께 쓰는 것이 맞다. 측정 방식이 다른 Xeneta 지표(2026년 6월 37%)와 섞어 쓰면 안 된다(2차 자료).",
+          "source_url": "https://www.sea-intelligence.com/press-room/404-july-global-schedule-reliability-drops-to-lowest-2026-level / https://www.sea-intelligence.com/press-room/410-global-schedule-reliability-continues-to-plummet-in-august",
+          "source_date": "2026-08-26 / 2026-09-29"
+        },
+        {
+          "claim": "관세법 제277조제6항: 제251조제1항(적재기간) 위반 등에 200만원 이하 과태료(롤오버·지연 시 30일 적재기간 경과 위험).",
+          "status": "corrected",
+          "correct_statement": "법정 상한 200만원(제277조제6항제2호)은 맞다. 그러나 시행령 별표5 제3호 사목의 실제 부과기준은 1년간 위반 횟수 구간에 따라 1~10회 10만원, 11~20회 30만원, 21회 이상 50만원이다. '건당 최대 200만원'처럼 쓰면 과장이다. 재무 위험의 핵심은 과태료보다 제251조②의 수출신고 수리 취소 가능성과 재신고·연장승인 업무다(추론). 롤오버로 30일이 실제로 지나는 빈도는 공개 통계가 없다.",
+          "source_url": "https://casenote.kr/법령/관세법/제277조 / 관세법 시행령 [별표 5](https://www.law.go.kr/법령/관세법시행령 첨부)",
+          "source_date": "관세법 2026-08-11 시행본 / 별표5 2026-02-27 개정"
+        },
+        {
+          "claim": "DCSA 구현 가이드: SI 수정과 부킹 변경 순서는 표준이 정하지 않고, 부킹 변경 수락 시 부킹 재확정·Draft 재게시.",
+          "status": "unverified",
+          "correct_statement": "reference.dcsa.org 구현 가이드는 403으로 열리지 않았다. eBL API v3.0.3 명세에서는 TD 변경 경로로 SI 업데이트(UseCase 3), Booking API 부킹 정정(UseCase 7), 선택적 직접 TD 정정(UseCase 17)이 병렬로 제시되고 '허용되는 변경과 시점은 정의하지 않는다'는 문구까지만 확인했다. '부킹 변경 수락 시 Draft 재게시'라는 문구 자체는 확인하지 못했다.",
+          "source_url": "https://raw.githubusercontent.com/dcsaorg/DCSA-OpenAPI/master/ebl/v3/EBL_v3.0.3.yaml",
+          "source_date": "2026-04-14"
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "claims": [
+        {
+          "claim": "보세화물 운송 차량·기사 사전신고 위반 시 건당 50만원 과태료, 근거는 관세법 제216조제3항(보도, 원문 미확인).",
+          "status": "verified",
+          "correct_statement": "근거 사슬을 원문으로 확인했다. 관세법 제216조제3항은 2023-12-31 신설(2024-01-01 시행) 당시 '운송수단을 정하여 신고·승인받은 경우 그 운송수단으로 운송을 마쳐야 한다'였다. 2025-12-23 개정(법률 제21208호, 2026-01-01 시행)으로 '제213조제2항에 따라 신고·승인을 받은 자가 보세운송을 할 때에는 관세청장이 정하는 바에 따라 신고·승인받은 운송수단을 이용하여 운송을 마쳐야 한다'로 바뀌었다. 과태료 상한은 제277조제6항제2호 200만원이다. 시행령 별표5 제2호 크목 부과기준은 1차 50만원, 2차 100만원, 3차 200만원, 4차 이상 200만원이다. 가중은 최근 2년간 같은 위반으로 부과처분을 받은 경우에만 적용하고, 중소기업은 100분의 20 범위에서 감경할 수 있다. 따라서 '건당 50만원'은 1차 위반 기준으로 정확하다. '2026년 본격 적용'은 2026-01-01 법 개정·고시 개정 시점과 맞물린다(시점 일치는 확인, 인과관계는 추론).",
+          "source_url": "https://casenote.kr/법령/관세법/제216조 (구판 ?a=19924&e=20240101 비교) / https://casenote.kr/법령/관세법/제277조 / 관세법 시행령 [별표 5](https://www.law.go.kr/법령/관세법시행령 첨부 HWP)",
+          "source_date": "법 개정 2025-12-23(시행 2026-01-01) / 별표5 2026-02-27 개정"
+        },
+        {
+          "claim": "신고 시점 정의(고시 원문 미확인).",
+          "status": "verified",
+          "correct_statement": "「보세운송에 관한 고시」(관세청고시 제2026-1호, 2026-01-01 시행) 제26조에 신고 시점이 정해져 있다. ② 보세운송 신고자는 운송차량을 보세구역 출발 전까지 발송지 또는 도착지 세관장에게 운송차량(변경)신고서(별지 9-2)로 신고한다. 철도·선박·항공은 제외하고, 복수 차량은 함께 기재할 수 있다(개정 '26.1). ③ 차량을 바꾸려면 출발 전까지 다시 신고한다(신설 '17.10). 공휴일·야간 등 세관 개청시간 외에 바뀌면 목적지 보세구역 도착 전까지 다시 낼 수 있다(단서 신설 '24.12). ④ 출발 뒤 차량 고장 등으로 바뀌면 그 사정이 생긴 때부터 다음 날까지 사유를 적어 다시 신고한다. 제37조⑥은 신고 후 운송수단 변경에 항목변경 승인 신청을 요구한다. 제41조③에 따라 도착지 운영인은 건별 도착일시·인수자·차량번호를 2년간 기록하고, 등록 운송수단과 세관 화물정보시스템 정보의 일치를 확인한다. '2017년 10월 신설' 보도는 제26조③ 신설 시점과 일치한다. 업계 측은 법 제216조제3항이 변경 신고를 직접 규정하지 않는다고 주장했으나(뉴시스 2026-06-06), 변경 재신고 의무는 고시에 명시돼 있다.",
+          "source_url": "https://www.law.go.kr/행정규칙/보세운송에관한고시",
+          "source_date": "2026-01-01 시행"
+        },
+        {
+          "claim": "2026년 본격 적용, 3개월 약 1,000만원 누적 사례, 업계의 전산 연동·사전 예방 요구.",
+          "status": "corrected",
+          "correct_statement": "뉴시스 2026-04-18 기사(홍찬선 기자) 원문은 '3개월간 과태료가 1000만원 규모로 예상되는' 사례다. 부과·누적이 확정된 금액이 아니라 예상액으로 써야 한다. 업계는 신고 순서 뒤바뀜과 전산처리 시차를 원인으로 들며 '일정 기간 부과 유예 등 계도 중심 운영'을 요청했고, 운송수단 정보가 이미 COPINO로 전송된다고 주장했다. 관세청은 2025년 6월부터 월별 안내를 강화했고 부과 시점은 세관별로 다르다고 설명했다. 2026-06-06 기사(등록 06-06 12:00)에는 1월 적용 후 위반 안내가 3월 이후에 이뤄졌다는 업계 주장, 1분기 과태료 면제·부과기준 재검토·전산 연동 요구, 소명 절차 후 부과 예정 통지를 보낼 계획이라는 관세청 설명이 실렸다. 1,000만원은 1차 50만원 기준 약 20건에 해당한다(산술 추론).",
+          "source_url": "https://mobile.newsis.com/view/NISX20260417_0003596310 / https://www.newsis.com/view/NISX20260605_0003658307",
+          "source_date": "2026-04-18 / 2026-06-06"
+        },
+        {
+          "claim": "해수부 외항컨테이너반출입정보 공공 API(B/L 번호 포함, 실시간, 자동승인)로 다음 날 사후 누락을 점검한다.",
+          "status": "corrected",
+          "correct_statement": "API 존재와 조건은 확인했다. 해양수산부 제공, 응답에 항만명·호출부호·입항횟수·수출입 구분·컨테이너 번호·규격·반출입 장소·선하증권 번호·TEU가 있고, 갱신 실시간, 자동승인, 이용허락 제한 없음, 최종 수정 2026-10-06이다. 요청 파라미터는 항만청코드·호출부호·업체코드·입항연도·입항횟수다. 그러나 상세 페이지 항목 목록에는 반출입 시각과 차량번호가 보이지 않는다. 활용가이드 PDF는 확인하지 못했다. 차량·기사 단위 사후 대조의 근거로 쓰려면 시각·차량 항목 존재를 먼저 확인해야 한다.",
+          "source_url": "https://www.data.go.kr/data/15057599/openapi.do",
+          "source_date": "2026-10-06(최종 수정)"
+        },
+        {
+          "claim": "엠투코리아 '스마트 보세운송 서비스'가 2024-11 상용화 진행으로 보도됐다(중복 위험).",
+          "status": "secondary_only",
+          "correct_statement": "트위그 2024-11-08 기사는 부산시·과기정통부 블록체인 특화 클러스터 사업으로 엠투코리아 컨소시엄이 '개발을 완료하고 상용화에 진입'했다고 보도했다. 기능은 보세운송 세관신고, 반·출입 관리, 보세운송 전용 AI 챗봇이며, 블록체인 디지털 계약으로 운전자·차량 교체 문제를 처리한다고 한다. 현재 운영 여부와 차량신고 대조 기능의 실제 범위는 확인하지 못했다.",
+          "source_url": "https://www.twig24.com/news/local_bs/2024/11/08/20241108500138",
+          "source_date": "2024-11-08"
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "claims": [
+        {
+          "claim": "항만 하역 재해 2022~2024년 1,016명, 2025년 사망 7명(국회 제출 자료 보도).",
+          "status": "corrected",
+          "correct_statement": "세계일보 2025-10-15 기사가 윤준병 의원실이 해수부에서 받은 자료를 보도한 것이다(2차 보도, 원자료 미열람). 수치는 2022년 351명(사망 2), 2023년 335명(사망 4), 2024년 330명(사망 4), 3년 합계 1,016명(사망 10)이다. 유형은 업무상 질병 210명, 부딪힘 161명, 떨어짐 157명, 넘어짐 143명, 무리한 동작 107명이다. '2025년 사망 7명'은 연간 수치가 아니다. 기사 표현은 '올해 들어서도 7명'으로, 2025-10-15 기사 시점까지의 누계다. 산재가 사고 장소가 아니라 사업체 산업분류로 집계돼, 하역업종이 아닌 업체 소속 피해는 항만 통계에서 빠진다는 내용도 같은 기사에 있다.",
+          "source_url": "https://www.segye.com/newsView/20251015514233",
+          "source_date": "2025-10-15"
+        },
+        {
+          "claim": "항만안전특별법상 하역사는 사업장 출입 근로자 전체를 대상으로 총괄 안전관리(지시·감독) 의무가 있다.",
+          "status": "corrected",
+          "correct_statement": "현행 법(법률 제21443호, 2026-03-10 개정, 2026-09-11 시행) 제9조①은 '항만하역사업자는 항만운송 종사자의 안전사고 예방을 위하여 항만 내 출입통제, 시설 안전확보 및 안전장비 지급 등 대통령령으로 정하는 바에 따라 자체안전관리계획을 수립하여 관리청의 승인을 받아야 한다(변경 시에도 같다)'이다. 항만운송 종사자에는 근로자뿐 아니라 도급·용역·위탁 등 계약 형식과 무관하게 역무를 제공하는 자가 포함된다(제2조6호). 시행령 제6조① 필수 기재사항은 안전관리 전담조직, 하역작업별 작업기준·안전작업 요령, 하역장비 안전수칙, 안전점검계획, 악천후 대비 조치 등이다. '출입하는 모든 근로자에 대한 안전관리를 지시·감독'은 2022-08-03 뉴스토마토 보도 표현으로, 현행 법문에는 그 문구가 없다. 협력업체 동시작업 충돌 조정 의무도 법이 직접 명시하지 않는다(M5는 의무 이행 수단이라기보다 계획 이행 지원으로 써야 함, 추론). 안전교육은 시행령 별표1 기준으로 신규 7시간 이상, 정기 매년 4시간 이상, 7일 미만 종사자 기초 1시간 이내, 항만전용 하역장비 전담자 이론 7시간 이상+실습 7시간 이상(스트래들캐리어 14시간 이상)이다.",
+          "source_url": "https://www.law.go.kr/법령/항만안전특별법 / https://www.law.go.kr/법령/항만안전특별법시행령 (별표1 첨부) / https://newstomato.com/ReadNews.aspx?no=1138813",
+          "source_date": "법 2026-09-11 시행본 / 시행령 대통령령 제36660호 2026-09-11 시행본 / 2022-08-03"
+        },
+        {
+          "claim": "해수부 2030년 항만사업장 재해 50% 감축 목표, 항만재해 예측 시스템 개발.",
+          "status": "secondary_only",
+          "correct_statement": "머니투데이·데일리안 2025-11-18 보도 기준 내용은 다음과 같다. 2024년 330건(명)을 2030년 165건으로 50% 감축하고, 항만안전점검관을 11명에서 2026년 22명으로 늘린다. AI 학습모델을 적용한 항만재해 예측 시스템을 개발하고, 2년 내 2회 처벌 시 등록 취소가 가능하도록 한다. 같은 보도는 신규 근로자 안전교육을 14시간에서 20시간으로 늘린다고 했으나, 2026-09-11 시행 시행령 별표1에는 일반 신규 7시간, 장비 전담 이론7+실습7로 돼 있어 보도 수치와 맞지 않는다(미해소). 해수부 보도자료 원문은 열람하지 않았다.",
+          "source_url": "https://www.mt.co.kr/economy/2025/11/18/2025111809365764886 / https://www.dailian.co.kr/news/view/1574437/",
+          "source_date": "2025-11-18"
+        },
+        {
+          "claim": "BPA가 2024-12 AI 사고예측 기반 위험성평가·TBM 기록 도구를 도입했고, 위험성평가 핵심 절차 충실 이행 57.7%.",
+          "status": "secondary_only",
+          "correct_statement": "메트로신문 2024-12-12 보도 기준 대상은 부산항만공사 발주 소규모 건설현장이며 하역 작업이 아니다. 57.7%는 고용노동부 2023년 조사에서 '위험성평가 실시 현장 중 핵심 절차를 모두 준수하는 사업장 비율'로, 항만 한정 수치가 아니다.",
+          "source_url": "https://www.metroseoul.co.kr/article/20241212500598",
+          "source_date": "2024-12-12"
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "claims": [
+        {
+          "claim": "EU ICS2 하우스 신고 의무화 시점이 출처마다 2025-04와 2026-02로 다르다.",
+          "status": "corrected",
+          "correct_statement": "불일치는 해소됐다. 해상 하우스 신고인의 배치 기간은 2024-12-04~2025-04-01이다(UCC Work Programme, 이행결정 (EU) 2023/2879, Maersk 2023-12-27 공지). '2026-02'는 의무화 시점이 아니라 모든 사업자가 ENS 메시지 v3로 옮겨야 하는 기한(2026-02-03)이다(트레드링스 블로그, 2차 자료). 다른 단계 시점과 혼동하지 않도록 기획서에는 '해상 하우스 신고 2025-04-01까지 단계 적용'으로 쓴다.",
+          "source_url": "https://www.maersk.com/news/articles/2023/12/27/new-schedule-of-import-control-system-2-ics2-release-3-regulations / https://blogs.tradlinx.com/ics2-in-practice-what-lsps-shipping-into-the-eu-need-to-fix-before-february-2026/",
+          "source_date": "2023-12-27 / 2025(게시일 미확인)"
+        },
+        {
+          "claim": "금지 일반 품명(Stop word) 목록이 200개 이상으로 확장됐고, 2026-08-03 발효 갱신 목록이 공개됐다(핀란드 세관 검색 요약만 확인).",
+          "status": "verified",
+          "correct_statement": "EU 집행위 ICS2 공식 페이지 2026-07-01 공지는 '2026-08-03 발효 갱신 stop word 목록이 CIRCABC 라이브러리에 게시됐다'고 밝힌다(공식 확인). FIATA 2025-07-24 경고: stop word 사용 시 ENS가 자동 거절될 수 있으나, 목록 일부 용어는 '일시 비활성'으로 당장 거절되지 않으며 오류 메시지를 보고 재제출해야 한다. '200개 이상'과 '전 운송수단 적용'은 Air Cargo Week 2025-07-31 보도(2차)다. 핀란드 세관 페이지는 403으로 열리지 않았다. 목록 항목별 활성 여부는 CIRCABC 원본으로 확인해야 한다.",
+          "source_url": "https://taxation-customs.ec.europa.eu/customs-4/customs-security/import-control-system-2-ics2-0_en / https://fiata.org/n/eu-ics2-alert-new-stop-word-list-published-avoid-rejections-and-ensure-data-quality/ / https://aircargoweek.com/?p=92086",
+          "source_date": "2026-07-01 공지 / 2025-07-24 / 2025-07-31"
+        },
+        {
+          "claim": "집행위 가이드: 위임규정 2015/2446 Annex B는 일반 용어를 품명으로 받지 않고, 금지 용어 목록은 망라적이지 않으며 계속 변경된다(TAXUD 가이드 v4.10).",
+          "status": "verified",
+          "correct_statement": "TAXUD 'guidance on acceptable goods description' v4.10(2021-03) 원문 기준이다. 개정 Annex B는 'consolidated', 'general cargo', 'parts', 'freight of all kinds' 같은 일반 용어를 받지 않는다고 명시한다. 일반 용어 목록은 망라적이지 않고 예시를 주는 목적이라고 쓴다. 다만 2021년 문서이므로 최신 허용 예시는 CIRCABC 최신판으로 보완해야 한다.",
+          "source_url": "https://info-aduaneiro.portaldasfinancas.gov.pt/pt/informacao_aduaneira/ICS2/Documents/guidance_acceptable_goods_description_V4.10_MAR2021_EN.pdf",
+          "source_date": "2021-03"
+        },
+        {
+          "claim": "모호한 품명·HS 누락은 ENS 반려와 단기 통보 적재 금지(No-load)로 이어질 수 있다.",
+          "status": "secondary_only",
+          "correct_statement": "stop word·필수항목 오류에 따른 ENS 거절과 재제출은 FIATA·집행위 공지와 맞는다. 그러나 적재 금지(Do Not Load)는 위험분석에서 중대한 보안 위협이 확인될 때 쓰는 조치로 소개되며(오스트리아 BMF FAQ 등 검색 요약 기준, 해상 원문 조문은 미열람), 품명이 모호하다는 이유만으로 바로 적재 금지된다고 쓰면 과장일 수 있다. 원 출처는 트레드링스 블로그(2025-10-06) 2차 자료다.",
+          "source_url": "https://blogs.tradlinx.com/ics2-release-3-for-ocean-house-filers-what-lsps-must-change-in-october-november",
+          "source_date": "2025-10-06"
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "claims": [
+        {
+          "claim": "IMO JIT 가이드: 선박이 운항시간의 최대 9%를 정박지 대기에 쓴다.",
+          "status": "verified",
+          "correct_statement": "IMO 2020-08-11 공지 원문은 'It is estimated that ships spend up to 9% of their time waiting at anchorage'다. 가이드는 IMO GloMEEP 산하 저탄소 해운 글로벌산업연합(Low Carbon GIA)이 냈고, 대상 이해관계자로 선주·운항사·용선자·선박대리점·중개인·항만당국·터미널·도선 등 해상·선박 서비스 제공자를 든다. 9%는 '추정치'다.",
+          "source_url": "https://imo.org/en/MediaCentre/Pages/WhatsNew-1502.aspx",
+          "source_date": "2020-08-11"
+        },
+        {
+          "claim": "IALA S-211 port call 메시지 표준(v1.0.0)이 있고 유럽 13개 항만 PortCDM 검증에 기반한다.",
+          "status": "verified",
+          "correct_statement": "IALA 아카데미 페이지 기준으로 S-211 Port Call Message v1.0.0이다(2018-01 S-200 형식 전환). PortCDM 구현 경험에서 나왔고, 13개 유럽 항만의 PortCDM 실증 수요를 반영했다.",
+          "source_url": "https://academy.iala.int/technical/data-modelling/iala-s-200-development-status/s-211/",
+          "source_date": "페이지 날짜 표시 없음"
+        },
+        {
+          "claim": "울산항만공사는 선석배정 현황을 로그인 없이 받을 수 있는 공개 데이터로 제공한다(2020-05~2025-11, 33,698건).",
+          "status": "verified",
+          "correct_statement": "공공데이터포털 '울산항만공사_선석배정현황_20260527' 파일데이터로 확인했다. 항목은 항구명·부두코드명·입항연도·접안예정일자·선석배정일자·등록일자·수정일자·접안방향, 기간은 2020-05~2025-11, 33,698행이다. 공공저작물 출처표시(제1유형), 무료, 최종 수정 2026-06-16이다. 도선·예선·줄잡이 오더 정보는 이 데이터에 없다.",
+          "source_url": "https://www.data.go.kr/data/15121258/fileData.do",
+          "source_date": "2026-06-16(최종 수정)"
+        },
+        {
+          "claim": "국내 대리점은 선석·ETA 변경을 업체별로 개별 전파하며 확인 누락으로 서비스 대기·지연이 발생한다.",
+          "status": "unverified",
+          "correct_statement": "이번 조사에서 근거가 되는 공개 통계·보도·공식 자료를 찾지 못했다. 가설로만 표기해야 한다.",
+          "source_url": "",
+          "source_date": ""
+        }
+      ]
+    }
+  ],
+  "critical_corrections": [
+    "M2(및 M1 근거 묶음): 'Maersk 발행 후 수하인·인도지 변경 USD 100(2023-03-09)'은 출처와 다르다(refuted). 해당 출처는 Maersk 벨기에의 이메일 정정 EUR 50(2023-04-03 시행, 디지털 정정 무료) 공지다. 현행 한국 근거로는 머스크 코리아 2026-09-16 공지(2026-10-12부터 SOB+1일 이후 B/L 정정·OBL↔SWB 변경 KRW 55,000)를 쓴다.",
+    "M1·M2: DCSA 'Draft 직접 수정 불가'는 단정할 수 없다. DCSA eBL API v3.0.3(2026-04-14)이 DRAFT·ISSUED 상태 TD를 직접 정정하는 선택적 경로(UseCase 17)와 SI 개정 번호를 추가했다. 요청 대비 결과 대조 기능은 여전히 표준 범위 밖이므로 차별성 논리는 유지하되 문구를 고쳐야 한다.",
+    "M1·M2·M3: 관세법 제277조 '200만원 이하'는 법정 상한이다. 시행령 별표5의 실제 부과기준은 다음과 같다. 제251조 적재기간 위반은 1년 위반 횟수 구간별 10만·30만·50만원이다. 적재물품과 불일치하는 적재화물목록(명백한 품명 오류·정정기간 경과 정정 포함)은 구간별 10만·20만·30만원이고 오류 B/L 11~50건이면 2배, 51건 이상이면 3배다. 입·출항 전 적재화물목록 미제출은 1차 60만원이다. 효과성 계산에 상한액을 쓰면 과장이다.",
+    "M4: 근거를 '보도'에서 원문으로 확정했다. 관세법 제216조제3항(2025-12-23 개정, 2026-01-01 시행), 제277조제6항제2호, 시행령 별표5 크목(1차 50만원, 2차 100만원, 3차 이상 200만원, 2년 내 재부과 시 가중, 중소기업 20% 감경 가능)이다. 신고 시점은 「보세운송에 관한 고시」 제26조②~④에 따라 출발 전 신고, 출발 전 변경 재신고(개청시간 외는 도착 전), 출발 후 고장 등은 다음 날까지다. '3개월 1,000만원'은 누적이 아니라 예상액이다.",
+    "M4: 외항컨테이너반출입정보 API 상세 항목에는 반출입 시각·차량번호가 보이지 않는다. '다음 날 공공 API로 차량 신고 사후 누락 점검' 기능은 활용가이드로 항목을 확인하기 전까지 핵심 기능으로 내세우지 않는다.",
+    "M3: '2026년 7월 56.4%(2026년 최저)'는 이미 갱신됐다. 최신값은 Sea-Intelligence 2026-09-29 발표 2026년 8월 49.9%(2022년 9월 이후 최저), 평균 지연 6.81일이다.",
+    "M5: '2025년 사망 7명'은 연간 통계가 아니라 2025-10-15 기사 시점까지의 누계다. '하역사가 출입 근로자 전체를 총괄 지시·감독'은 현행 항만안전특별법 문구가 아니다. 법문은 항만운송 종사자(도급·용역 포함) 대상 자체안전관리계획 수립·승인 의무이며, 협력업체 동시작업 조정 의무는 법에 직접 없다.",
+    "M6: 의무화 시점 불일치를 해소했다. 해상 하우스 신고 배치 기간은 2024-12-04~2025-04-01이고, 2026-02-03은 ENS 메시지 v3 이행 기한이다. stop word 갱신 목록 2026-08-03 발효는 EU 공식 페이지로 확인했다. 일부 stop word는 일시 비활성이라 모두 즉시 거절되는 것은 아니다.",
+    "M1·M2: Hamburg Süd USD 95는 2020년 미국·캐나다 수출분 자료이고 브랜드는 2023년 Maersk로 통합됐다. 현행 근거로 쓰지 않는다. 대신 Hapag-Lloyd 한국 MAF KRW 60,000('세관 제출 후 정정', 2026-07-01 시행)과 SMC USD 40을 쓴다.",
+    "M2: 관세법 제135조제2항 단서의 화물운송주선업자 직접 제출은 탁송품 운송업자 한정이다. 해상 포워더 하우스 적재화물목록의 작성·제출·정정 근거는 「보세화물 입출항 하선 하기 및 적재에 관한 고시」 제2조·제43조·제44조·제48조로 인용한다(출항 정정 기한 해상 90일)."
+  ],
+  "sources_checked": [
+    {"title": "관세법 제135조·제216조·제251조·제277조(케이스노트 법령 미러, 관세법 [시행 2026.8.11.] 법률 제21858호 전문 포함, 제216조 구판 2024-01-01·2011-01-01 비교)", "url": "https://casenote.kr/법령/관세법/제216조", "source_date": "2026-08-11 시행본", "accessed": "2026-10-07"},
+    {"title": "관세법 시행령 [별표 5] 과태료의 부과기준(제265조의2 관련) <개정 2026.2.27.> HWP 원문", "url": "https://www.law.go.kr/법령/관세법시행령", "source_date": "2026-02-27", "accessed": "2026-10-07"},
+    {"title": "보세운송에 관한 고시 [관세청고시 제2026-1호] 제26조·제37조·제41조", "url": "https://www.law.go.kr/행정규칙/보세운송에관한고시", "source_date": "2026-01-01 시행", "accessed": "2026-10-07"},
+    {"title": "보세화물 입출항 하선 하기 및 적재에 관한 고시 [관세청고시 제2026-53호] 제2조·제8조·제12조·제43조·제44조·제48조", "url": "https://www.law.go.kr/행정규칙/보세화물입출항하선하기및적재에관한고시", "source_date": "2026-08-28 시행", "accessed": "2026-10-07"},
+    {"title": "항만안전특별법 [법률 제21443호] 및 시행령 [대통령령 제36660호]·시행령 별표1", "url": "https://www.law.go.kr/법령/항만안전특별법", "source_date": "2026-09-11 시행", "accessed": "2026-10-07"},
+    {"title": "DCSA Bill of Lading 3.0 User Stories", "url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories", "source_date": "날짜 표시 없음", "accessed": "2026-10-07"},
+    {"title": "DCSA-OpenAPI ebl/v3 README(v3.0.3 릴리스 2026-04-14, v3.0.2 2025-11-14) 및 EBL_v3.0.0·3.0.2·3.0.3·3.0.4 명세", "url": "https://github.com/dcsaorg/DCSA-OpenAPI/tree/master/ebl/v3", "source_date": "2026-04-14", "accessed": "2026-10-07"},
+    {"title": "Hapag-Lloyd South Korea Local Charges / Service Fees (Aug2026)", "url": "https://www.hapag-lloyd.com/content/dam/website/downloads/detention_demurrage/South_Korea_local_charges_service_fees_Aug2026.pdf", "source_date": "2026-08", "accessed": "2026-10-07"},
+    {"title": "Maersk e-B/L amendment communication(벨기에, EUR 50) 및 FAQ B/L Amendment Fee PDF", "url": "https://www.maersk.com/news/articles/2023/03/09/e-bl-amendment-communication", "source_date": "2023-03-09", "accessed": "2026-10-07"},
+    {"title": "머스크 코리아 디지털 뉴스레터: Transport Document Amendment Fee(AME) 적용 방식 변경", "url": "https://maily.so/maersk.korea/posts/w6ovpmqpok5", "source_date": "2026-09-16", "accessed": "2026-10-07"},
+    {"title": "AJOT: Hamburg Süd export correction fee from United States and Canada", "url": "https://www.ajot.com/news/hamburg-sued-export-correction-fee-from-united-states-and-canada", "source_date": "2020-04-27", "accessed": "2026-10-07"},
+    {"title": "Maritime Executive: Hamburg Süd CEO steps down saying Maersk integration is reaching conclusion", "url": "https://maritime-executive.com/article/hamburg-sued-ceo-steps-down-saying-maersk-integration-is-reaching-conclusion", "source_date": "2023-08-31", "accessed": "2026-10-07"},
+    {"title": "Sea-Intelligence 보도자료 404(7월 2026, GLP 180)·410(8월 2026, GLP 181)", "url": "https://www.sea-intelligence.com/press-room/410-global-schedule-reliability-continues-to-plummet-in-august", "source_date": "2026-08-26 / 2026-09-29", "accessed": "2026-10-07"},
+    {"title": "FreshPlaza: Global schedule reliability falls to 56.4% in July 2026", "url": "https://www.freshplaza.com/asia/article/9867075/global-schedule-reliability-falls-to-56-4-in-july-2026-lowest-since-february-2025/", "source_date": "2026-08-27", "accessed": "2026-10-07"},
+    {"title": "뉴시스: 올해 시행된 '보세운송 차량 신고 의무'…위반시 50만원", "url": "https://mobile.newsis.com/view/NISX20260417_0003596310", "source_date": "2026-04-18", "accessed": "2026-10-07"},
+    {"title": "뉴시스: 보세운송 신고제 놓고 물류업계 반발…관세청에 반기", "url": "https://www.newsis.com/view/NISX20260605_0003658307", "source_date": "2026-06-06", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털: 해양수산부_외항컨테이너반출입정보 API", "url": "https://www.data.go.kr/data/15057599/openapi.do", "source_date": "2026-10-06", "accessed": "2026-10-07"},
+    {"title": "공공데이터포털: 울산항만공사_선석배정현황_20260527", "url": "https://www.data.go.kr/data/15121258/fileData.do", "source_date": "2026-06-16", "accessed": "2026-10-07"},
+    {"title": "트위그: 블록체인·AI 기반 스마트 보세운송 서비스 상용화", "url": "https://www.twig24.com/news/local_bs/2024/11/08/20241108500138", "source_date": "2024-11-08", "accessed": "2026-10-07"},
+    {"title": "세계일보: 항만 하역장 사고, 재해통계서 제외…해수부 3년째 '뒷짐'", "url": "https://www.segye.com/newsView/20251015514233", "source_date": "2025-10-15", "accessed": "2026-10-07"},
+    {"title": "머니투데이: 항만사업장 재해 50% 감축 목표…해수부, 항만안전 사각지대 없앤다", "url": "https://www.mt.co.kr/economy/2025/11/18/2025111809365764886", "source_date": "2025-11-18", "accessed": "2026-10-07"},
+    {"title": "뉴스토마토: 제2의 이선호 사고 막는다…항만별 총괄 안전 시스템 도입", "url": "https://newstomato.com/ReadNews.aspx?no=1138813", "source_date": "2022-08-03", "accessed": "2026-10-07"},
+    {"title": "메트로신문: 부산항만공사, 소규모 건설현장 AI 기반 위험성평가 시스템 도입", "url": "https://www.metroseoul.co.kr/article/20241212500598", "source_date": "2024-12-12", "accessed": "2026-10-07"},
+    {"title": "EU 집행위 ICS2 페이지(2026-07-01 stop word 갱신 공지, 2026-06-01 ENS 공지)", "url": "https://taxation-customs.ec.europa.eu/customs-4/customs-security/import-control-system-2-ics2-0_en", "source_date": "2026-07-01", "accessed": "2026-10-07"},
+    {"title": "Maersk: New schedule of ICS2 Release 3 regulations(UCC Work Programme 배치 일정)", "url": "https://www.maersk.com/news/articles/2023/12/27/new-schedule-of-import-control-system-2-ics2-release-3-regulations", "source_date": "2023-12-27", "accessed": "2026-10-07"},
+    {"title": "FIATA: EU ICS2 Alert – New Stop Word List Published", "url": "https://fiata.org/n/eu-ics2-alert-new-stop-word-list-published-avoid-rejections-and-ensure-data-quality/", "source_date": "2025-07-24", "accessed": "2026-10-07"},
+    {"title": "Air Cargo Week: EU bans vague cargo terms in customs filings", "url": "https://aircargoweek.com/?p=92086", "source_date": "2025-07-31", "accessed": "2026-10-07"},
+    {"title": "TAXUD Guidance on acceptable goods description v4.10", "url": "https://info-aduaneiro.portaldasfinancas.gov.pt/pt/informacao_aduaneira/ICS2/Documents/guidance_acceptable_goods_description_V4.10_MAR2021_EN.pdf", "source_date": "2021-03", "accessed": "2026-10-07"},
+    {"title": "Tradlinx: ICS2 in practice – what LSPs need to fix before February 2026", "url": "https://blogs.tradlinx.com/ics2-in-practice-what-lsps-shipping-into-the-eu-need-to-fix-before-february-2026/", "source_date": "게시일 미확인", "accessed": "2026-10-07"},
+    {"title": "Trade Finance Global: ICC briefing addresses the topic of reducing discrepancy rates", "url": "https://www.tradefinanceglobal.com/posts/icc-briefing-addresses-the-topic-of-reducing-discrepancy-rates/", "source_date": "2022-08-11", "accessed": "2026-10-07"},
+    {"title": "IMO: Just In Time Arrival Guide issued", "url": "https://imo.org/en/MediaCentre/Pages/WhatsNew-1502.aspx", "source_date": "2020-08-11", "accessed": "2026-10-07"},
+    {"title": "IALA Academy: S-211 Port Call Message", "url": "https://academy.iala.int/technical/data-modelling/iala-s-200-development-status/s-211/", "source_date": "날짜 표시 없음", "accessed": "2026-10-07"}
+  ],
+  "not_done": [
+    "Hapag-Lloyd '2023-06-26부터 B/L 정정·승인 온라인 전용' 공지는 403으로 본문을 열지 못했다(미확인 유지).",
+    "DCSA 구현 가이드(reference.dcsa.org)는 403이라 '부킹 변경 수락 시 Draft 재게시' 문구를 확인하지 못했다.",
+    "핀란드 세관 stop word 공지(403)와 CIRCABC의 2026-08-03 발효 목록 원본(항목·활성 여부)은 열람하지 않았다.",
+    "EU 위임규정 2015/2446 제106조(해상 컨테이너 ENS 적재 24시간 전 제출)와 이행규정의 Do Not Load 조문을 EUR-Lex 원문으로 확인하지 않았다.",
+    "외항컨테이너반출입정보 API 활용가이드 PDF로 반출입 시각·차량번호 항목 존재 여부를 확인하지 않았다.",
+    "관세법 시행령 별표5에 제216조제3항 항목이 처음 들어간 개정 시점(2024년 또는 2026-02-27)을 개정 이력으로 추적하지 않았다.",
+    "해수부 2025-11-18 대책 보도자료 원문과 '신규 안전교육 14→20시간' 수치의 근거(시행령 별표1과 불일치)를 확인하지 못했다.",
+    "윤준병 의원실·해수부 원자료(항만 하역 재해 현황)와 2025년 연간 사망자 확정치는 확인하지 못했다.",
+    "머스크 코리아 AME 공지는 maily.so 뉴스레터로만 확인했고 maersk.com 한국 공지 원문, 부가세 적용 여부, 수출·수입 적용 범위 세부는 확인하지 못했다.",
+    "Hamburg Süd 통합 이후 Maersk 미국 수출 B/L 정정 수수료 현행 요율은 조사하지 않았다.",
+    "ICC TAB-3 원문은 열람하지 않았다(2차 보도만).",
+    "국내 B/L 정정 빈도·비용, 보세운송 과태료 전체 부과 건수, ENS 거절 빈도, 대리점 변경 전파 누락에 관한 공식 통계는 찾지 못했다(모두 가설 유지).",
+    "KOBC 실증·사업화 관련 브리핑 사실(key_findings)과 kobcax 응모작 중복 여부는 이번 임무 범위가 아니라 재확인하지 않았다."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "participant_id": "evidence",
+  "round": 1,
+  "recommendation": {
+    "candidate_id": "DEFER",
+    "rationale": "현재 근거로는 두 후보의 제출 주제 선택을 확정하기 어렵다. 다음 검증 순서는 A를 우선한다. A는 공식 자료로 실제 업무와 문서 관계를 확인할 수 있지만, 기존 검증 기능 이후에도 남는 문제와 AI의 추가 가치가 미검증이다. B는 구체적인 인수인계 단계가 정해지지 않았고 범용 업무 도구와의 기능 중복도 크다. 이는 인터뷰 없이는 공모전에 참가할 수 없다는 뜻이 아니라, 현재 선택의 근거가 부족하다는 판단이다.",
+    "conditions": ["A: 한 선사·한 업무 단계·제한 필드에 대해 비교 대상 버전, 값의 출처, 허용 차이, 판단 유보 조건을 정의한다.", "A: 기존 선사 포털과 규칙 기반 대조로 해결되지 않는 사례를 제시한다. 실제 사례를 확보하지 못하면 설계 검증용 가설임을 명시한다.", "B: 인계자·인수자·업무 시작과 종료·미처리 판정 근거를 하나의 업무 단계로 특정한다.", "두 후보 모두 기존 방식 대비 검토 시간, 놓친 문제, 불필요한 경고를 비교할 평가 계획을 제시한다.", "실무 자료와 권한을 확보하지 못한 상태에서도 기획서 작성은 가능하되, 현장 효과를 검증했다는 주장은 하지 않는다."]
+  },
+  "candidate_assessments": [
+    {
+      "candidate_id": "A",
+      "strengths": ["SI 처리 후 Verify Copy를 검토·수정·승인하는 업무는 선사 공식 안내로 확인된다.", "두 문서의 제한 필드를 다루므로 입력·출력·검토 책임을 구체화하기 쉽다.", "표준과 선사 자료를 이용해 정상 차이, 버전 문제, 누락 등 실패 사례를 설계할 수 있다."],
+      "weaknesses": ["공식 업무의 존재는 국내 고객의 미충족 수요나 별도 도구 구매 의사를 증명하지 않는다.", "선사 포털에는 이미 필수값 검증과 초안 승인·수정 기능이 있다.", "DCSA는 SI를 변경하지 않는 TD 직접 수정 경로도 명시한다. 최신 SI와 최신 Draft의 차이를 곧바로 오류로 볼 수 없다.", "단순 식별번호·수량 등의 대조만 남기면 규칙 기반 도구로 충분할 가능성이 있다.", "두 문서가 동일한 잘못된 원천값을 공유하면 문서 간 일치는 사실의 정확성을 보장하지 않는다."],
+      "non_ai_alternative": ["선사 포털의 기존 검증·수정·승인 기능과 담당자 체크리스트", "고정 필드 추출, 명시적 정규화 규칙, 값 비교, 변경 이력 표시", "가능한 환경에서는 SI·TD 구조화 데이터 연계"],
+      "smallest_workflow": ["담당자가 동일 업무에 속한 SI·Draft 쌍과 버전 및 승인된 변경 근거를 지정한다.", "정의된 제한 필드를 추출하고 각 값의 원문 위치를 보여준다.", "규칙으로 비교 가능한 항목을 먼저 대조한다.", "AI는 비정형 표현의 대응 후보와 검토 사유를 제시한다. 근거가 부족하면 판단을 유보한다.", "담당자가 정상 차이·수정 필요·추가 확인으로 분류한다. 문서 발행이나 자동 수정은 하지 않는다."]
+    },
+    {
+      "candidate_id": "B",
+      "strengths": ["자연어 기록에서 작업 후보를 추출하는 용도는 AI 활용 이유를 설명하기 쉽다.", "사용자가 확인한 작업 목록을 만들고 인수인계에 사용하는 흐름은 작은 범위로 구성할 수 있다."],
+      "weaknesses": ["현재는 특정 항만·물류 업무와 실제 누락 사례가 정해지지 않았다.", "Microsoft 공식 제품 문서에도 AI가 작업과 담당자를 제안하고 사용자가 기한을 추가·검토하는 기능이 존재한다.", "대화에 완료 메시지가 없다는 사실은 업무가 미처리되었다는 증거가 아니다.", "담당자 미정 문제는 추출 성능보다 책임 배분과 운영 절차 문제일 수 있다.", "이메일·메신저·문서를 함께 사용하려면 접근 범위와 기록 누락 문제가 평가에 영향을 준다."],
+      "non_ai_alternative": ["인수인계 필수 항목 양식과 인수 확인", "공유 작업 목록의 담당자·기한·상태 필수 입력", "기존 업무 도구의 기한 알림과 수동 작업 등록"],
+      "smallest_workflow": ["하나의 인수인계 단계와 승인된 단일 자료 묶음을 대상으로 한다.", "AI가 요청·약속·확인 필요 항목을 원문 근거와 함께 제안한다.", "담당자·기한이 명시되지 않은 경우 임의로 채우지 않는다.", "인계자가 작업 목록과 상태를 확인하고 인수자가 수락한다.", "확인되지 않은 상태는 미처리 확정이 아니라 상태 확인 필요로 표시한다."]
+    }
+  ],
+  "claims": [
+    {"id": "E-C01", "statement": "공식 웹 공지는 개인 또는 팀 참가와 2026-10-30 14:00 접수 마감을 안내한다.", "status": "verified_fact", "source_refs": ["E-S01"], "limits": "2026-10-07 웹 본문 확인. 최신 첨부 HWP의 파일 동일성과 원본 레이아웃은 이번 검토에서 재확인하지 않았다."},
+    {"id": "E-C02", "statement": "로컬 공식 공고문 HWP 추출문에는 실현 가능성 30, 효과성 30, 문제 정의 20, 적합성 10, 혁신성 10의 배점이 기재되어 있다.", "status": "verified_fact", "source_refs": ["E-S02"], "limits": "추출문 75~93행 확인. 현재 게시 첨부 원본과의 동일성 검증은 별도 필요하다."},
+    {"id": "E-C03", "statement": "로컬 참가 양식 추출문은 프로토타입을 선택 제출로 규정하고 미제출 시 감점 없이 기본평가 점수만 적용한다고 설명한다.", "status": "verified_fact", "source_refs": ["E-S03"], "limits": "245행 확인. 프로토타입 가점에 따른 상대적 차이까지 없다는 의미는 아니다."},
+    {"id": "E-C04", "statement": "Maersk 공식 안내에는 SI 처리 후 PDF Verify Copy를 확인하고 승인하거나 수정하여 새 Verify Copy를 받는 절차가 있다.", "status": "verified_fact", "source_refs": ["E-S04"], "limits": "해당 선사 서비스 안내에 한정된다. 국내 모든 선사·포워더의 동일 절차나 오류 빈도를 증명하지 않는다."},
+    {"id": "E-C05", "statement": "Maersk 공식 안내에는 SI 필수 항목 검증과 내부 점검 결과에 따른 Draft 제공 흐름이 있다.", "status": "verified_fact", "source_refs": ["E-S05"], "limits": "필수값 검증이 모든 의미 오류나 문서 간 불일치를 탐지한다는 근거는 아니다."},
+    {"id": "E-C06", "statement": "DCSA SI+TD 가이드의 3.0.3 변경 내역은 Booking 또는 SI를 변경하지 않고 TD를 직접 수정하는 경로를 설명한다.", "status": "verified_fact", "source_refs": ["E-S06"], "limits": "2026-04-13 버전 변경 설명이며 선사마다 지원 방식이 다를 수 있다. 모든 발행 전 Draft에서 이 경로가 사용된다고 단정하지 않는다."},
+    {"id": "E-C07", "statement": "따라서 SI–Draft 차이의 존재만으로 오류를 확정할 수 없으며, 비교 전에 버전·변경 근거·필드 의미를 확인해야 한다.", "status": "inference", "source_refs": ["E-S04", "E-S06"], "limits": "개별 필드의 정상 차이 규칙은 대상 업무별 검증이 필요하다."},
+    {"id": "E-C08", "statement": "Microsoft는 영업 협업 채널에서 AI가 제안한 작업과 담당자를 검토하고 사용자가 기한을 추가해 Planner 작업을 만드는 기능을 공식 문서로 안내한다.", "status": "verified_fact", "source_refs": ["E-S07"], "limits": "영업 협업 시나리오에 한정된다. 모든 이메일·메신저의 물류 인수인계를 자동 처리한다는 증거는 아니다."},
+    {"id": "E-C09", "statement": "B의 작업 추출·담당자·기한 관리라는 기능 조합만으로 독창성을 주장하기는 어렵다.", "status": "inference", "source_refs": ["E-S07"], "limits": "항만·물류 고유의 업무 상태나 증빙 연결에서 차별성을 만들 가능성까지 부정하지 않는다."},
+    {"id": "E-C10", "statement": "A의 비정형 표현 대응과 B의 자연어 요청 추출에서 AI가 규칙 또는 수동 입력보다 추가 가치를 제공할 수 있다.", "status": "hypothesis", "source_refs": [], "limits": "동일 입력을 사용하는 비AI 기준선과의 비교 평가가 필요하다."},
+    {"id": "E-C11", "statement": "국내 대상 사용자의 처리량, 오류·누락 빈도, 기존 도구 불편, 지불 의사와 데이터 제공 의사는 확인되지 않았다.", "status": "unknown", "source_refs": [], "limits": "자료가 없다는 사실을 수요가 없다는 증거로 해석하지 않는다."},
+    {"id": "E-C12", "statement": "실제 업무 자료가 없는 합성 예시는 제안 기능과 실패 처리를 설명할 수 있지만 현장 오류 감소나 비용 절감 효과를 입증하지 못한다.", "status": "inference", "source_refs": [], "limits": "합성 자료를 이용한 설계·기능 평가 자체는 가능하다. 현장 일반화와 분리해 보고해야 한다."}
+  ],
+  "sources": [
+    {"id": "E-S01", "url": "https://kobcax.com/contest/?id=1821&sbr2_action=view&sbr2_page=1", "title": "한국해양진흥공사: 2026 해운·항만·물류 AX 아이디어 공모전", "published_on": "2026-09-07", "checked_on": "2026-10-07", "supports": ["공모 취지", "개인 또는 팀 참가", "접수 마감"]},
+    {"id": "E-S02", "url": null, "path": "C:/dev/maritime-ax-idea/work/notice-native-hwp.txt", "title": "공식 공고문 HWP의 기존 네이티브 추출문", "published_on": null, "checked_on": "2026-10-07", "supports": ["평가 배점", "기본평가 및 프로토타입 가점 방식"], "limits": "현재 웹 첨부 원본과 파일 동일성 미검증"},
+    {"id": "E-S03", "url": null, "path": "C:/dev/maritime-ax-idea/work/form-native-hwp.txt", "title": "공식 참가 양식 HWP의 기존 네이티브 추출문", "published_on": null, "checked_on": "2026-10-07", "supports": ["프로토타입 선택 제출 및 미제출 감점 없음"], "limits": "원본 레이아웃과 최신 파일 동일성 미검증"},
+    {"id": "E-S04", "url": "https://www.maersk.com/it-it/support/faqs/amend-or-approve-copy", "title": "Maersk: How to amend or approve the copy?", "published_on": null, "checked_on": "2026-10-07", "supports": ["SI 처리 후 Verify Copy 제공", "승인·수정·새 버전 제공"], "limits": "발행일 미표시, 특정 선사 서비스 안내"},
+    {"id": "E-S05", "url": "https://www.maersk.com/de-de/support/faqs/bill-of-lading-amendment", "title": "Maersk: How to use the review step in shipping instructions (new experience)?", "published_on": null, "checked_on": "2026-10-07", "supports": ["SI 필수값 검증", "점검 결과에 따른 Draft 제공"], "limits": "URL 이름과 현재 반환 본문 제목이 다르므로 현재 본문 제목으로 기록"},
+    {"id": "E-S06", "url": "https://reference.dcsa.org/content/standards/guidelines/implementation-guides/implementing-bill-of-lading-si-td", "title": "DCSA: Implementing the Bill of Lading Standard (SI+TD)", "published_on": null, "version_referenced": "3.0.3 변경 내역: 2026-04-13", "checked_on": "2026-10-07", "supports": ["SI·TD 구조화 표준", "선사 구현 차이", "SI 변경 없는 TD 직접 수정 경로"], "limits": "표준 지원 가능성과 개별 선사의 실제 적용은 구분해야 함"},
+    {"id": "E-S07", "url": "https://learn.microsoft.com/en-us/microsoft-sales-copilot/create-planner-tasks", "title": "Microsoft Learn: Create Planner tasks from suggested tasks", "updated_on": "2026-05-03", "checked_on": "2026-10-07", "supports": ["AI 작업·담당자 제안", "사용자 검토와 기한 입력", "Planner 작업 생성"], "limits": "영업 협업 채널의 기능 안내이며 물류 현장 대체 성능은 미검증"}
+  ],
+  "red_team_objections": [
+    {"id": "E-R01", "claim_challenged": "A: 최신 SI와 다른 Draft 항목은 오류다.", "reason": "TD 직접 수정 경로와 승인된 변경 때문에 두 최신 문서가 합법적으로 다를 수 있다. 두 문서 모두 잘못된 동일 값을 가질 수도 있다.", "evidence_needed": "필드별 기준 문서·허용 차이·변경 이력과 비교 불가 조건. 오류 판정과 단순 차이 표시를 분리한 명세."},
+    {"id": "E-R02", "claim_challenged": "A: 문서 검증 기능이 없으므로 새로운 AI 도구가 필요하다.", "reason": "선사 포털의 필수값 검증과 초안 검토·수정 기능이 이미 확인된다.", "evidence_needed": "기존 기능 이후 남는 문제 사례와 추가 도구를 사용하는 이유. 기존 기능을 사용하지 못하는 대상군이 있다면 그 근거."},
+    {"id": "E-R03", "claim_challenged": "A: 제한 필드 대조에 AI가 핵심이다.", "reason": "범위를 단순 식별번호와 수량으로 줄이면 규칙 대조가 더 명확한 기준선일 수 있다.", "evidence_needed": "동일 입력에서 AI 추가 전후의 누락·오경고·담당자 검토시간 비교. AI를 제거해도 성과가 같으면 AI 필요성 주장을 축소."},
+    {"id": "E-R04", "claim_challenged": "B: 메시지에 완료 언급이 없으면 미처리다.", "reason": "완료 정보가 다른 채널이나 시스템에 있을 수 있어 관측 누락과 실제 미처리를 혼동한다.", "evidence_needed": "완료 인정 증빙, 정보 누락 시 표시 방식, 사람의 상태 확인 절차."},
+    {"id": "E-R05", "claim_challenged": "B: AI 작업·담당자·기한 추출 자체가 독창적이다.", "reason": "공식 제품 문서에 유사한 기능 조합이 존재한다.", "evidence_needed": "하나의 물류 인수인계 단계에서 기존 제품 설정으로 해결되지 않는 업무 조건과 비교표."},
+    {"id": "E-R06", "claim_challenged": "프로토타입 미제출 시 감점이 없으므로 기획서만으로 경쟁상 불리함도 없다.", "reason": "공식 양식은 최대 10점 가점을 별도로 허용한다. 미제출 감점 없음과 상대적 차이 없음은 다르다.", "evidence_needed": "프로토타입 필요 여부는 제작 시간 대비 기획서 근거 강화 효과로 판단하고 수상 가능성으로 환산하지 않는다."}
+  ],
+  "decisive_questions_to_peers": [
+    {"target_role": "business", "question": "A에서 기존 선사 포털의 검증·초안 승인 기능을 이용하는 담당자가 별도 도구를 사용할 만큼 남는 문제가 무엇입니까? 확인 사실과 가설을 나눠 제시해 주십시오.", "why": "업무의 존재와 추가 도구 수요를 구분해야 한다."},
+    {"target_role": "architecture", "question": "SI 변경 없는 TD 직접 수정이 가능한 상황에서 최신 SI–Draft 쌍만 입력받아 무엇을 판정할 수 있습니까? 필수 추가 입력과 판단 유보 조건을 제시해 주십시오.", "why": "차이를 오류로 잘못 판정하는 설계 위험을 막아야 한다."},
+    {"target_role": "architecture", "question": "A에서 AI를 제거한 필드 추출·규칙 대조 기준선보다 AI가 개선해야 할 결과는 무엇이며, 개선이 없을 때 어떤 기능을 삭제합니까?", "why": "AX 적합성을 이름이 아니라 측정 가능한 추가 가치로 설명해야 한다."},
+    {"target_role": "business", "question": "B를 선택한다면 하나의 인수인계 단계와 기존 작업 관리 도구가 해결하지 못하는 물류 고유 조건을 특정할 수 있습니까?", "why": "산업 용어만 바꾼 일반 업무 도구라는 반론을 검증해야 한다."}
+  ],
+  "disconfirming_evidence": [
+    {"candidate_id": "A", "evidence": "기존 선사 포털 검증과 구조화 데이터 연계만으로 대상 문제를 충분히 해결한다는 관측", "decision_effect": "별도 AI 검토 도구 권고를 철회하거나 대상을 변경한다."},
+    {"candidate_id": "A", "evidence": "정상 차이·버전 불확실성 때문에 경고 확인 부담이 수동 대조보다 증가한다는 비교 결과", "decision_effect": "필드 또는 기능을 축소하고 순편익이 없으면 후보를 기각한다."},
+    {"candidate_id": "B", "evidence": "표준 인수인계 양식과 기존 업무 도구 설정으로 누락 문제가 해소된다는 관측", "decision_effect": "별도 AI 제품 필요성 주장을 철회한다."},
+    {"candidate_id": "B", "evidence": "미처리 판정에 필요한 완료 증빙을 수집할 수 없고 확인 부담도 줄지 않는다는 관측", "decision_effect": "자동 상태 추적 주장을 철회하고 제안 목록 수준으로 축소한다."},
+    {"candidate_id": "A/B", "evidence": "한 후보에 합법적인 실제 자료, 명확한 미충족 문제, 비교 가능한 기존 방식이 확보되는 경우", "decision_effect": "현재 DEFER 판단을 재검토한다. 합성 데모만 성공한 경우에는 현장 수요 판단을 바꾸지 않는다."}
+  ],
+  "unknowns": ["국내 대상 조직과 실제 이용자 역할", "반복 발생하는 오류·누락의 종류와 처리 비용", "합법적인 자료 확보와 익명화 가능성", "현장 문서·기록의 버전과 상태를 확인할 경로", "기존 선사 포털 및 업무 도구의 실제 사용 수준", "AI 추가 효과와 오경고 확인 부담", "최신 공식 첨부 HWP와 로컬 원본의 동일성", "전체 경쟁 제품과 선행 아이디어에 대한 포괄적 조사"]
+}

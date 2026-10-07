@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "reviewer": "root",
+  "checked_on": "2026-10-07",
+  "review_kind": "주요 주장의 독립 원자료 대조",
+  "checks": [
+    {
+      "id": "ROOT-V1",
+      "source_url": "https://reference.dcsa.org/content/standards/guidelines/implementation-guides/implementing-bill-of-lading-si-td",
+      "source_section": "Version overview: 3.0.3, 13 April 2026",
+      "source_lines": "81,92-97",
+      "claim": "Booking 또는 SI를 변경하지 않는 TD 직접 수정 방식이 표준에 추가됐고 선사마다 지원 방식을 선택할 수 있다.",
+      "result": "verified",
+      "limits": "표준상의 경로 존재. 모든 선사의 모든 발행 전 Draft에 동일 적용된다는 근거는 아니다.",
+      "discussion_consequence": "SI를 항상 정답 원천으로 삼는 판정 금지. 필드별 값의 출처, 승인된 변경, 비교 유보를 검토."
+    },
+    {
+      "id": "ROOT-V2",
+      "source_url": "https://www.maersk.com/support/faqs/review-step-shipping-instructions",
+      "source_section": "Review step and Instant Verify Copy",
+      "source_lines": "5-25,40-58",
+      "claim": "Maersk는 SI 필수항목 검사와 내부 점검 결과에 따른 Draft 제공 흐름을 안내한다.",
+      "result": "verified",
+      "limits": "국내 고객의 실제 이용상태·오류율·추가 도구 수요는 증명하지 않는다.",
+      "discussion_consequence": "기존 포털·체크리스트·규칙을 비교 기준에 포함."
+    },
+    {
+      "id": "ROOT-V3",
+      "source_url": "https://learn.microsoft.com/en-us/microsoft-sales-copilot/create-planner-tasks",
+      "source_section": "Create Planner tasks from suggested tasks",
+      "source_lines": "31-42,85",
+      "claim": "Microsoft 영업 협업 채널에서 AI가 제안한 작업·담당자를 검토하고 사용자가 기한을 더해 Planner 작업을 생성할 수 있다.",
+      "result": "verified",
+      "limits": "물류 인수인계 특화 성능이나 모든 외부 채널 자동연계의 증거가 아니다. 기한을 AI가 모두 자동 추출한다고 확대하지 않는다.",
+      "discussion_consequence": "B의 일반 기능 조합만으로 혁신성 확정 불가."
+    },
+    {
+      "id": "ROOT-V4",
+      "source_path": "work/notice-native-hwp.txt",
+      "source_lines": "75-93",
+      "claim": "기본평가 항목의 배점은 30+30+20+10+10=100점이다.",
+      "result": "verified_local_extract",
+      "limits": "원본 HWP의 레이아웃과 현재 첨부 바이트 동일성을 이번 회의에서 재확인하지 않음."
+    },
+    {
+      "id": "ROOT-V5",
+      "source_path": "work/form-native-hwp.txt",
+      "source_lines": "245",
+      "claim": "프로토타입 미제출 감점 없음과 최대10점 가점, 총점100상한이 함께 규정되어 있다.",
+      "result": "verified_local_extract",
+      "limits": "미제출이 경쟁상 차이도 없다는 의미로 해석하지 않음."
+    }
+  ],
+  "not_verified": [
+    "고객 수요·지불의사",
+    "실제 업무 자료·사용 권한",
+    "AI/비AI 성능 비교",
+    "현장 효과·비용·작업시간",
+    "전체 선행제품·특허 조사",
+    "현재 공식 HWP의 GUI/레이아웃·웹첨부 파일 해시"
+  ],
+  "privacy_and_publication": {
+    "external_messages_sent": false,
+    "public_submission": false,
+    "github_upload": false
+  },
+  "memory_lookup": {
+    "relevant_hits": false,
+    "memory_used_for_findings": false
+  }
+}

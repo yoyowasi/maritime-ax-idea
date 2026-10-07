@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "title": "실제 전문가 간 질문과 답변",
+  "provenance": "각 전문가 round2 원문의 보낸 메시지와 상대 수신 원문을 양방향 정확 문자열로 대조",
+  "ordering": "참가자별 원문 배열 순서로 묶음. 전체 시간순서나 정확한 발언시각을 주장하지 않음.",
+  "message_count": 10,
+  "exact_counterpart_matches": 10,
+  "messages": [
+    {
+      "message_id": "BUS-R2-Q1",
+      "from": "business",
+      "to": "architecture",
+      "text": "BUS-R2-Q1: A에서 기존 선사 포털의 입력검사·Draft 수정승인 및 구조화 내보내기·규칙 대조를 넘어, AI가 맡아야 하는 최소 잔여 작업은 무엇입니까? AI의 필요성을 아직 입증하지 못했다면 가설로 구분해 주세요. 동일한 SI–Draft 문서쌍이 같은 원천값을 공유하거나 정상 수정·버전 차이를 포함할 때, 원문 확인·오경고 대응 때문에 총작업시간이 늘어나는 조건도 답변 부탁드립니다. 저는 출품확정은 DEFER, 후속 검증 순위는 A 우선으로 분리합니다.",
+      "sender_record": "20-business-round2.json",
+      "receiver_record": "21-architecture-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "BUS-R2-Q2",
+      "from": "business",
+      "to": "evidence",
+      "text": "BUS-R2-Q2: 제 1차 결론은 A의 공식 검토·정정 절차는 확인되지만, 기존 포털·규칙 대조 이후 남는 한국 대상 사용자의 수요와 효과는 미검증이라는 것입니다. 출품확정 DEFER와 후속 검증 A 우선을 분리합니다. B 전환의 결정적 증거는 특정 인계 단계의 실제 기록·수락 또는 완료 증거·기존 작업표로 해결되지 않는 누락 사례를 확보하고, A보다 자료와 정답 검토가 쉬워지는 경우라고 봅니다. DCSA의 TD 직접 수정 경로가 A의 SI를 단독 정답으로 삼는 범위에 주는 제한과, B로 전환할 때 가장 필요한 반증/채택 증거를 답변 부탁드립니다. 실무자 접근 부재는 참가·기획불가의 관문으로 삼지 않고 주장 수준의 한계로만 표시하겠습니다.",
+      "sender_record": "20-business-round2.json",
+      "receiver_record": "22-evidence-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "BUS-R2-A2",
+      "from": "business",
+      "to": "evidence",
+      "text": "BUS-R2-A2 / E-R2-Q2 답변: A에서 허용할 기획 주장은 '공식적으로 존재하는 발행 전 검토 단계에서 제한필드의 차이와 원문 근거를 정리하는 보조 절차를 제안한다'까지입니다. '기존 포털이 놓친 오류를 잡는다', '한국 담당자의 시간이 줄었다', '정정료를 절감한다'는 실측 전 가설로 표시합니다. 공개·합성 예시는 절차 설명과 반례 제시에 쓰고 효과 증거로 쓰지 않습니다. B의 최소 절차는 업무 식별자로 요청–인수자 수락–완료 근거를 연결하고, 원문만으로 확인되지 않으면 '상태 미확인'으로 두며, 해당 인수자 또는 권한 있는 상태 원천이 확인한 뒤에만 '실제 미처리'로 분류하는 것입니다. 기한·담당자는 명시된 근거 또는 사람의 지정이 있을 때만 확정합니다. 완료 미언급과 누락을 동일시하지 않으며, 확인 요청 자체의 추가 업무도 효과 측정에 포함합니다.",
+      "sender_record": "20-business-round2.json",
+      "receiver_record": "22-evidence-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "BUS-R2-A1",
+      "from": "business",
+      "to": "architecture",
+      "text": "BUS-R2-A1 / ARCH-R2-Q2 답변: '발행 전 Draft 검토·수정 요청을 맡은 담당자 한 명이 기존 승인된 포털 업무를 유지한다'는 명시적 가정으로 기획할 수 있습니다. 문서 작성자와 최종 승인자가 동일하다고 가정할 필요는 없으며, 최종 발행·승인은 범위 밖으로 두면 더 작아집니다. 이 담당자의 실제 권한과 포털 이용은 미검증입니다. 두 문서만 있으면 값 차이·원문 근거까지만 제시하고, 정책·변경 이력 또는 권한 있는 담당자의 확인이 없으면 정상 변경/업무 오류를 판단 불가로 남깁니다. 문서쌍·승인 이력 확보 가능성은 현재 미확인입니다. 자료 부재는 기획서 작성 금지가 아니라 실증·효과 주장 범위의 제한입니다.",
+      "sender_record": "20-business-round2.json",
+      "receiver_record": "21-architecture-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "ARCH-R2-Q1",
+      "from": "architecture",
+      "to": "evidence",
+      "text": "ARCH-R2-Q1: 총괄이 전달한 DCSA 3.0.3의 SI/Booking 변경 없는 TD 직접 수정 경로를 검토합니다. 이 근거가 1차의 'SI 수락→Draft 재게시 경로 존재' 자체를 부정하는지, 아니면 '수락 SI와 대응 Draft만 있으면 차이를 오류로 판정 가능'이라는 확대를 부정하는지 범위를 확인해 주세요. 수정 계약은 두 문서만으로 원문 값의 차이·추출 유보를 출력하되, 업무 오류·정상 승인 변경의 판정은 적용 정책과 변경 승인 근거가 확보된 필드에 한정하려 합니다. 변경근거가 없으면 DIFFERENCE_OBSERVED/REVIEW_REQUIRED로 남기고 오류로 확정하지 않는 방식이 충분한지도 의견 부탁드립니다.",
+      "sender_record": "21-architecture-round2.json",
+      "receiver_record": "22-evidence-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "ARCH-R2-A1",
+      "from": "architecture",
+      "to": "business",
+      "text": "ARCH-R2-A1 / BUS-R2-Q1 답변: 기존 포털의 입력검사·Draft 수정승인·구조화 내보내기와 규칙 대조를 넘는 AI 잔여 가치는 현재 가설입니다. 후보는 '서식이 다른 비정형 문서에서 제한필드와 정확한 원문 위치를 추출해 검토표를 만드는 부담'입니다. 포털에서 구조화 원천값을 얻거나 고정서식 파서로 충분하면 AI 필요성이 사라집니다. 주소·상호의 의미상 동등성을 AI가 최종 결정하거나 동일 원천값끼리 대조한 결과를 정확성 증명으로 삼으면 안 됩니다. 총시간 증가 조건: 원문 재확인·오탐 대응·모호한 추출 수정·버전 확인에 든 시간이 수기 추출 절감보다 큼; SI에 없는 선사 값·정상 직접 Draft 수정·집계 차이를 오류로 오경고; 유보가 많아 결국 전체 수기검토를 중복함. 동일 문서·동일 OCR로 규칙 기준선과 AI 보조를 비교하고 원문확인과 수정·유보 대응까지 포함한 총검토시간을 측정해야 합니다. 출품확정 DEFER와 A 검증우선으로 분리하는 권고에 동의합니다. 실무자 미확보 상태에도 이 한계를 밝힌 기획서 작성은 가능합니다.",
+      "sender_record": "21-architecture-round2.json",
+      "receiver_record": "20-business-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "ARCH-R2-A2",
+      "from": "architecture",
+      "to": "evidence",
+      "text": "ARCH-R2-A2 / E-R2-Q1 답변: 같은 입력 문서·OCR·필드 범위·버전정보·원문 검토절차로 규칙/템플릿 기준선과 AI 추출 보조를 비교합니다. 개선 후보는 필드 추출 정확도와 근거 위치 정확도, 새 서식 대응, 그리고 원문확인·오경고·추출수정·유보 대응을 모두 포함한 총검토시간입니다. AI는 비교·승인 권한을 갖지 않습니다. 삭제 조건: 구조화 원천값이나 고정서식 파서로 충분함; AI가 총시간을 늘림; 실질적 추가 가치가 없음; 중요한 차이를 의미상 동일로 축약하거나 근거가 잘못됨; 불확실 사례를 유보하지 못함. 값 추출 유보(EXTRACTION_ABSTAIN)와 업무 판단 유보(REVIEW_REQUIRED)를 분리하고 MATCH_OBSERVED도 업무 적합성·문서 전체 정상 선언이 되지 않도록 계약을 수정합니다. 간접 경로 존재는 유지하되 두 문서 차이→오류라는 확대는 철회합니다.",
+      "sender_record": "21-architecture-round2.json",
+      "receiver_record": "22-evidence-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "ARCH-R2-Q2",
+      "from": "architecture",
+      "to": "business",
+      "text": "ARCH-R2-Q2: 수정 계약에서는 두 문서로 '관측된 값 차이와 원문'까지만 만들고, 정상 변경·업무 오류 판단은 적용 정책·변경승인 이력 또는 담당자 확인 이후로 분리합니다. 이때 실제 검토 주체가 문서 작성·승인 담당자이고 기존 포털에서 확인하는 업무를 유지한다는 최소 가정이 현장 근거 없이도 기획서의 명시적 가정으로 적절한지, 더 작은 대상이 필요한지 답변 부탁드립니다. 문서·승인 이력 확보 가능성이 현재 미확인이라는 판단도 확인해 주세요.",
+      "sender_record": "21-architecture-round2.json",
+      "receiver_record": "20-business-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "E-R2-A1-Q1",
+      "from": "evidence",
+      "to": "architecture",
+      "text": "E-R2-A1 (ARCH-R2-Q1 답변): DCSA 근거는 기존 간접 경로의 존재를 부정하지 않고, 수락 SI+대응 Draft만으로 차이를 업무 오류로 확정하는 확대를 부정합니다. https://reference.dcsa.org/content/standards/guidelines/implementation-guides/implementing-bill-of-lading-si-td 의 3.0.3(2026-04-13) 변경표는 Booking/SI 변경 없는 TD 직접 수정과 선사별 간접·직접·양쪽 지원 가능성을 명시합니다. 제안한 DIFFERENCE_OBSERVED/REVIEW_REQUIRED 계약은 적절합니다. 추가로 값 추출 유보와 업무 판단 유보를 구분하고, 차이 없음도 업무 정상 판정으로 승격하지 않아야 합니다. 적용 정책·변경승인 근거가 있어도 범위 밖 오류 전체를 검증했다는 뜻은 아닙니다. E-R2-Q1: AI 제거 기준선 대비 개선해야 할 결과와 AI를 삭제할 조건을 간단히 확인 부탁드립니다.",
+      "sender_record": "22-evidence-round2.json",
+      "receiver_record": "21-architecture-round2.json",
+      "exact_counterpart_match": true
+    },
+    {
+      "message_id": "E-R2-A2-Q2",
+      "from": "evidence",
+      "to": "business",
+      "text": "E-R2-A2 (BUS-R2-Q2 답변): DCSA 3.0.3은 SI/Booking 변경 없는 TD 직접 수정을 명시하므로 SI를 무조건 정답으로 삼으면 승인된 차이를 오류로 경고할 수 있습니다. 기존 간접 수정 경로의 존재는 유지됩니다. 두 문서만 확보되면 차이 관측까지만, 업무 오류 판단에는 필드 정책·변경승인 근거가 추가로 필요합니다. B 전환의 채택 증거는 특정 단계에서 요청·수락·완료를 연결한 기록, 기존 작업표의 실패 이유, AI로 추가 발견한 항목의 실제 미처리 여부를 확인할 경로입니다. 반증은 기록에 완료 언급만 없고 실제 완료했거나, 기존 양식의 필수 입력·알림으로 문제를 해결하는 경우입니다. E-R2-Q2: A에서 기존 포털 검증 이후 남는 수요를 아직 가설로 둘 때 허용할 기획 주장과, B의 관측 누락을 실제 미처리와 구분할 최소 운영 절차를 확인 부탁드립니다. 현장 접근 부재는 제출 자격 제한이 아니라 실증 주장 범위 제한이라는 데 동의합니다.",
+      "sender_record": "22-evidence-round2.json",
+      "receiver_record": "20-business-round2.json",
+      "exact_counterpart_match": true
+    }
+  ]
+}

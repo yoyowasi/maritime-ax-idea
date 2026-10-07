@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "status": "complete",
+  "completed_at_utc": "2026-10-07T04:44:02.7903841Z",
+  "user_facing_date": "2026-10-07 KST",
+  "artifact_count_including_manifest": 13,
+  "read_first": "30-synthesis.json",
+  "actual_peer_dialogue": "25-peer-dialogue.json",
+  "expert_originals": [
+    "10-business-round1.json",
+    "11-architecture-round1.json",
+    "12-evidence-round1.json",
+    "20-business-round2.json",
+    "21-architecture-round2.json",
+    "22-evidence-round2.json"
+  ],
+  "later_comparison": "40-comparison-template.json",
+  "claude_meeting_read": false,
+  "original_brief_note": "00-brief.json은 시작 시점의 고정 입력으로 in_progress 상태를 보존. 최종 완료 상태는 본 manifest가 기준.",
+  "recording_note": "전문가가 보낸 최신 원문 객체 보존. JSON 공백 형식은 다를 수 있음. business round2는 작성자 최종 교체본, architecture round2는 작성자가 지정한 한국어 정정 및 response_ko 중복키 제거를 반영.",
+  "validation": {
+    "json_parse": "passed",
+    "required_files": "passed",
+    "expert_round_and_counts": "passed",
+    "participants": [
+      {
+        "participant_id": "business",
+        "rounds": [
+          1,
+          2
+        ],
+        "claims": 10,
+        "sources": 5,
+        "sent": 4,
+        "received": 3,
+        "final_priority": "A"
+      },
+      {
+        "participant_id": "architecture",
+        "rounds": [
+          1,
+          2
+        ],
+        "claims": 7,
+        "sources": 4,
+        "sent": 4,
+        "received": 3,
+        "final_priority": "A"
+      },
+      {
+        "participant_id": "evidence",
+        "rounds": [
+          1,
+          2
+        ],
+        "claims": 12,
+        "sources": 7,
+        "sent": 2,
+        "received": 4,
+        "final_priority": "A"
+      }
+    ],
+    "round1_claims_total": 29,
+    "allowed_claim_statuses": "passed",
+    "source_refs": "resolved",
+    "local_source_paths": "exist",
+    "exact_peer_messages": 10,
+    "unmatched_sent": 0,
+    "orphan_received": 0,
+    "original_input_files_checked": 11,
+    "input_files_changed_during_meeting": [],
+    "independent_primary_source_checks": "02-moderator-evidence-checks.json",
+    "comparison_status": "awaiting_claude_artifacts",
+    "limitations": [
+      "실제 사람의 인터뷰·현장 실증·모델 성능시험 미실시",
+      "이번 회의에서 공식 HWP 원본 레이아웃 및 최신 첨부와 파일 동일성 재검증 미실시",
+      "모든 외부 출처를 총괄이 재열람하지는 않았음; 핵심3개 웹 주장과 공식 배점·프로토타입 항목은 별도 검증"
+    ]
+  },
+  "artifacts": [
+    {
+      "file": "00-brief.json",
+      "bytes": 6715,
+      "sha256": "7a30e970ef7e737a4c6e21254de1c09a1a3f10fe554df8712f5cae00783a1a88"
+    },
+    {
+      "file": "01-input-provenance.json",
+      "bytes": 6113,
+      "sha256": "2b5cfd33a5c603c47691bf9396c504a74a9e51e90a511b0f67c82a95c003c896"
+    },
+    {
+      "file": "02-moderator-evidence-checks.json",
+      "bytes": 3541,
+      "sha256": "0da3f41f83d392a1e85822f75b5568d35b05a7bde0ceaf1164a2b9d8bf4f15e9"
+    },
+    {
+      "file": "10-business-round1.json",
+      "bytes": 22256,
+      "sha256": "4f69bc7275d8b4fdecb1bc97995afce0867b0925fb1c85f800ec5c3db74f62d4"
+    },
+    {
+      "file": "11-architecture-round1.json",
+      "bytes": 19257,
+      "sha256": "0d9e2204082519975aaf67244910b295840bc75906f14619c404ede9a3ccd742"
+    },
+    {
+      "file": "12-evidence-round1.json",
+      "bytes": 17668,
+      "sha256": "b2eb7a0644b7f1b1d5420be5fa9cb94da4eb98b3051d8a64ac9c1a1629ddd01e"
+    },
+    {
+      "file": "20-business-round2.json",
+      "bytes": 11871,
+      "sha256": "6f9fc20d52f0b458e3805f6d9637b588dd7d4ae21c731954061682f0399b81c3"
+    },
+    {
+      "file": "21-architecture-round2.json",
+      "bytes": 13831,
+      "sha256": "1087711ef6cf2ac6e7d0fadb54307fd2623a6cd5fc827a6899a5606f7b9c2fb9"
+    },
+    {
+      "file": "22-evidence-round2.json",
+      "bytes": 11044,
+      "sha256": "c4f75b790c6fb15cbf10b6060471399fac5075518fbd5bf2b23197fbe71281e2"
+    },
+    {
+      "file": "25-peer-dialogue.json",
+      "bytes": 12013,
+      "sha256": "37a8f8da97b59a30d162f575e3a2ae370898246ec48d6481c786be7689d803b1"
+    },
+    {
+      "file": "30-synthesis.json",
+      "bytes": 10885,
+      "sha256": "d4bb4a73bd2204081e77362a198ffe5cb0988e74b8a82f8c7ee3a0fd7dd71c8f"
+    },
+    {
+      "file": "40-comparison-template.json",
+      "bytes": 5208,
+      "sha256": "1a60706217be6d94933286ae8677ed0615fbaf3ef96ecdf2f532213e856f1392"
+    }
+  ],
+  "hash_scope": "manifest 자신의 해시는 자기참조를 피하기 위해 제외"
+}

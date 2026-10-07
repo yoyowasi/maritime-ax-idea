@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "title": "Codex 해양 AX 전문가 회의 종합",
+  "date_kst": "2026-10-07",
+  "record_type": "총괄이 실제 전문가 의견과 상호 검토를 통합한 회의록",
+  "decision": {
+    "submission_topic": "미확정",
+    "recommendation": "A를 기획·후속 검증 우선 후보로 유지하고 출품 주제 확정은 보류한다.",
+    "priority_candidate": "A",
+    "candidate_a_working_title": "발행 전 운송문서의 제한필드 차이와 원문 근거를 제시하는 담당자 검토 보조",
+    "basis": "A는 현재 B보다 업무 단계와 입력·출력을 좁혀 설명하기 쉽다. 국내 잔여 수요·AI 우월성·효과가 검증됐다는 뜻은 아니다.",
+    "owner": "최종 출품 주제는 사용자 결정",
+    "not_a_requirement": "실무자 인터뷰나 실제 문서 확보를 참가자격·기획서 작성의 필수 요건으로 추가하지 않는다."
+  },
+  "participants": [
+    {
+      "id": "business",
+      "role": "사업성·현장 업무",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "round1": "출품확정 DEFER, 실제 자료 확보에 따라 검증; A의 업무 경계가 상대적으로 명확",
+      "round2": "주제확정 보류와 A 기획·검증 우선 분리, 현장접근 없이 가설 명시한 초안 가능"
+    },
+    {
+      "id": "architecture",
+      "role": "기술·데이터 실현성",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "round1": "후속 연구 대상으로 A 조건부 권고",
+      "round2": "주제확정 DEFER+A 검증우선. 문서 차이 관측과 업무 판단, 추출 유보와 판단 유보를 분리"
+    },
+    {
+      "id": "evidence",
+      "role": "근거 검증·심사 반론",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "round1": "주제확정 DEFER+A 검증우선, 기존 기능과 TD 직접 수정 반론",
+      "round2": "같은 권고 유지. 합성자료·현장효과 및 미처리·상태미확인의 증거 경계를 강화"
+    }
+  ],
+  "meeting_method": {
+    "independent_round": 1,
+    "peer_review_round": 2,
+    "actual_agents": true,
+    "human_experts_interviewed": false,
+    "decision_method": "다수결이 아니라 원자료·반례·검증 가능성으로 논점을 정리",
+    "record_keeper": "별도 기록 보조가 전문가의 JSON 원문을 파일로 저장. 판단 참가자 수에 포함하지 않음",
+    "skills": [
+      "orchestrate",
+      "superpowers:brainstorming"
+    ],
+    "grilling_note": "별도 grill-me/grilling 스킬은 미발견. 가정·반증 질문 방식을 회의에 적용."
+  },
+  "debate_and_revision": [
+    {
+      "id": "D1",
+      "topic": "SI와 Draft의 차이는 오류인가",
+      "challenge_by": "evidence",
+      "initial_limit": "1차에 버전·필드 조건은 있었지만 수락 SI와 대응 Draft만으로 판단할 수 있는 범위가 충분히 분리되지 않았다.",
+      "evidence": "DCSA는 Booking/SI 변경 없이 TD를 직접 수정하는 대안 경로와 선사별 선택 가능성을 명시한다.",
+      "root_verified_source": "02-moderator-evidence-checks.json#ROOT-V1",
+      "reply_by": "architecture",
+      "resolution": "기존 SI 개정→Draft 재게시 흐름의 존재는 유지한다. SI를 항상 정답으로 삼지 않고, 관측 차이와 승인된 변경·업무 오류 판단을 나눈다.",
+      "final_contract": "두 문서는 값과 근거를 제공한다. 동일 업무·의미·집계가 불확실하면 비교 불가. 정책·변경근거·권한 있는 사람 확인이 없으면 업무 판단 유보.",
+      "status": "설계 수정 합의. 개별 선사 적용은 미확인"
+    },
+    {
+      "id": "D2",
+      "topic": "AI를 넣어야 하는가",
+      "challenge_by": "business",
+      "reply_by": "architecture",
+      "resolution": "다양한 비정형 서식에서 제한필드와 정확한 원문 위치를 추출하는 부담 감소를 검증할 가설로 좁힌다.",
+      "baseline": [
+        "기존 선사 포털",
+        "구조화 내보내기",
+        "고정서식 파서",
+        "OCR와 명시적 대조 규칙",
+        "사람 체크리스트"
+      ],
+      "comparison_rule": "동일 입력·OCR·필드범위·버전정보·검토절차에서 추출·근거 정확도, 오경고·누락·유보, 사람의 총활동시간과 경과시간을 구분해 비교",
+      "rejection_rule": "추가 가치가 없거나 중복검토 부담이 더 크면 AI 기능 또는 후보 범위를 축소·기각",
+      "status": "검증 방법 합의. AI 추가 가치는 미검증"
+    },
+    {
+      "id": "D3",
+      "topic": "B에서 완료 언급이 없으면 미처리인가",
+      "challenge_by": "evidence",
+      "reply_by": "business",
+      "resolution": "요청–인수자 수락–완료 근거를 업무 식별자로 연결하고, 관측되지 않은 상태는 상태 미확인으로 둔다. 권한 있는 상태 원천 또는 담당자 확인 뒤에만 실제 미처리로 분류.",
+      "rejection_rule": "이미 완료된 업무의 확인 요청만 늘거나 표준 양식·기존 알림으로 충분하면 별도 AI 필요성을 철회",
+      "status": "판정 경계 합의. 특정 물류 단계는 미확정"
+    },
+    {
+      "id": "D4",
+      "topic": "현장접근 없으면 기획서도 멈춰야 하는가",
+      "challenge_by": "root",
+      "reply_by": [
+        "business",
+        "architecture",
+        "evidence"
+      ],
+      "resolution": "공식자료·공개규칙·명시적 가설·합성 반례로 기획 초안을 작성할 수 있다. 현장 수요·효과 검증 완료로 표현하지 않는다.",
+      "status": "합의"
+    },
+    {
+      "id": "D5",
+      "topic": "1차의 A 권고와 DEFER는 모순인가",
+      "resolution": "권고 대상이 달랐다. 다음 조사·기획 우선순위는 A, 사용자의 출품 주제 확정은 보류로 공통 표기한다.",
+      "status": "용어와 결정 단계 정리"
+    }
+  ],
+  "candidate_comparison": [
+    {
+      "candidate_id": "A",
+      "problem": "발행 전 제한필드 차이 검토와 원문 확인 부담이라는 가설",
+      "user_hypothesis": "한 선사의 Draft 검토·수정 요청 담당자 한 역할",
+      "known": "공식 선사 문서에서 SI 검토·Draft 제공·수정 절차와 기존 기능 확인",
+      "unknown": "국내의 기존 도구 이후 잔여 업무, 실제 데이터·권한·정답, AI 순효과",
+      "decision": "우선 기획·검증",
+      "switch_condition": "기존 도구로 충분하거나 정상 차이 확인 부담이 더 크면 범위 축소·기각"
+    },
+    {
+      "candidate_id": "B",
+      "problem": "특정 물류 인수인계 단계의 미확인 항목 추적이라는 가설",
+      "user_hypothesis": "한 인계 단계의 인계자와 인수자",
+      "known": "일반 AI 작업관리 및 해외 물류 상태관리의 기능 사례 존재",
+      "unknown": "대상 단계·실제 미처리·완료증거·기존 도구의 실패 이유",
+      "decision": "대안 유지",
+      "switch_condition": "사용 가능한 요청·수락·완료 기록과 기존 도구가 해결 못한 문제가 A보다 먼저 확인되면 우선순위를 재검토"
+    }
+  ],
+  "scope_for_a": {
+    "allowed_in_proposal": [
+      "사용자가 선택한 문서쌍의 제한필드·원문 위치 제시",
+      "관측 일치·차이·비교불가·추출유보 표시",
+      "확정 정책 및 변경근거에 따른 담당자 검토",
+      "검토 범위와 판단유보 표시"
+    ],
+    "excluded": [
+      "자동 문서 발행·승인",
+      "자동 대외 정정 요청",
+      "SI를 단독 절대 정답으로 취급",
+      "문서 전체 적합성·법적 효력 보증",
+      "정량 효과·수요·정정료 절감을 확인 사실로 제시"
+    ],
+    "important_edge_case": "같은 잘못된 원천값을 공유하면 두 문서가 일치해도 실제 정보는 틀릴 수 있다."
+  },
+  "agreed_evidence_rules": [
+    "확인 사실·추론·가설·미확인을 분리한다.",
+    "기존 서비스 기능 존재는 확인하되 국내 보급·효과로 확대하지 않는다.",
+    "합성 사례는 기능과 반례 설명이며 현장 효과의 증거가 아니다.",
+    "임의 심사점수·수상확률·절감률을 만들지 않는다.",
+    "미제출 감점 없음과 프로토타입 가점의 상대적 차이를 구분한다.",
+    "출처 최신성·문서 버전·원본 확인 범위를 적는다."
+  ],
+  "unresolved": {
+    "substantive_peer_disagreements": [],
+    "facts_requiring_evidence": [
+      "실제 담당자와 선사·문서 유형",
+      "사용 가능한 문서·변경근거와 이용 권한",
+      "필드별 정상 차이·원천·집계 계약",
+      "기존 포털·규칙으로 해결되지 않는 문제",
+      "AI 비교평가 결과",
+      "국내 수요·빈도·작업시간·비용",
+      "B의 특정 인계 단계와 완료 증거"
+    ],
+    "note": "전문가들의 합의가 현장 검증을 대체하지 않는다."
+  },
+  "next_steps_proposed_not_executed": [
+    {
+      "order": 1,
+      "action": "A 한 장 개요와 반례 표를 공개 근거로 작성",
+      "allowed_without_field_access": true,
+      "outputs": "문제 가설·사용자 가정·제한필드·비AI 대안·유보 조건"
+    },
+    {
+      "order": 2,
+      "action": "사용자의 실무자·비식별 자료 접근 가능 여부를 확인",
+      "allowed_without_field_access": false,
+      "outputs": "실제 자료 검증 경로 또는 공개·합성 중심의 주장 범위"
+    },
+    {
+      "order": 3,
+      "action": "정상 차이·잘못된 버전·TD 직접 수정·같은 잘못된 값 등의 비교 사례 설계",
+      "allowed_without_field_access": true,
+      "outputs": "설계 검증 계획. 수행 실적이나 효과 수치로 쓰지 않음"
+    },
+    {
+      "order": 4,
+      "action": "Claude 회의 JSON을 제공받으면 같은 차원으로 비교",
+      "allowed_without_field_access": true,
+      "outputs": "주장별 공통점·충돌·출처·판별 방법. 입력 조건이 다르면 별도 표기"
+    }
+  ],
+  "comparison_integrity": {
+    "claude_meeting_read": false,
+    "comparison_performed": false,
+    "prior_context": "기존 planning-session의 A 축소안과 규정 검증 기록을 읽었다. 완전한 무맥락 맹검은 아님.",
+    "input_manifest": "01-input-provenance.json",
+    "comparison_template": "40-comparison-template.json"
+  },
+  "verification_refs": [
+    "02-moderator-evidence-checks.json",
+    "90-manifest.json"
+  ],
+  "limits": "AI 역할별 회의와 원자료 검토다. 실제 인간 실무자 자문·제품 시험·현장 실증은 수행하지 않았다."
+}

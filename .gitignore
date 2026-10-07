@@ -1,0 +1,9 @@
+work/
+.env
+.env.*
+!.env.example
+*.log
+node_modules/
+.venv/
+__pycache__/
+outputs/private/

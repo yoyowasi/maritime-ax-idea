@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "title": "Codex–Claude 해양 AX 회의 비교",
+  "status": "comparison_performed",
+  "comparison_performed": true,
+  "codex_record": "outputs/codex-expert-meeting-2026-10-07-01/30-synthesis.json",
+  "claude_record": "outputs/claude-expert-meeting-2026-10-07/moderator/final-minutes.json",
+  "template_source": "outputs/codex-expert-meeting-2026-10-07-01/40-comparison-template.json (원본은 수정하지 않음)",
+  "fairness_checks_applied": [
+    {
+      "check": "같은 공모전·후보·사용자 제약·결정 단계인지",
+      "result": "같은 공모전과 사용자 제약. 후보 범위는 다르다: Codex는 A·B 두 후보를 검증했고, Claude는 A·B 평가에 새 후보 발산(M1~M7)을 더했다."
+    },
+    {
+      "check": "투입 자료·회의 날짜·역할·모델·도구·반복 횟수 차이",
+      "result": "같은 날짜. Codex는 gpt-6.1-sol·gpt-6-astra 3명, 2라운드. Claude는 Claude Opus 5.5 상속 에이전트 9개 역할, 3라운드(브리핑·발산·교차·중복 반박·사실 재확인·모의 심사·심화·반론·수정·최종 판정). Claude는 웹 원문 확인과 공개 응모작 게시판 확인을 더 많이 수행했다."
+    },
+    {
+      "check": "상대 회의 열람 여부와 공통 사전 판단",
+      "result": "Claude 전문가 에이전트는 Codex 회의를 읽지 않았다. Claude 사회자는 Codex 종합을 읽었고 별도 판별 검토를 했으며, 그 결과의 EP 대조 요소를 출처를 밝혀 반영했다. 양측 모두 docs/planning-session-2026-10-07.md의 A 축소안을 공유했다."
+    },
+    {
+      "check": "조건부 제안과 검증된 사실 구분",
+      "result": "각 차원의 claude 값에서 확인 사실과 미확인을 구분해 적었다."
+    },
+    {
+      "check": "문서 길이·출처 수·모델 이름·찬성 수를 성능 근거로 쓰지 않음",
+      "result": "적용. 승패를 판정하지 않는다."
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "problem_user",
+      "label": "문제·사용자",
+      "codex": "A: 발행 전 Draft 검토·수정 요청 담당자 한 역할이라는 가설",
+      "claude": "포워더 해상 수출 문서 담당자가 첫 Draft MBL v1을 받고 승인 회신하기 직전, 선사별 유료 전환 시점 전의 한 장면. 2차 사용자로 선사 문서팀 모드를 둔다.",
+      "relationship": "different_scope",
+      "evidence_to_resolve": "실무자 1명에게 EP 수신 형태와 Draft 수신–유료 전환 간격 확인"
+    },
+    {
+      "id": "workflow_scope",
+      "label": "업무 범위",
+      "codex": "문서쌍의 제한필드 검토, 자동발행·승인·대외발신 제외",
+      "claude": "수출신고필증(EP)·SI 개정 이력·Draft MBL·HBL/House 목록 4자 대조, 선사별 비용·시점 라벨, 정정 요청 초안(발송 버튼 없음). 자동 발행·승인·대외 발신 제외. MBL 1 : HBL N 혼재는 확장 정의만.",
+      "relationship": "different_scope",
+      "evidence_to_resolve": "Maersk 한국의 EP–B/L 일치 요구와 SI·Draft가 같은 잘못된 값을 공유하는 반례가 EP 포함 필요성을 판별"
+    },
+    {
+      "id": "decision_stage",
+      "label": "권고 단계",
+      "codex": "출품 주제 미확정, A 기획·검증 우선",
+      "claude": "MF1 단일 출품을 조건부 추천. 10-10까지 사용자 확정, 전환 조건(가용 시간·실무 답변·선행 응모작)과 10-18 절단선을 명시.",
+      "relationship": "different_assumption",
+      "evidence_to_resolve": "양측 모두 최종 결정은 사용자 몫. Claude는 마감·프로토타입 가점을 근거로 확정 시점을 앞당겼고, Codex는 근거 충분성을 근거로 보류했다"
+    },
+    {
+      "id": "evidence_status",
+      "label": "사실·가설 구분",
+      "codex": "공식 업무·기존 기능은 확인, 국내 수요·AI 추가가치·효과는 미확인",
+      "claude": "국내 공개 요율(Hapag-Lloyd 한국 KRW 60,000·SMC USD 40, Maersk 한국 KRW 55,000은 2차), Maersk 한국 EP 요구, 관세법·별표5·고시 원문, 공개 응모작 제목 95건을 확인. 국내 빈도·국적 선사 요율·실무 순서는 미확인.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "미확인 목록은 같다. Claude는 한국 현장 비용 근거를 추가로 확보했다"
+    },
+    {
+      "id": "ai_necessity",
+      "label": "AI 필요성과 비AI 대안",
+      "codex": "다양한 서식의 추출·근거 위치 보조 가설. 기존 포털·규칙과 동일조건 비교",
+      "claude": "규칙 우선. AI는 비정형 PDF 필드·원문 위치 추출, 품명 포섭 판정(사람 확인 필수 \"AI 정상 추정\" 배지), Draft v2 정정 요청 구조화. diff·정규화 규칙·LLM 3단 기준선 합성 회귀 시험. 한글–영문 품명 대조는 대표 AI 몫으로 쓰지 않는다.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "동일 입력 비교에서 AI 추가 가치가 없으면 AI 기능 축소(Codex 기각 규칙을 Claude 기획에도 명시할 것)"
+    },
+    {
+      "id": "data_access",
+      "label": "데이터 접근",
+      "codex": "실제 문서·변경근거·정답·권한 미확보. 공개·합성 기획은 가능",
+      "claude": "실데이터 없음. DCSA v3.0.3 스키마 기반 합성 선적 건, 사전 생성 LLM 결과를 원 응답 해시·모델·생성일과 함께 고정. 차년도 PoC는 읽기 전용 파일 반입.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "실제 비식별 문서쌍 확보 여부"
+    },
+    {
+      "id": "differentiation",
+      "label": "기존 제품 대비 차별성",
+      "codex": "일반 OCR·작업관리 기능만으로 독창성 확정 금지. 남은 실제 문제 필요",
+      "claude": "\"AI 서류 대조\" 자체는 차별점이 아님을 인정(R대리·IQAX×CargoNPay·Cozentus·imagetotable.ai·Logitude). 남는 차별점은 EP–SI 개정 이력–Draft MBL–House 목록 결합, 선사별 유료 전환 시점 라벨, DCSA 필드 출처 매핑.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "공개 자료에 없다는 것은 부재 증명이 아님. 응모작 본문과 국내 포워딩 시스템 기능 확인 필요"
+    },
+    {
+      "id": "error_boundary",
+      "label": "오류·유보 처리",
+      "codex": "관측 차이와 업무 오류 분리, 정상 TD 직접수정 고려, 추출 유보와 판단 유보 분리",
+      "claude": "규칙 사전 R1~R15: N:M 키 그래프, EP 분할·병합 합계, 동시포장, 총중량만 비교·VGM 제외, 포장 단위 계층, 포괄 품명 하한, HBL·MBL 당사자 축 분리, DCSA v3.0.3 직접 정정(amendedTransportDocumentStatus), 필드 일치로 SI 버전 추정, 사람 판정·보류.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "양측 모두 DCSA 직접 정정 경로를 반영. Claude는 한국 EP 규칙을 추가"
+    },
+    {
+      "id": "success_and_failure",
+      "label": "효과·실패 기준",
+      "codex": "누락·오경고·근거 정확도·검토시간. 순효과 없으면 AI 제거 또는 범위 축소",
+      "claude": "섀도 단계: 마감 전 포착 가능 비율, 회피 비용은 상한 추정. 개입 단계: B/L 100건당 유료 정정률(담당자·선사 교차). 합성 회귀 시험은 유형별 검출 수/전체 수, 보류 세트·실패 사례 공개.",
+      "relationship": "different_scope",
+      "evidence_to_resolve": "Codex의 검토시간·근거 정확도·순효과 없을 때 AI 제거 규칙과 결합하면 상호 보완"
+    },
+    {
+      "id": "cost_and_schedule",
+      "label": "비용·일정",
+      "codex": "실제 값 미입력. 사람 활동시간과 경과시간 구분, 원/월과 초기 비용의 단위 일치",
+      "claude": "금액 없이 비용 항목·산식만. 일정: 10-09 변형 명세 고정, 10-18 절단선, 10-27 배포 승인·접속 검증, 10-28 동결, 10-28~29 제출.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "실제 견적·인시. Codex의 사람 활동시간·경과시간 구분을 함께 쓸 것"
+    },
+    {
+      "id": "alternative_b",
+      "label": "B 채택 조건",
+      "codex": "한 단계의 요청–수락–완료 근거 및 기존 도구의 실패가 확인되면 재검토",
+      "claude": "원안 B는 전원 비권장(Tandom·Wove·Expedock 중복, 냉동컨테이너 인계 응모작 유사). B 변형(M4 보세운송 법정 인계, M7 입항 서비스 연쇄)도 하향. 차순위는 MF2 선적 변경 연쇄 점검.",
+      "relationship": "different_assumption",
+      "evidence_to_resolve": "Codex는 B를 조건부 대안으로 유지, Claude는 공개 응모작·상용 제품 확인 후 제외"
+    },
+    {
+      "id": "changes_and_dissent",
+      "label": "회의 중 수정·이견",
+      "codex": "직접 수정 경로 반론으로 판단 계약 수정, A 권고와 DEFER의 단계 차이 해소",
+      "claude": "라운드3 반론으로 Agensi 오인용 정정, 섀도 KPI 모순 수정, 비용 경계를 \"선사마다 다르거나 없음\"(RCL 정정료 없음)으로 수정, TD에 SI 개정 번호 없음 확인 후 R10 수정, 혼재 범위 정리. 라운드2 모의 심사는 M3을 1.4점 앞에 뒀으나 최종에서 MF1로 정리.",
+      "relationship": "not_comparable",
+      "evidence_to_resolve": "회의 과정 기록이라 직접 비교 대상이 아님"
+    },
+    {
+      "id": "source_freshness",
+      "label": "출처 최신성",
+      "codex": "2026-10-07 공식 웹 핵심 주장 재확인. 현재 HWP 첨부 동일성·렌더 미검증",
+      "claude": "2026-10-07 원문 재확인: Hapag-Lloyd 한국 2026-08 요율표, DCSA eBL v3.0.3 YAML(2026-04-14), 관세법·별표5·고시. Maersk AME는 뉴스레터 수준. 공식 HWP 첨부 동일성은 이번 회의에서 재검증하지 않았다(기존 기록에서 확인).",
+      "relationship": "agreement",
+      "evidence_to_resolve": "제출 직전 최신 공지·요율표 재확인"
+    },
+    {
+      "id": "remaining_unknowns",
+      "label": "남은 미확인",
+      "codex": "국내 수요·자료·권한·정답·AI 실측·B 단계",
+      "claude": "국내 B/L 정정 빈도, 국적 선사 정정료, 포워더의 수수료 전가 여부, EP 수신 형태·필증 품명 언어·분할 할당 출처, 응모작 본문, 1인 23일 작업량.",
+      "relationship": "agreement",
+      "evidence_to_resolve": "실무자 1명 확인과 가용 시간 결정"
+    }
+  ],
+  "dimensions_without_claude_value": [],
+  "relationship_values": [
+    "agreement",
+    "different_scope",
+    "different_assumption",
+    "contradiction",
+    "missing_evidence",
+    "not_comparable"
+  ],
+  "convergence_summary": "양측 모두 A 계열(발행 전 B/L 문서 대조)을 우선으로 보고 B를 우선 후보에서 뺐다. 관측 차이와 업무 오류 분리, DCSA 직접 정정 경로, 비AI 기준선 비교, 합성 자료는 효과 증거가 아니라는 원칙도 같다. 가장 큰 차이는 결정 단계(Codex 보류 vs Claude 조건부 확정), 범위(Codex SI–Draft 두 문서 vs Claude EP·HBL 포함 4자 대조와 선사별 비용 시점 라벨), 프로토타입 전략이다.",
+  "winner": null,
+  "winner_policy": "자동 승패를 정하지 않는다. 사용자가 요구하면 동일 조건과 근거 품질에 비춰 항목별로 판단한다.",
+  "next_action": "사용자가 MF1 단일 출품 여부를 10-10까지 정한다. 두 회의의 공통 원칙(Codex의 AI 기각 규칙, 활동시간·경과시간 구분)을 MF1 기획서 2.6·2.7에 반영한다."
+}

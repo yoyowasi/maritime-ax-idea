@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "title": "Codex–Claude 회의 비교 준비",
+  "status": "awaiting_claude_artifacts",
+  "comparison_performed": false,
+  "codex_record": "30-synthesis.json",
+  "claude_record": null,
+  "fairness_checks": [
+    "같은 공모전·후보·사용자 제약·결정 단계인지 확인",
+    "투입 자료·버전·회의 날짜·역할·모델·도구·반복 횟수 차이를 표시",
+    "기존 상대 회의 열람 여부와 공통 사전 판단을 기록",
+    "조건부 제안과 검증된 사실을 구분해 비교",
+    "문서 길이·출처 개수·모델 이름·찬성 수를 성능 근거로 쓰지 않음",
+    "충돌 주장마다 판별 가능한 근거 또는 추가 검증을 제시",
+    "사후 Codex 수정은 이번 원본을 덮지 않고 새 비교 파일로 저장"
+  ],
+  "dimensions": [
+    {
+      "id": "problem_user",
+      "label": "문제·사용자",
+      "codex": "A: 발행 전 Draft 검토·수정 요청 담당자 한 역할이라는 가설",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "workflow_scope",
+      "label": "업무 범위",
+      "codex": "문서쌍의 제한필드 검토, 자동발행·승인·대외발신 제외",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "decision_stage",
+      "label": "권고 단계",
+      "codex": "출품 주제 미확정, A 기획·검증 우선",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "evidence_status",
+      "label": "사실·가설 구분",
+      "codex": "공식 업무·기존 기능은 확인, 국내 수요·AI 추가가치·효과는 미확인",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "ai_necessity",
+      "label": "AI 필요성과 비AI 대안",
+      "codex": "다양한 서식의 추출·근거 위치 보조 가설. 기존 포털·규칙과 동일조건 비교",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "data_access",
+      "label": "데이터 접근",
+      "codex": "실제 문서·변경근거·정답·권한 미확보. 공개·합성 기획은 가능",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "differentiation",
+      "label": "기존 제품 대비 차별성",
+      "codex": "일반 OCR·작업관리 기능만으로 독창성 확정 금지. 남은 실제 문제 필요",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "error_boundary",
+      "label": "오류·유보 처리",
+      "codex": "관측 차이와 업무 오류 분리, 정상 TD 직접수정 고려, 추출 유보와 판단 유보 분리",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "success_and_failure",
+      "label": "효과·실패 기준",
+      "codex": "누락·오경고·근거 정확도·검토시간. 순효과 없으면 AI 제거 또는 범위 축소",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "cost_and_schedule",
+      "label": "비용·일정",
+      "codex": "실제 값 미입력. 사람 활동시간과 경과시간 구분, 원/월과 초기 비용의 단위 일치",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "alternative_b",
+      "label": "B 채택 조건",
+      "codex": "한 단계의 요청–수락–완료 근거 및 기존 도구의 실패가 확인되면 재검토",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "changes_and_dissent",
+      "label": "회의 중 수정·이견",
+      "codex": "직접 수정 경로 반론으로 판단 계약 수정, A 권고와 DEFER의 단계 차이 해소",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "source_freshness",
+      "label": "출처 최신성",
+      "codex": "2026-10-07 공식 웹 핵심 주장 재확인. 현재 HWP 첨부 동일성·렌더 미검증",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    },
+    {
+      "id": "remaining_unknowns",
+      "label": "남은 미확인",
+      "codex": "국내 수요·자료·권한·정답·AI 실측·B 단계",
+      "claude": null,
+      "relationship": null,
+      "evidence_to_resolve": null
+    }
+  ],
+  "relationship_values": [
+    "agreement",
+    "different_scope",
+    "different_assumption",
+    "contradiction",
+    "missing_evidence",
+    "not_comparable"
+  ],
+  "winner": null,
+  "winner_policy": "자동 승패를 정하지 않는다. 사용자가 요구하면 동일 조건과 근거 품질에 비춰 항목별로 판단한다.",
+  "next_action": "사용자가 Claude 회의 파일을 제공하거나 위치를 지정하면 비교. 현재는 열람·검색하지 않음."
+}

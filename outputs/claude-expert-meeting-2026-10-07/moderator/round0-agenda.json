@@ -1,0 +1,52 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 아이디어 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "producer": "Claude Code",
+  "date": "2026-10-07",
+  "moderator": "메인 오케스트레이터(현재 대화 모델 Claude Opus 5.5)",
+  "status": "안건 확정, 라운드1 진행 예정",
+  "goal": "기존 후보 A(운송 문서 불일치 검토)·B(인수인계 미처리 항목 추적)를 공식 배점으로 재평가하고, 서로 다른 전문 관점에서 새 후보를 발산해 기획서로 확장할 상위 후보와 사용자에게 물을 결정사항을 정한다.",
+  "independence": {
+    "codex_meeting_read_by_experts": false,
+    "excluded_from_expert_inputs": [
+      "outputs/codex-expert-meeting-2026-10-07-01/",
+      "outputs/topic-comparison-v1.md",
+      "outputs/independent-review-v1.md"
+    ],
+    "expert_inputs": [
+      "README.md",
+      "AGENTS.md",
+      "docs/idea-candidates.md",
+      "docs/planning-session-2026-10-07.md",
+      "work/official-rules-2026-10-07.md",
+      "work/notice-native-hwp.txt",
+      "work/form-native-hwp.txt"
+    ],
+    "caveat": "사회자(메인)는 회의 시작 전에 코덱스 회의 종합(30-synthesis.json)과 topic-comparison-v1.md를 읽었고, 사용자 요청으로 코덱스 결론을 별도 판별하는 읽기 전용 검토를 병행했다. 전문가 에이전트에게는 코덱스 결과를 전달하지 않으며, 사회자의 종합 단계는 완전한 맹검이 아니다."
+  },
+  "ground_rules": [
+    "사실(출처 URL 포함)과 가설을 구분한다. 실무 경험·인터뷰·통계·효과 수치·비용을 만들지 않는다.",
+    "공식 배점(실현 30·효과 30·문제정의 20·적합 10·혁신 10, 프로토타입 가점 최대 10, 총점 100 상한)을 판단 기준으로 쓴다.",
+    "모바일신분증 공모전과 출품 아이디어를 섞지 않는다.",
+    "외부 문의·가입·접수·게시는 하지 않는다. 웹 조사는 공개 자료 열람만 한다.",
+    "각 전문가는 자기 폴더의 JSON 파일만 작성한다."
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "name": "브리핑과 개별 발산(기존 A·B 평가 + 새 후보)",
+      "participants": ["industry-researcher", "shipping-ops", "port-terminal", "logistics-data-architect", "ai-engineer", "business-strategist", "regulation-esg"],
+      "output": "<전문가>/round1-*.json"
+    },
+    {
+      "round": 2,
+      "name": "후보 압축 후 교차 검토·중복 반증·심사위원 채점",
+      "output": "<전문가>/round2-review.json, moderator/round1-shortlist.json"
+    },
+    {
+      "round": 3,
+      "name": "상위 후보 심화 설계와 반론, 최종 권고",
+      "output": "<전문가>/round3-*.json, moderator/final-minutes.json"
+    }
+  ]
+}

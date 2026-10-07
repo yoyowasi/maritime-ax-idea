@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "created_at_utc": "2026-10-07T04:28:09.0876789Z",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2218,
+      "last_write_time_utc": "2026-10-07T02:35:53.7538787Z",
+      "sha256": "3d30cd0a2a7fd15b98568c19352fa5af8c0683db28cab0c318a5db87d72fff2a"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 702,
+      "last_write_time_utc": "2026-10-07T02:35:53.8161646Z",
+      "sha256": "0bcc35120348056974b5395c607909730c260fa257b277e4974cfa57e26aef35"
+    },
+    {
+      "path": "docs/idea-candidates.md",
+      "bytes": 1450,
+      "last_write_time_utc": "2026-10-07T02:35:53.7593704Z",
+      "sha256": "0f376dba800006b13f5eb169a4ae090deca8cebbb475827e4081241a48bd44c6"
+    },
+    {
+      "path": "docs/planning-session-2026-10-07.md",
+      "bytes": 5418,
+      "last_write_time_utc": "2026-10-07T02:49:44.3775163Z",
+      "sha256": "be395a0b30f3e613850514292e4915677585ef2ef11079da919b04fbec286bf8"
+    },
+    {
+      "path": "sources/notice.hwp",
+      "bytes": 73728,
+      "last_write_time_utc": "2026-10-07T02:21:00.4516756Z",
+      "sha256": "7f353977a7b57766016b8a814e42b781bf80be6d07d26b69476f8f362720cba0"
+    },
+    {
+      "path": "sources/form.hwp",
+      "bytes": 97280,
+      "last_write_time_utc": "2026-10-07T02:21:00.5376171Z",
+      "sha256": "a7ac059af9788a56f158f9e155c53c48b61a2d905b3def9c4bbe788dbf1b1be6"
+    },
+    {
+      "path": "sources/notice.txt",
+      "bytes": 7665,
+      "last_write_time_utc": "2026-10-07T02:21:55.8721535Z",
+      "sha256": "66a63e28908be0ee21a0d2052fe88edc086ac3f3f682bb244de2510573dd181b"
+    },
+    {
+      "path": "sources/form.txt",
+      "bytes": 12949,
+      "last_write_time_utc": "2026-10-07T02:21:55.8751533Z",
+      "sha256": "d6f326ff950723313a34d5b72052b5bbc8a44966d1e0f0e840f637973ecf1d8f"
+    },
+    {
+      "path": "work/notice-native-hwp.txt",
+      "bytes": 7374,
+      "last_write_time_utc": "2026-10-07T02:46:15.1657026Z",
+      "sha256": "7fbba65485775450c87053a4bfc0585a37f894c2aba9270b70c61e8d8fbdb192"
+    },
+    {
+      "path": "work/form-native-hwp.txt",
+      "bytes": 12635,
+      "last_write_time_utc": "2026-10-07T02:46:18.6024185Z",
+      "sha256": "c80be1ace329343ccfd7e2d1c4b9a34b68d267a4f2603f0a3921202df957e3ca"
+    },
+    {
+      "path": "work/official-rules-2026-10-07.md",
+      "bytes": 6973,
+      "last_write_time_utc": "2026-10-07T02:48:09.7855370Z",
+      "sha256": "300a612c25a1c1e0b78e451c8706f9758f696794a7784100662072caeda982ce"
+    }
+  ],
+  "hashes_mean": "이번 회의 시작 시점의 로컬 파일 상태 기록. 원본 HWP의 현재 웹 첨부 동일성이나 화면 렌더 확인을 뜻하지 않는다.",
+  "excerpts": [
+    {
+      "path": "work/notice-native-hwp.txt",
+      "lines": "60-99",
+      "text": "\n 선정 및 시상 등\n\n\n□ 평가방법\n\n ㅇ 서류평가 100%\n\n ㅇ 기본평가 100점 + 프로토타입 가점 최대 10점을 합산하되, 최종점수는 100점을 상한으로 함\n\n□ 평가기준\n\n평가 항목\n기준 설명\n배점\nFeasibility\n(실현 가능성)\n아이디어가 단기간 내(차년도 등) 실행 가능한가? 비용·기간·기술적 측면에서 현실성이 있는가?\n30\nImpact\n(효과성)\n아이디어가 산업 현장에서 품질·비용·납기(QCD) 등 성과와 가치 창출에 기여할 수 있는가?\n30\nFit / Alignment\n(적합성)\n아이디어가 해양 AX 전환 목적 및 산업 특성과 얼마나 부합하는가?\n10\nInnovation & Creativity\n(혁신성·창의성)\n아이디어가 기존 방식과 차별화되며 창의적 요소를 갖추고 있는가?\n10\nProblem Definition(문제 정의)\n해결하고자 하는 해양산업 현장 문제, 적용 대상 업무·사용자·이해관계자가 명확하고 구체적으로 제시되어 있는가?\n20\nPrototype Validation\n(프로토타입 검증성)\n제출한 프로토타입이 제안 아이디어와 일관되게 연계되어 있으며, 핵심 기능 및 사용자 흐름을 구체적으로 구현하고 아이디어의 실현 가능성을 효과적으로 뒷받침하는가?\n+ 10※ 가점\n총점\n100　"
+    },
+    {
+      "path": "work/form-native-hwp.txt",
+      "lines": "220-246",
+      "text": " - 데이터 확보, 기술 구현, 현장 적용, 비용 등 예상 리스크 작성\n - 보안, 개인정보, 저작권, 규제 관련 고려사항 작성\n - 리스크별 대응 방안 및 보완 계획 작성\n\n\n※ 아이디어 기획서 작성 시 유의사항\n  - 기획서 분량은 A4 10페이지 이내로 작성하되, 사진, 동영상 등 추가 첨부 가능    (파일 추가 시 모든 파일을 압축파일 1개로 업로드)\n\n  - 프로토타입 자료는 기획서 분량에 포함하지 않으며, 별도 파일 또는 URL로 제출 가능\n\n  - 심사표를 참조하여 관련 내용이 누락되지 않도록 작성\n\n※ 선택 제출자료 안내사항\n\n구분\n내용\n프로토타입 제출 여부\n □ 없음 □ 화면 목업 □ HTML/웹페이지 □ 데모 영상  □ 기타: (                      )\n제출자료 형태\n □ 파일 첨부 □ URL 제출 □ 기획서 내 이미지 삽입 □ 해당 없음  □ 기타: (                      )\n제출자료 링크 또는 파일명\n - URL 또는 파일명을 기재\n ※ 로그인, 별도 설치, 권한 승인 없이 확인 가능한 형태로 제출\n\n\n- 프로토타입은 선택 제출자료이며, 미제출 시 감점 없이 기본평가 점수만 적용 합니다. 제출 시 기획서 연계성, 핵심 기능 및 사용자 흐름 구현 수준, 실현 가능성을 기준으로 최대 10점의 가점을 부여합니다. 최종점수는 기본평가 점수와 가점을 합산하되, 100점을 초과할 수 없습니다.\n"
+    }
+  ],
+  "excluded_from_reads": [
+    "outputs/topic-comparison-v1.md",
+    "outputs/independent-review-v1.md",
+    "Claude 회의 산출물"
+  ],
+  "privacy": "work/participant-context.md는 읽거나 복사하지 않음"
+}

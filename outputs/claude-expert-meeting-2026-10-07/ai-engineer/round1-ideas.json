@@ -1,0 +1,360 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 아이디어 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "round": 1,
+  "round_name": "개별 발산",
+  "date": "2026-10-07",
+  "expert": {
+    "slug": "ai-engineer",
+    "role": "AI·LLM 적용 엔지니어",
+    "lens": "문서 AI·예측·최적화·LLM 에이전트·이상 탐지를 해운 현장에 쓸 때 규칙 기반보다 나은 지점과 그렇지 않은 지점을 가른다. 정확도·누락·오경고·검토시간으로 평가하는 방법과 프로토타입 시연 설계를 맡는다."
+  },
+  "opening_statement": "이번 공모전은 서류로만 평가하고 효과 수치를 지어낼 수 없다. 그래서 'AI가 규칙으로 안 되는 어느 칸을 맡는지'와 '그 칸을 누락·오경고·검토시간으로 어떻게 재는지'를 재현 가능한 실험으로 보여주는 안이 실현가능성 30·효과성 30을 가장 설득력 있게 가져간다. 숫자, 코드, 컨테이너번호 체크디지트, 신고 순서는 규칙으로 충분하다. LLM은 자유문 정정 요청 해석, 주소·품명 같은 자유문 필드의 의미 동치 판정, 원문 근거 제시에만 써야 기획서가 과장 없이 단단해진다. 그 기준으로 보면 후보 A를 '정정 사이클'(요청→재발행 Draft→연결 문서)로 옮기는 것이 가장 유리하다. 공개 표준(DCSA BL 3.0)으로 합성 벤치마크를 만들고 '규칙만' 대 '규칙+LLM' 성능을 웹 시연에서 비교하면 프로토타입 가점까지 노릴 수 있다. 다만 프로토타입에는 API 키를 넣을 수 없고 마감 후 수정할 수 없으므로, LLM 결과는 사전 생성해 고정하고 그렇다고 명시해야 한다.",
+  "lens_notes_on_other_candidates": [
+    "PSC(항만국통제) 결함 사전점검 체크리스트: Kaiko Systems×Risk4Sea가 선종·MoU 지역·과거 결함 기반 맞춤 체크리스트와 AI 억류 위험 예측을 2025-04에 이미 발표했다. 벌크 적합성은 높지만 신규 아이디어로 내기 어렵다. https://www.iims.org.uk/streamlining-psc-inspections-through-ai-powered-approach/",
+    "보세운송 사전신고 점검(조사관 후보 1): 순서, 필수 항목, 기한 검사는 결정적 규칙 문제다. AI가 더할 가치는 비정형 운송 지시(메일·PDF)를 신고 항목으로 바꾸는 추출 정도로 좁다. 출품하려면 'AI 없이 규칙 엔진만으로 되는 부분'을 정직하게 나누어 써야 혁신성 감점을 피한다.",
+    "ETA·체선 대기시간 예측: 공개 데이터(울산항 체선정보 등)로 역검증은 가능하지만 Port-i, 씨벤티지, Portchain과 겹친다. 용선계약상 도착 유인(NOR 제출) 때문에 감속 운항 채택이 어렵다는 현장 제약도 있을 수 있다(가설)."
+  ],
+  "existing_candidate_assessment": [
+    {
+      "candidate": "A",
+      "verdict": "조건부",
+      "strengths": [
+        "구조화 필드(수량·중량·컨테이너번호·항구 코드)와 자유문 필드(당사자명·주소·품명·Marks)가 섞여 있어 규칙과 LLM의 역할을 나누어 설명하기 좋다.",
+        "DCSA BL 3.0의 공개 스키마로 합성 SI·Draft를 만들고, 정답이 알려진 변형을 주입하는 평가 세트를 23일 안에 만들 수 있다. 개인정보를 넣지 않고도 웹 시연이 가능하다.",
+        "정정 수수료(Maersk 발행 후 수하인·인도지 변경 USD 100, Hamburg Süd USD 95)라는 공개된 비용 근거가 있다."
+      ],
+      "weaknesses": [
+        "SI 추출·검증과 eBL 발행은 IQAX×CargoNPay, 문서 추출·입력은 포스코DX R대리·Shipamax·Raft가 이미 한다. '최신 SI와 Draft를 한 시점에 대조'만으로는 차별점이 약하다.",
+        "구조화 필드 대조는 문자열·수치 비교로 끝난다. 이 부분에 AI를 쓴다고 쓰면 심사위원이 '규칙으로 충분하다'고 볼 수 있다.",
+        "대형 선사는 정정을 웹 포털의 구조화 양식으로 받는 방향이다(Hapag-Lloyd는 2023-06-26부터 온라인 정정만 접수, 페이지 제목 기준). 선사 구간에서는 자유문 해석의 가치가 줄어든다.",
+        "국내 오류율과 재작업 통계가 없어 효과는 측정 계획으로만 쓸 수 있다."
+      ],
+      "how_to_improve": "대조 대상을 '한 시점의 SI와 Draft'에서 '정정 사이클'로 옮긴다. 화주의 자유문 정정 요청에서 기대 변경 집합을 LLM으로 추출하고, 이전 Draft와 재발행 Draft의 필드 차이는 규칙으로 계산한다. 두 결과를 맞춰 미반영·요청 외 변경·표기만 다름을 판정한다. 연결 문서(MBL·HBL·House 적하목록 초안)에 같은 변경이 반영됐는지도 함께 본다. 평가는 '규칙만' 대 '규칙+LLM'을 합성 변형 벤치마크로 비교하고, LLM이 자유문 필드에서만 이득을 내는지 보여준다(아이디어 ai-engineer-1).",
+      "scores": {
+        "feasibility_30": 24,
+        "impact_30": 18,
+        "problem_20": 14,
+        "fit_10": 8,
+        "innovation_10": 5,
+        "prototype_bonus_potential_10": 8
+      }
+    },
+    {
+      "candidate": "B",
+      "verdict": "비권장",
+      "strengths": [
+        "업무 누락이 납기·품질에 직결된다는 서사는 이해하기 쉽다.",
+        "LLM의 할 일(action item) 추출 능력이 이미 충분해 구현 난도는 낮다."
+      ],
+      "weaknesses": [
+        "메일·메신저에서 할 일을 추출하고 독촉하는 기능은 Tandom·Wove·Expedock이 상용화했다. AI 부분에서 차별점이 거의 없다.",
+        "평가하려면 실제 메일·메신저 대화가 필요하다. 개인정보라 확보할 수 없고, 합성 대화로 측정한 재현율은 현장 성능을 설득하지 못한다.",
+        "할 일 추출의 정답(무엇이 요청이고 누가 담당인가)은 사람끼리도 일치도가 낮다(가설). 그래서 정확도 지표를 정의하기 어렵다.",
+        "항만 인계로 좁히면 2026 냉동컨테이너 전원 인계 확인 응모작과 겹칠 수 있다(제목 기준)."
+      ],
+      "how_to_improve": "단독 출품보다 A에 흡수하는 쪽이 낫다. '정정 요청이 모든 연결 문서에 반영될 때까지 미처리 항목으로 추적한다'로 바꾸면 B의 추적 개념이 문서 정합성이라는 정답 있는 문제로 바뀌어 평가할 수 있다.",
+      "scores": {
+        "feasibility_30": 18,
+        "impact_30": 15,
+        "problem_20": 10,
+        "fit_10": 6,
+        "innovation_10": 3,
+        "prototype_bonus_potential_10": 6
+      }
+    }
+  ],
+  "ideas": [
+    {
+      "id": "ai-engineer-1",
+      "title": "B/L 정정 반영 검증기 — 요청한 것만, 연결 문서까지 바뀌었는가",
+      "track": "해운 AX",
+      "keywords": ["B/L 정정", "SI 수정", "Draft B/L", "문서 정합성", "LLM 근거 제시", "규칙+LLM 하이브리드"],
+      "one_liner": "화주의 자유문 정정 요청을 필드 단위 기대 변경으로 바꾸고, 재발행 Draft와 연결 문서(MBL·HBL·House 적하목록 초안)의 실제 변경과 맞춘다. 미반영, 요청 외 변경, 표기만 다름을 원문 근거와 함께 담당자에게 보여준다.",
+      "scene": "부산의 중소 포워더(NVOCC) 서류 담당자가 마감 전날 화주에게서 '수하인 주소 변경, 포장 수 120 CTNS→118 CTNS' 정정 메일을 받는다. 선사 포털에서 SI를 고치고 자사 HBL을 수정한 뒤 재발행된 Draft MBL을 받는다. 그런데 House 적하목록 초안에는 포장 수 변경이 빠졌고, 재발행 Draft MBL에서는 요청하지 않은 중량이 바뀌어 있었다. 담당자는 두 버전을 눈으로 대조하다 이를 놓치고, 발행 후 다시 정정한다. 그 결과 정정 수수료·적하목록 정정·선적서류 지연이 생긴다(장면은 가설이며 빈도는 미검증).",
+      "users_and_stakeholders": [
+        "주 사용자: 중소 포워더·NVOCC 서류(Documentation) 담당자",
+        "보조 사용자: 중소 선사 서류팀(Draft 재발행 측)",
+        "이해관계자: 화주(정정 요청자), 선사, 세관(적하목록 정정 접수), 은행(신용장 서류 심사)"
+      ],
+      "problem_evidence": [
+        {
+          "claim": "DCSA BL 3.0에서 화주는 Draft를 직접 고칠 수 없다. SI 수정 → 선사 처리 → Draft 재발행 경로를 거친다. 사용자 스토리에는 요청한 변경과 재발행 결과를 비교하는 장치나 버전 이력 대조가 기술돼 있지 않다.",
+          "status": "fact",
+          "source_url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories"
+        },
+        {
+          "claim": "Maersk는 B/L이 화주에게 인도·발행된 뒤 수하인이나 인도지를 바꾸면 USD 100의 정정 수수료를 부과한다(2023-03-09 시행).",
+          "status": "fact",
+          "source_url": "https://maersk.com/~/media_sc9/maersk/news/rate-announcements/files/2023/03/faq-bl-amendment-fee.pdf"
+        },
+        {
+          "claim": "Hamburg Süd의 미국·캐나다 수출 B/L 정정 수수료는 2020년 USD 75에서 USD 95로 올랐다(조사관 브리핑 인용, 본인 미재확인).",
+          "status": "fact",
+          "source_url": "https://www.ajot.com/news/hamburg-sued-export-correction-fee-from-united-states-and-canada"
+        },
+        {
+          "claim": "Hapag-Lloyd는 2023-06-26부터 B/L 정정·승인을 웹사이트로만 받는다(검색 결과의 페이지 제목 기준, 본문은 403으로 미열람). 선사 구간의 정정은 구조화되는 추세이며, 자유문 정정은 화주→포워더 구간에 남는다는 판단의 근거다.",
+          "status": "fact",
+          "source_url": "https://www.hapag-lloyd.com/es/services-information/news/2023/05/bill-of-lading-correction-amendment-online.html"
+        },
+        {
+          "claim": "신용장 서류의 65~80%가 최초 제시에서 하자로 거절된다(ICC TAB-3, B/L만의 비율은 아님, 조사관 브리핑 인용).",
+          "status": "fact",
+          "source_url": "https://www.tradefinanceglobal.com/posts/icc-briefing-addresses-the-topic-of-reducing-discrepancy-rates/"
+        },
+        {
+          "claim": "적하목록 정정 신청은 Master B/L이면 선사, House B/L이면 포워더가 한다. 그래서 정정 하나가 서로 다른 주체의 여러 문서에 따로 반영돼야 한다(벤더 블로그 설명, 고시 원문 미확인).",
+          "status": "hypothesis",
+          "source_url": "https://www.tradlinx.com/blog/guide/적하목록-cargo-manifest/"
+        },
+        {
+          "claim": "화주→포워더 정정 요청은 메일 자유문으로 오는 경우가 많다. 재발행 Draft의 요청 외 변경과 연결 문서 미반영이 발행 후 재정정의 원인이 된다(빈도·비용 미검증).",
+          "status": "hypothesis",
+          "source_url": ""
+        }
+      ],
+      "ai_role": "규칙이 맡는 일: 이전 Draft와 재발행 Draft의 필드별 차이 계산, 컨테이너번호 ISO 6346 체크디지트, 컨테이너별 포장 수·중량 합계와 총계 일치, 단위·코드 형식 검사, 연결 문서 간 공통 필드(컨테이너·씰·포장 수·중량·POL/POD·선명/항차) 일치 검사. LLM이 맡는 일: ① 자유문 정정 요청을 '필드·이전 값·새 값·적용 문서' 기대 변경 집합으로 구조화하고 원문 문장 위치를 반드시 인용한다. 인용할 근거가 없으면 '해석 불가'로 사람에게 넘긴다. ② 주소·당사자명·품명·Marks 같은 자유문 필드의 차이를 '표기만 다름'과 '실질 변경'으로 분류하고 이유를 쓴다. ③ 기대 변경과 실제 변경을 맞춰 미반영·요청 외 변경 후보를 근거와 함께 설명한다. 사람이 맡는 일: 모든 판정의 최종 확인, 선사·화주에 대한 재정정 요청 여부 결정. 시스템은 메일을 보내거나 문서를 고치지 않는다.",
+      "data": {
+        "types": ["화주 정정 요청(메일 본문·첨부)", "SI 버전", "Draft MBL 이전본·재발행본", "HBL", "House 적하목록 초안", "담당자 판정 기록"],
+        "acquisition": "차년도 시범에서 참여 포워더 내부 문서를 비식별해 사용한다. 기존 시스템(포워딩 ERP·선사 포털 다운로드 PDF/JSON)에서 읽기 전용으로 가져온다. 사내 설치형 모델이나 기업용 API 중 하나를 보안 검토 후 선택한다.",
+        "public_or_synthetic_for_prototype": "DCSA BL 3.0 공개 OpenAPI·데이터 개요의 필드 정의로 합성 선적 건을 만든다. 정정 요청 문장은 한국어·영어 템플릿에 약어·오탈자·주소 표기 변형을 주입해 만든다. 정답 라벨(반영/미반영/요청 외 변경/표기 차이)은 변형을 프로그램으로 주입하므로 자동으로 알 수 있다. 실제 회사명·인명은 쓰지 않고 가상명임을 표시한다."
+      },
+      "user_flow": [
+        "1. 담당자가 정정 요청 메일 본문, 이전 Draft, 재발행 Draft, 자사 HBL·적하목록 초안을 끌어다 놓는다(프로토타입은 합성 사례 선택).",
+        "2. 시스템은 규칙으로 필드 차이와 형식 오류를 계산한다. LLM은 정정 요청을 기대 변경 집합으로 구조화하고, 자유문 필드 차이를 분류한다.",
+        "3. 결과 화면에 필드별 판정 배지(요청 반영/미반영/요청 외 변경/표기만 다름/해석 불가)가 표시된다. 판정마다 요청 원문 문장과 문서 위치가 강조된다. 연결 문서별 반영 현황표도 함께 나온다.",
+        "4. 담당자가 판정마다 확인·기각을 기록하고 재정정이 필요한 문서 목록을 내려받는다. 기록은 다음 평가(정밀도·재현율)의 정답으로 쌓인다."
+      ],
+      "existing_alternatives": [
+        "현재: 담당자가 두 PDF를 눈으로 대조한다(현장 방식은 가설, 인터뷰 미실시).",
+        "선사 포털의 구조화 정정 양식(Maersk, Hapag-Lloyd): 선사 구간만 다루며 화주 자유문 요청과 연결 문서를 대조하지 않는다.",
+        "IQAX×CargoNPay: SI를 추출·검증한 뒤 eBL을 발행한다. 포스코DX R대리·Shipamax·Raft: 문서를 추출해 입력한다.",
+        "포워딩 ERP(CargoWise 등)의 문서 버전 비교 기능: 기존 제품 여부 미확인"
+      ],
+      "differentiation": "기존 제품은 '문서 한 건을 정확히 읽고 입력·검증'한다. 이 안은 '정정 요청 한 건이 의도대로, 빠짐없이, 그 이상은 바뀌지 않고 모든 연결 문서에 반영됐는가'를 확인한다. 요청 의도(자유문)와 결과(버전 차이)를 맞추는 일은 규칙만으로는 할 수 없어 LLM이 필요한 지점이 분명하다. 수치 필드는 규칙으로 처리해 환각 위험을 구조적으로 막는다. 같은 기능이 있는 상용 제품은 공개 자료로 확인하지 못했다(기존 제품 여부 미확인).",
+      "adopter": "EU·미주 등 정정 수수료와 적하목록 정정 부담이 있는 노선을 다루는 중소 포워더·NVOCC. 받아들일 이유: 기존 업무 흐름(포털·ERP)을 바꾸지 않고 정정 건에만 쓰는 검토 보조라 도입 부담이 작다. 결과를 사람이 확인하는 구조라 책임 소재도 바뀌지 않는다. KOBC PoC 환경 지원을 받는 중소 선사 서류팀도 같은 구조로 쓸 수 있다.",
+      "qcd_impact_logic": "품질: 발행 전에 미반영·요청 외 변경을 잡으면 발행 후 재정정과 서류 하자가 줄어든다. 지표는 발행 후 정정 건수, 정정 1건당 재정정 횟수, 도구 경고의 정밀도·재현율(담당자 판정 기준), 오경고율이다. 비용: 정정 수수료 발생 건수와 정정에 든 담당자 시간을 잰다. 납기: 정정 요청 접수부터 모든 연결 문서 반영까지 걸린 시간, 서류 지연으로 인한 선적·인도 지연 건수를 잰다. 모든 지표는 도구 없이 처리한 기간(또는 병행 처리 대조군)과 비교하며, 효과 수치는 시범 전에 예측하지 않는다.",
+      "execution_plan_next_year": "범위: 중소 포워더 1곳, 노선 1~2개의 정정 건 전수. 1단계(1~2개월): 비식별 문서 수집, 필드 매핑, 기준선 측정(현행 방식의 정정·재정정 기록). 2단계(2~3개월): 섀도 모드. 도구 결과는 참고만 하고 담당자 판정을 정답으로 기록한다. 3단계(1~2개월): 정밀도·재현율·오경고율·검토시간을 평가하고 확대 여부를 결정한다. 인력: 서류 담당자 2~3명(판정 기록), 개발 1~2명, 보안 검토 담당. 비용 항목: LLM 추론(API 사용료 또는 사내 설치형 모델 인프라, KOBC 오픈랩 GPU 활용 가능성 확인 필요), 개발 인건비, 비식별 처리, 보안 점검. 금액은 시범 범위 확정 후 산정한다.",
+      "risks_and_mitigations": [
+        {"type": "기술", "risk": "LLM이 정정 요청에 없는 변경을 만들어 내거나(환각) 수치를 잘못 옮긴다.", "mitigation": "수치·코드 필드는 규칙으로만 판정한다. LLM 출력은 원문 문장 위치를 인용하도록 강제하고, 인용이 원문과 맞지 않으면 자동으로 버린다. 확신이 낮으면 '해석 불가'로 사람에게 넘긴다."},
+        {"type": "현장", "risk": "선사 포털의 구조화 정정이 늘어 자유문 해석의 가치가 줄어든다.", "mitigation": "적용 지점을 화주→포워더 구간과 HBL·House 적하목록 연쇄 반영으로 둔다. 구조화된 요청이 들어오면 LLM 단계를 건너뛰고 규칙 경로만 쓴다."},
+        {"type": "데이터", "risk": "실제 정정 사례와 오류 유형 분포를 확보하지 못해 합성 벤치마크가 현장과 다르다.", "mitigation": "기획서에 합성 평가는 기능과 오류 유형 검증일 뿐 현장 효과의 증거가 아니라고 명시한다. 차년도 섀도 모드의 담당자 판정 기록으로 다시 평가한다."},
+        {"type": "보안·개인정보·규제", "risk": "B/L의 수하인 이름·주소·연락처는 개인정보 또는 영업비밀이다. 외부 LLM API로 보내면 유출 위험이 있다.", "mitigation": "전송 전 비식별 처리, 사내 설치형 모델 선택지, 로그 보관 정책을 둔다. KOBC 해양산업 AI 가이드라인 체크리스트로 점검하고 AI 기본법(2026-01-22 시행) 관련 고지를 검토한다."},
+        {"type": "비용", "risk": "정정 건마다 LLM을 호출하면 비용과 지연이 쌓인다.", "mitigation": "규칙으로 결론이 나는 필드는 LLM을 부르지 않는다. 자유문 필드 차이가 있을 때만 호출해 호출량을 측정 지표로 관리한다."}
+      ],
+      "prototype_plan": {
+        "form": "HTML/웹페이지",
+        "scope": "로그인 없는 정적 웹 1개. ① 합성 사례 10~20건 목록 ② 사례별 3단 화면(정정 요청 원문 | 이전·재발행 Draft 필드 차이 | 연결 문서 반영 현황표)과 판정 배지, 근거 하이라이트, 담당자 확인 버튼(브라우저 로컬 상태만) ③ 평가 탭: 합성 벤치마크에서 '규칙만'·'규칙+정규화'·'규칙+LLM' 세 방식의 미반영 재현율·요청 외 변경 재현율·오경고율 비교표(합성 데이터 기준이라고 표시). LLM 결과는 제출 전에 사전 생성해 JSON으로 고정하고, 사용 모델·프롬프트·생성일을 화면에 공개한다. API 키는 넣지 않는다. 일정: 1주차 스키마·합성 생성기, 2주차 규칙 엔진·LLM 일괄 생성·평가, 3주차 화면·데모 영상, 마지막 2일 동결·접속 검증. 공개 호스팅 게시는 사용자가 승인한 뒤 진행한다.",
+        "data": "DCSA BL 3.0 OpenAPI 필드 정의 기반 합성 SI·Draft MBL·HBL·적하목록 초안, 프로그램으로 주입한 정정 요청과 변형(가상 회사·인명만 사용)"
+      },
+      "self_assessment": {
+        "feasibility_30": 25,
+        "impact_30": 20,
+        "problem_20": 15,
+        "fit_10": 8,
+        "innovation_10": 7,
+        "prototype_bonus_potential_10": 9,
+        "rationale": "개인이 공개 표준과 합성 데이터만으로 핵심 흐름과 정량 평가까지 시연할 수 있어 실현가능성과 프로토타입 가점이 높다. 정정 수수료·DCSA 절차라는 공개 근거가 있지만 국내 빈도·비용 통계가 없고 실무자 확인도 없어 효과성과 문제정의는 중간이다. '요청 의도와 결과의 대조'에 LLM 역할이 분명해 A보다 혁신성이 높지만, 포워딩 ERP의 유사 기능 여부가 미확인이라 상한을 낮췄다."
+      },
+      "key_risks": [
+        "포워딩 ERP나 선사 포털에 버전 비교 기능이 이미 있으면 차별점이 '자유문 요청과의 대조'로 더 좁아진다.",
+        "실무자 확인 없이 쓰면 '정정은 대부분 구조화 포털로 온다'는 반론에 답하기 어렵다.",
+        "합성 벤치마크 수치를 효과 수치로 오인하게 쓰면 신뢰도가 떨어진다."
+      ],
+      "open_questions": [
+        "사용자가 마감 전 포워더 서류 담당자 한 명에게라도 정정 요청이 오는 경로(메일·포털·메신저)를 확인할 수 있는가?",
+        "CargoWise 등 포워딩 시스템에 Draft 버전 비교·정정 추적 기능이 있는가(공개 문서 조사)?",
+        "대표 Track을 해운 AX(선사 서류팀)와 물류 AX(포워더) 중 무엇으로 할 것인가? KOBC 2026 지원 대상이 중소 선사이므로 해운 AX를 우선 권한다.",
+        "국내 적하목록 정정 관련 과태료·기한 고시 원문은 어디에서 확인할 수 있는가?"
+      ]
+    },
+    {
+      "id": "ai-engineer-2",
+      "title": "EU행 하우스 화물 품명·HS 품질 사전 게이트 — 거절되기 전에 화주에게 묻는다",
+      "track": "물류 AX",
+      "keywords": ["ICS2", "ENS", "품명 품질", "Stop words", "HS 6단위", "화주 보완 질의"],
+      "one_liner": "EU행 하우스 B/L 신고 데이터를 보내기 전에 품명의 모호성과 품명·HS 6단위 불일치를 미리 걸러낸다. 품명을 AI가 대신 짓지 않고, 화주에게 보낼 보완 질문(재질·용도·형태)을 만든다.",
+      "scene": "중소 포워더의 EU 콘솔 담당자가 선적 마감 직전 화주 인보이스의 'PARTS', 'SAMPLE', '기계부품' 같은 품명과 HS 6단위를 ENS 데이터로 옮긴다. 품명이 Stop word에 걸리거나 HS와 맞지 않아 신고가 거절되면 재전송하고 화주에게 다시 물어야 해 선적이 늦어질 수 있다(장면과 빈도는 가설).",
+      "users_and_stakeholders": [
+        "주 사용자: EU 노선 하우스 ENS를 다루는 중소 포워더 담당자",
+        "이해관계자: 화주(품명·HS 제공자), 선사(Master 신고), EU 세관"
+      ],
+      "problem_evidence": [
+        {
+          "claim": "EU 위임규정 2015/2446 Annex B는 'general cargo', 'parts', 'freight of all kinds' 같은 일반 용어를 품명으로 받지 않는다. 집행위원회는 허용·불허 예시 목록을 공개하며, 이 목록이 망라적이지 않고 계속 바뀐다고 밝힌다(TAXUD 가이드 v4.10, 2021-03).",
+          "status": "fact",
+          "source_url": "https://info-aduaneiro.portaldasfinancas.gov.pt/pt/informacao_aduaneira/ICS2/Documents/guidance_acceptable_goods_description_V4.10_MAR2021_EN.pdf"
+        },
+        {
+          "claim": "FIATA는 2025-07-24 ICS2 Stop word 목록 갱신을 알리며 이 용어를 쓰면 ENS가 자동 거절될 수 있다고 경고했다.",
+          "status": "fact",
+          "source_url": "https://fiata.org/n/eu-ics2-alert-new-stop-word-list-published-avoid-rejections-and-ensure-data-quality/"
+        },
+        {
+          "claim": "국내 EU 수출 포워더의 과제로 HS 6단위 확보, 'General Cargo' 같은 모호한 표현 금지, 수하인 EORI, 화주 정보 수집 과정의 누락 방지가 꼽힌다(트레드링스 블로그 2026-02-20, 벤더 자료). 하우스 신고 의무화 시점은 출처마다 2025-04와 2026-02로 달라 EU 원문 확인이 필요하다.",
+          "status": "fact",
+          "source_url": "https://www.tradlinx.com/blog/?p=23713"
+        },
+        {
+          "claim": "국내 포워더의 ENS 거절·보완 빈도와 그로 인한 지연 규모는 공개 통계가 없다.",
+          "status": "hypothesis",
+          "source_url": ""
+        }
+      ],
+      "ai_role": "규칙이 맡는 일: 공개 Stop word 목록 일치·변형 일치, HS 6단위 형식, 필수 필드(EORI 등) 존재 여부 검사. LLM이 맡는 일: ① 목록에 없지만 모호한 품명 판정. EU 가이드의 허용·불허 예시를 검색해 근거로 붙인다. ② 품명과 HS 6단위가 류(Chapter) 수준에서 어긋나는지 표시한다. HS를 결정하거나 추천하지는 않는다. ③ 한국어 원천 품명을 영어로 옮길 때 빠진 속성(재질·용도·형태)을 짚고, 화주에게 보낼 보완 질문 초안을 만든다. 사람이 맡는 일: 화주 회신 확인, 최종 품명·HS 확정, 신고 전송.",
+      "data": {
+        "types": ["화주 상업송장 품목 줄", "HBL 품명", "HS 6단위", "EU Stop word 목록", "EU 허용·불허 예시 가이드", "보완 질의·회신 기록"],
+        "acquisition": "차년도 시범에서 참여 포워더의 EU 노선 하우스 건을 비식별해 쓰고, Stop word 목록은 집행위원회 공개본(CIRCABC)을 주기적으로 받는다.",
+        "public_or_synthetic_for_prototype": "EU TAXUD 가이드 부록의 허용·불허 예시 쌍을 라벨 데이터로 쓰고, 합성 인보이스 품목 줄을 만든다. 일반화 평가는 Stop word 일부를 규칙 목록에서 빼고 LLM이 그 용어를 잡는지 보는 '목록 제외 시험'으로 한다."
+      },
+      "user_flow": [
+        "1. 담당자가 하우스 건의 품목 줄(품명·HS·수량)을 붙여 넣거나 합성 사례를 고른다.",
+        "2. 규칙이 Stop word와 형식을 검사하고, LLM이 모호성과 품명·HS 불일치를 판정하며 근거 예시를 붙인다.",
+        "3. 품목별로 통과·보완 필요·불일치 의심 배지와 화주 보완 질문 초안이 표시된다.",
+        "4. 담당자가 질문을 직접 고쳐 화주에게 보내고(시스템은 발송하지 않음), 회신 후 재검사한다."
+      ],
+      "existing_alternatives": [
+        "Zonos AI Customs Description: 상품 데이터를 ICS2 등에 맞는 세관용 품명으로 바꾼다(이커머스·캐리어 대상).",
+        "iCustoms iClassification: 품명 텍스트로 HS 코드를 추천한다.",
+        "ICS2 신고 소프트웨어의 Stop word 사전 검사: 일부 존재할 것으로 추정하나 기존 제품 여부 미확인"
+      ],
+      "differentiation": "기존 AI는 품명을 대신 생성하거나 HS를 추천한다. 그러면 신고 책임이 걸린 값을 AI가 만드는 셈이다. 이 안은 값을 만들지 않고 '거절 전에 화주에게 무엇을 물어야 하는가'를 찾아 데이터 수집 단계에 들어간다. 한국어 원천 품명과 해상 하우스 콘솔 단위를 다루는 점도 다르다. 다만 핵심 기술은 기존 제품과 많이 겹친다.",
+      "adopter": "EU 노선 하우스 ENS를 직접 신고하는 중소 포워더. 받아들일 이유: 거절·재전송과 막판 화주 재문의를 줄이려는 동기가 있고(가설), 신고 시스템을 바꾸지 않는 사전 점검 도구다.",
+      "qcd_impact_logic": "품질: 최초 전송 시 거절 비율과 보완 필요 품목 비율. 비용: 건당 화주 재문의 횟수와 담당자 처리 시간. 납기: 거절로 인한 재전송 지연, 선적 마감 직전 보완 요청 건수. 도구 판정의 정밀도·재현율은 담당자 판정과 세관 응답(거절 코드)을 정답으로 잰다. 수치 예측은 하지 않는다.",
+      "execution_plan_next_year": "범위: 중소 포워더 1곳의 EU 노선 하우스 건. 1단계: 과거 건 비식별 수집과 거절 이력 확인. 2단계: 섀도 모드로 도구 판정과 실제 세관 응답 대조. 3단계: 보완 질의 단계 정식 적용 여부 결정. 인력: 신고 담당 1~2명, 개발 1명. 비용 항목: LLM 추론, Stop word 목록 갱신 유지, 개발 인건비, 보안 점검.",
+      "risks_and_mitigations": [
+        {"type": "보안·개인정보·규제", "risk": "AI의 판정이 신고 내용 결정으로 오인돼 법적 책임 문제가 생긴다.", "mitigation": "품명·HS를 생성하거나 추천하지 않는다. 결과는 보완 질문과 불일치 표시로만 낸다."},
+        {"type": "기술", "risk": "LLM이 허용 가능한 구체적 품명을 모호하다고 판정해 오경고가 많아진다.", "mitigation": "EU 가이드의 허용 예시로 오경고율을 측정하고, 임계값을 오경고 기준으로 조정한다."},
+        {"type": "현장", "risk": "Zonos 등 기존 제품과의 차별성이 약하다고 평가될 수 있다.", "mitigation": "단독 출품보다 ai-engineer-1의 '연결 문서' 범위에 House 적하목록·ENS 품명 검사로 흡수하는 방안을 검토한다."}
+      ],
+      "prototype_plan": {
+        "form": "HTML/웹페이지",
+        "scope": "품목 줄 입력→배지·근거 예시·보완 질문 초안 화면 1개, 평가 탭(Stop word 규칙만 대 규칙+LLM, 목록 제외 시험 결과). LLM 결과는 사전 생성해 고정한다.",
+        "data": "EU TAXUD 허용·불허 예시, 공개 Stop word 목록, 합성 인보이스 품목"
+      },
+      "self_assessment": {
+        "feasibility_30": 24,
+        "impact_30": 16,
+        "problem_20": 13,
+        "fit_10": 7,
+        "innovation_10": 4,
+        "prototype_bonus_potential_10": 8,
+        "rationale": "공개 라벨 데이터(EU 예시)가 있어 평가가 가장 정직하게 된다. 다만 국내 거절 빈도 근거가 없고 Zonos·iCustoms와 핵심 기술이 겹친다. 해양 AX보다 통관 데이터 품질에 가까워 적합성도 중간이다."
+      },
+      "key_risks": [
+        "기존 AI 품명·HS 도구와 겹친다.",
+        "ICS2 하우스 신고 일정이 출처마다 달라 문제 시급성 서술이 흔들릴 수 있다."
+      ],
+      "open_questions": [
+        "ICS2 해상 하우스 신고 의무화의 정확한 적용 시점을 EU 원문으로 확인할 수 있는가?",
+        "국내 ICS2 신고 대행 시스템이 Stop word 사전 검사를 이미 제공하는가?"
+      ]
+    },
+    {
+      "id": "ai-engineer-3",
+      "title": "해운 문서 AI 도입 전 자가 검증 세트 — 우리 문서로 재는 누락과 오경고",
+      "track": "해운 AX",
+      "keywords": ["AI 도입 평가", "합성 변형 벤치마크", "누락률", "오경고율", "KOBC PoC", "QA Set"],
+      "one_liner": "중소 선사·포워더가 문서 AI 솔루션을 도입하기 전에 자사 양식을 본뜬 합성 변형 사례(정답이 알려진 오류 주입)로 누락·오경고·검토시간을 재서 PoC 도입 여부를 판단한다.",
+      "scene": "KOBC AX 지원을 받는 중소 선사 서류팀장이 벤더 두 곳의 문서 AI 데모를 보고 도입을 결정해야 한다. 그런데 벤더의 정확도 주장은 벤더 샘플 기준이라 자사 양식과 자주 나는 오류 유형에서 얼마나 놓치는지 알 수 없다. 그래서 도입을 미루거나, 도입 후 재작업을 겪는다(가설).",
+      "users_and_stakeholders": [
+        "주 사용자: 중소 선사·포워더의 서류 책임자, AI 도입 담당자",
+        "이해관계자: KOBC(AX 지원 사업 운영), 솔루션 공급사, LG CNS 등 PoC 수행사"
+      ],
+      "problem_evidence": [
+        {
+          "claim": "KOBC 사장은 해운·항만기업 30여 곳 조사에서 기본적인 AI 도입 비율이 14%라고 밝혔다(2025-04-08).",
+          "status": "fact",
+          "source_url": "https://newstomato.com/ReadNews.aspx?no=1258541"
+        },
+        {
+          "claim": "KOBC는 2026년 8월부터 LG CNS와 중소 선사 AI 진단·컨설팅·PoC를 진행한다(조사관 브리핑 인용).",
+          "status": "fact",
+          "source_url": "https://view.asiae.co.kr/article/2026072314175095375"
+        },
+        {
+          "claim": "KOBC 해양산업 AI 가이드라인(2026-01 발간)에는 AI 서비스 도입 체크리스트가 들어 있지만 정성 점검 위주다. 정량 성능 검증 도구는 기사에서 언급되지 않는다.",
+          "status": "fact",
+          "source_url": "https://www.metroseoul.co.kr/article/20260112500589"
+        },
+        {
+          "claim": "중소기업은 벤더의 성능 주장을 자사 문서로 검증할 수단이 없어 도입 판단이 늦어진다.",
+          "status": "hypothesis",
+          "source_url": ""
+        }
+      ],
+      "ai_role": "규칙·프로그램이 맡는 일: 오류 주입과 정답 라벨 유지. 변형을 프로그램으로 넣으므로 정답이 알려진다. 지표 계산도 프로그램이 한다. LLM이 맡는 일: 비식별 양식에서 필드 사전 초안 만들기, 현실적인 표기 변형(약어·오탈자·주소 형식) 생성 보조. 사람이 맡는 일: 오류 유형의 우선순위와 허용 기준(예: 누락은 0에 가깝게, 오경고는 일정 수준까지 허용) 결정, 도입 판단.",
+      "data": {
+        "types": ["자사 문서 양식(비식별)", "오류 유형 목록", "벤더 도구 출력", "검토시간 측정 기록"],
+        "acquisition": "참여 기업이 양식만 비식별해 제공한다. 실데이터는 외부로 보내지 않는다.",
+        "public_or_synthetic_for_prototype": "DCSA BL 3.0 스키마 기반 합성 문서와 프로그램 주입 변형"
+      },
+      "user_flow": [
+        "1. 담당자가 문서 종류와 자주 나는 오류 유형을 고른다.",
+        "2. 시스템이 정답이 알려진 합성 변형 세트를 만든다.",
+        "3. 후보 도구의 출력을 올리면 누락률·오경고율·유형별 성능표가 나온다.",
+        "4. 담당자가 허용 기준과 비교해 PoC 진행이나 보류를 결정한다."
+      ],
+      "existing_alternatives": [
+        "KOBC AI 가이드라인 도입 체크리스트(정성), AX Discovery 워크숍의 QA Set 단계",
+        "벤더 자체 PoC, 범용 ML 평가 오픈소스 도구(해운 문서 특화 여부 미확인)"
+      ],
+      "differentiation": "정성 체크리스트가 아니라 정답이 알려진 합성 변형으로 정량 지표를 낸다. 다만 직접적인 현장 QCD 효과가 아니라 도입 판단의 질을 높이는 간접 효과다.",
+      "adopter": "KOBC AX 지원 사업(평가 도구로 활용), 도입을 검토하는 중소 선사·포워더",
+      "qcd_impact_logic": "간접 효과다. 도입 후 재작업 감소(품질), 부적합 도구 도입 회피(비용), PoC 판단 기간 단축(납기)을 노린다. 지표는 PoC당 평가 소요 기간, 도입 후 실제 누락률과 사전 평가 누락률의 차이다.",
+      "execution_plan_next_year": "KOBC PoC 대상 기업 1~2곳에서 문서 종류 1개로 시범한다. 인력은 평가 설계 1명과 기업 담당자 1명이다. 비용 항목은 개발 인건비와 합성 데이터 생성 추론 비용이다.",
+      "risks_and_mitigations": [
+        {"type": "현장", "risk": "심사위원이 현장 업무 개선이 아니라 메타 도구로 보아 효과성·문제정의 점수가 낮다.", "mitigation": "단독 출품 대신 ai-engineer-1의 2.6 성과지표와 프로토타입 평가 탭으로 흡수한다."},
+        {"type": "데이터", "risk": "합성 변형 분포가 실제 오류 분포와 달라 평가가 왜곡된다.", "mitigation": "기업 담당자가 오류 유형별 가중치를 정하고, 시범 중 실제 오류로 보정한다."}
+      ],
+      "prototype_plan": {
+        "form": "HTML/웹페이지",
+        "scope": "오류 유형 선택→합성 세트 생성→샘플 도구 출력 업로드 대신 내장 예시→지표표",
+        "data": "DCSA 기반 합성 문서"
+      },
+      "self_assessment": {
+        "feasibility_30": 25,
+        "impact_30": 11,
+        "problem_20": 10,
+        "fit_10": 8,
+        "innovation_10": 6,
+        "prototype_bonus_potential_10": 7,
+        "rationale": "만들기는 쉽고 KOBC 사업과 맞지만, 현장 QCD 효과가 간접적이고 문제 근거가 약하다. 단독 출품보다 1번 안의 평가 설계로 쓰는 편이 점수에 유리하다."
+      },
+      "key_risks": [
+        "메타 도구라 효과성이 간접적이다.",
+        "문제(평가 수단 부재)의 직접 근거가 없다."
+      ],
+      "open_questions": [
+        "KOBC 2026 PoC에서 솔루션 평가를 어떤 기준으로 하는지 공개 자료가 있는가?"
+      ]
+    }
+  ],
+  "sources_checked": [
+    {"title": "DCSA Bill of Lading 3.0 User Stories", "url": "https://dcsa.org/standards/bill-of-lading/documentation-bill-of-lading-3/bill-of-lading-3-user-stories", "accessed": "2026-10-07"},
+    {"title": "Maersk FAQ B/L amendment fee (2023-03)", "url": "https://maersk.com/~/media_sc9/maersk/news/rate-announcements/files/2023/03/faq-bl-amendment-fee.pdf", "accessed": "2026-10-07"},
+    {"title": "Hapag-Lloyd: From June 26, 2023, all BL amendments and approvals will be online (검색 결과 제목만, 본문 403)", "url": "https://www.hapag-lloyd.com/es/services-information/news/2023/05/bill-of-lading-correction-amendment-online.html", "accessed": "2026-10-07"},
+    {"title": "EU TAXUD Guidance on acceptable and unacceptable terms for the description of goods v4.10 (2021-03)", "url": "https://info-aduaneiro.portaldasfinancas.gov.pt/pt/informacao_aduaneira/ICS2/Documents/guidance_acceptable_goods_description_V4.10_MAR2021_EN.pdf", "accessed": "2026-10-07"},
+    {"title": "FIATA EU ICS2 Alert - New Stop Word List Published (2025-07-24)", "url": "https://fiata.org/n/eu-ics2-alert-new-stop-word-list-published-avoid-rejections-and-ensure-data-quality/", "accessed": "2026-10-07"},
+    {"title": "트레드링스 ICS2 실전 가이드 (2026-02-20)", "url": "https://www.tradlinx.com/blog/?p=23713", "accessed": "2026-10-07"},
+    {"title": "트레드링스 적하목록 가이드 (검색 결과 요약만)", "url": "https://www.tradlinx.com/blog/guide/적하목록-cargo-manifest/", "accessed": "2026-10-07"},
+    {"title": "IIMS: Streamlining PSC inspections through AI-powered approach (Kaiko×Risk4Sea, 2025-04-23)", "url": "https://www.iims.org.uk/streamlining-psc-inspections-through-ai-powered-approach/", "accessed": "2026-10-07"},
+    {"title": "Tokyo MOU Inspections & Detentions", "url": "https://www.tokyo-mou.org/inspections-detentions/", "accessed": "2026-10-07"},
+    {"title": "Zonos Customs Description", "url": "https://zonos.com/customs-description", "accessed": "2026-10-07"},
+    {"title": "iCustoms iClassification (검색 결과 요약만)", "url": "https://icustoms.ai/?p=28267", "accessed": "2026-10-07"},
+    {"title": "뉴스토마토: 해진공 AI 바우처 사업 (2025-04-08)", "url": "https://newstomato.com/ReadNews.aspx?no=1258541", "accessed": "2026-10-07"},
+    {"title": "메트로서울: 해진공 해양산업 AI 가이드라인 발간 (2026-01-12)", "url": "https://www.metroseoul.co.kr/article/20260112500589", "accessed": "2026-10-07"}
+  ],
+  "not_done": [
+    "해운·포워딩 실무자 인터뷰나 업무 확인을 하지 않았다. 정정 요청 경로와 빈도는 모두 가설이다.",
+    "실제 SI·B/L·적하목록 데이터를 보지 않았다. 합성 벤치마크도 아직 만들지 않았고 LLM 성능 시험도 하지 않았다.",
+    "CargoWise 등 포워딩 ERP와 국내 포워딩 시스템에 Draft 버전 비교·정정 추적 기능이 있는지 확인하지 못했다.",
+    "국내 적하목록 정정 과태료·기한의 고시 원문을 확인하지 못했다.",
+    "Hapag-Lloyd 공지 본문과 핀란드 세관 Stop word 공지 본문은 403으로 열람하지 못했다.",
+    "EU 집행위원회 ICS2 Release 3 공식 일정 페이지가 404여서 하우스 신고 의무화 시점을 원문으로 확정하지 못했다.",
+    "Tokyo MOU PSC DB의 이용약관과 대량 조회 가능 여부를 확인하지 못했다.",
+    "조사관 브리핑의 Hamburg Süd 수수료, ICC TAB-3 수치, KOBC·LG CNS PoC 기사는 다시 열람하지 않고 인용했다.",
+    "KOBC 공모 게시판 응모작 본문을 열람하지 않았다(제목 기준 중복 판단만 했다)."
+  ]
+}

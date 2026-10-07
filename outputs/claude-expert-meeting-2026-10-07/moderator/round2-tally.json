@@ -1,0 +1,496 @@
+{
+  "meeting": "2026 해운/항만/물류 AX 혁신 아이디어 공모전 Claude 전문가 아이디어 회의",
+  "meeting_id": "maritime-ax-claude-2026-10-07-01",
+  "round": 2,
+  "round_name": "사회자 집계",
+  "date": "2026-10-07",
+  "moderator": "메인 오케스트레이터(Claude Opus 5.5)",
+  "method": "전문가 6명 교차 점수(기본 100 + 프로토타입 가점 가능성 10), 상위3 투표(1위 3점·2위 2점·3위 1점), 모의 심사위원단(KOBC 자문위원단 5관점) 평균, 중복 반박(공개 응모작 제목 95건 확인), 사실 재확인 정정을 원 파일에서 기계적으로 집계했다. 점수는 상대 비교용 정성 판단이며 실제 심사점수 예측이 아니다.",
+  "source_files": [
+    "shipping-ops/round2-review.json",
+    "port-terminal/round2-review.json",
+    "logistics-data-architect/round2-review.json",
+    "ai-engineer/round2-review.json",
+    "business-strategist/round2-review.json",
+    "regulation-esg/round2-review.json",
+    "industry-researcher/round2-duplication-check.json",
+    "fact-checker/round2-fact-check.json",
+    "judge-panel/round2-scoring.json"
+  ],
+  "contest_board_titles_checked": 95,
+  "tally": [
+    {
+      "id": "M1",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 75,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "강력 추천"
+        },
+        "port-terminal": {
+          "base_total_100": 70,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "추천"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "추천"
+        },
+        "ai-engineer": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "추천"
+        },
+        "business-strategist": {
+          "base_total_100": 69,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "추천"
+        },
+        "regulation-esg": {
+          "base_total_100": 71,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "강력 추천"
+        }
+      },
+      "expert_avg_base_100": 70.2,
+      "expert_avg_prototype_10": 8.7,
+      "top3_borda_points": 18,
+      "first_place_votes": 6,
+      "judge_panel": {
+        "base_avg": 68.8,
+        "prototype_bonus_avg": 8.4,
+        "one_line": "현장 장면, 규칙과 AI의 역할 분리, 시연성이 가장 좋고 한글–영문 품명 의미 대조라는 AI 몫도 있다. 국내 빈도 근거가 없고 문서 AI와 겹쳐 점수가 눌린다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "SI–B/L 비교 자동화 사례 Cozentus(2024-11 표기, 지금 원문 404, https://www.cozentus.com/use-case/comparison-of-bill-of-lading-with-shipping-instructions), IQAX×CargoNPay AI SI 검증(2025-10-30, https://www.aap.com.au/aapreleases/cision20251029ae08768), 범용 AI 스킬 'Shipment Document Consistency Gate'(https://www.agensi.io/skills/shipment-document-consistency-gate), 포스코DX R대리, 하나은행 AI 수출서류 심사(2025-05-09)",
+        "surviving_differentiation": "수출신고필증–SI 개정 버전–Draft MBL–HBL·House 적하목록 초안을 4자 대조한다. 위치는 선사 Draft 승인 전이자 적하목록 제출 전이다. DCSA 필드 출처 매핑으로 오탐을 줄이고, 차이마다 정정 시점별 비용 라벨을 붙인다. 'AI 서류 대조' 자체는 차별점이 아니다."
+      },
+      "fact_corrections": [
+        "DCSA 'Draft 직접 수정 불가'를 정정: BL 3.0 사용자 스토리는 그대로지만, eBL API v3.0.3(2026-04-14)이 DRAFT·ISSUED TD를 직접 정정하는 선택적 경로(UseCase 17)와 shippingInstructionsRevisionNumber를 추가함. 요청 대비 결과 대조 기능은 여전히 표준에 없음.",
+        "제277조 적재화물목록 과태료를 정정: 불일치 목록은 제7항제1호(100만원 이하)이고 시행령 별표5 실제 부과기준은 구간별 10·20·30만원, 오류 B/L 11~50건 2배·51건 이상 3배. 입·출항 전 미제출(135②·136③)은 1차 60만원.",
+        "ICC TAB-3 문구 정정: '서류의 65~80%'가 아니라 '신용장의 65~80%가 최초 제시 때 거절'. 2차 보도(TFG 2022-08-11)로만 확인."
+      ]
+    },
+    {
+      "id": "M2",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "port-terminal": {
+          "base_total_100": 64,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "조건부"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 65,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "ai-engineer": {
+          "base_total_100": 66,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "조건부"
+        },
+        "business-strategist": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "조건부"
+        },
+        "regulation-esg": {
+          "base_total_100": 67,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        }
+      },
+      "expert_avg_base_100": 66.3,
+      "expert_avg_prototype_10": 8.5,
+      "top3_borda_points": 5,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 65.4,
+        "prototype_bonus_avg": 8.4,
+        "one_line": "LLM 역할과 평가 설계는 가장 좋다. 그러나 정정 이후의 2차 오류라 단독 출품으로는 약하며, 평가 탭은 M1에 흡수할 가치가 있다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "Cozentus 초안–최종 BOL 차이 보고 사례(원문 404, https://www.cozentus.com/case-study/bill-of-lading-bl-automation), Hapag-Lloyd 웹 기반 B/L 정정·승인 전환(2023-06), DCSA eBL 정정 절차",
+        "surviving_differentiation": "자유문 정정 요청을 기대 변경 필드로 바꿔 재발행본에서 '요청한 것만 바뀌었는지' 검증하고, MBL→HBL→House 적하목록→목적지 사전신고 연쇄 조치를 산출한다. M1과 사용자·문서가 겹치므로 M1의 모드로 합칠 것을 권고한다."
+      },
+      "fact_corrections": [
+        "Maersk USD 100(2023-03-09) 반박: 출처는 Maersk 벨기에의 이메일 정정 EUR 50(2023-04-03 시행, 디지털 정정 무료) 공지임. 현행 한국 기준은 머스크 코리아 2026-09-16 공지로, 2026-10-12부터 SOB+1일 이후 B/L 정정과 OBL↔SWB 변경에 KRW 55,000.",
+        "관세법 제135조제2항 정정: 단서의 포워더 직접 제출은 탁송품 운송업자 한정임. 해상 하우스 목록 작성·제출 근거는 고시 제2조·제48조③. 위반 과태료 상한 200만원, 부과기준 1차 60만원·2차 100만원·3차 이상 200만원."
+      ]
+    },
+    {
+      "id": "M3",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 64,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "port-terminal": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 65,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "조건부"
+        },
+        "ai-engineer": {
+          "base_total_100": 65,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "조건부"
+        },
+        "business-strategist": {
+          "base_total_100": 67,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "regulation-esg": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "추천"
+        }
+      },
+      "expert_avg_base_100": 66.2,
+      "expert_avg_prototype_10": 7.7,
+      "top3_borda_points": 4,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 70.2,
+        "prototype_bonus_avg": 7.8,
+        "one_line": "스케줄 변동이라는 해운 특유의 문제와 납기 효과로 다섯 위원 점수가 고르게 높다. 다만 AI가 통지 추출에 그쳐 혁신성과 가점 상한이 낮다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "트레드링스 Ocean Visibility AI 선적 알림(선박·ETD/ETA·항구 변경, https://www.tradlinx.com/blog/?p=15581), CargoSmart Schedule Delay Alerts(컷오프·수출통관 계획 지원), Terminal49 등 이벤트 API",
+        "surviving_differentiation": "감지 이후 단계다. 변경 한 건을 부킹별 재작업 목록(SI·VGM 마감, Draft B/L, House 적하목록·해외 사전신고 정정, 적재기간 30일 위험)과 담당·기한으로 매핑한다. 감지는 기존 서비스의 알림을 입력으로 받는다."
+      },
+      "fact_corrections": [
+        "'2026년 최저'는 이미 갱신됨: 2026년 8월 49.9%(2022년 9월 이후 최저), 평균 지연 6.81일(2026-09-29, GLP 181).",
+        "제251조 위반 과태료 정정: 법정 상한은 200만원이지만 시행령 별표5 부과기준은 1년 위반 1~10회 10만원, 11~20회 30만원, 21회 이상 50만원. 핵심 위험은 수출신고 수리 취소 가능성(추론)."
+      ]
+    },
+    {
+      "id": "M4",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 69,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "port-terminal": {
+          "base_total_100": 67,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 66,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "ai-engineer": {
+          "base_total_100": 64,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "business-strategist": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "regulation-esg": {
+          "base_total_100": 66,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        }
+      },
+      "expert_avg_base_100": 66.7,
+      "expert_avg_prototype_10": 8.0,
+      "top3_borda_points": 6,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 67.6,
+        "prototype_bonus_avg": 7.8,
+        "one_line": "국내 근거와 비용 환산은 가장 강하다. 그러나 기존 상용 서비스, 얇은 AI 역할, 낮은 해양 적합성, 제도 의존이 상한을 막는다."
+      },
+      "duplication": {
+        "risk": "high",
+        "closest_existing": "엠투코리아 스마트 보세운송 서비스(2024-11-08 상용화 착수 보도, 신고·반출입·배차·AI 챗봇, https://www.twig24.com/news/local_bs/2024/11/08/20241108500138), KCLA Pass+ 보세운송 앱(엠투코리아 개발, 신고 상태 추적으로 누락 방지·과태료 부담 감소, 2025-07-04 업데이트, https://apps.apple.com/kr/app/kcla-pass-%EB%B3%B4%EC%84%B8%EC%9A%B4%EC%86%A1/id6480532767)",
+        "surviving_differentiation": "신고 도구 밖(메신저·엑셀)에서 생긴 배차 변경, 세관 차량신고, COPINO·터미널 반출을 3원 대조하고 순서 역전을 탐지하며 소명용 시간순 근거를 만든다. 엠투코리아의 대조 기능 유무는 공개 자료로 확인되지 않았다. 우선순위를 낮출 것을 권고한다."
+      },
+      "fact_corrections": [
+        "'3개월 약 1,000만원 누적' 정정: 원문은 '1000만원 규모로 예상되는' 사례임(뉴시스 2026-04-18). 1차 50만원 기준 약 20건에 해당(추론).",
+        "공공 반출입 API 활용 정정: B/L 번호, 컨테이너 번호, 실시간, 자동승인은 맞지만 상세 항목에 반출입 시각·차량번호가 보이지 않음. 차량 단위 사후 대조 근거로는 확인이 필요함."
+      ]
+    },
+    {
+      "id": "M5",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 68,
+          "prototype_bonus_potential_10": 9,
+          "verdict": "조건부"
+        },
+        "port-terminal": {
+          "base_total_100": 65,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 61,
+          "prototype_bonus_potential_10": 6,
+          "verdict": "비추천"
+        },
+        "ai-engineer": {
+          "base_total_100": 67,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "조건부"
+        },
+        "business-strategist": {
+          "base_total_100": 66,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "조건부"
+        },
+        "regulation-esg": {
+          "base_total_100": 65,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "조건부"
+        }
+      },
+      "expert_avg_base_100": 65.3,
+      "expert_avg_prototype_10": 7.3,
+      "top3_borda_points": 3,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 67.6,
+        "prototype_bonus_avg": 7.2,
+        "one_line": "적합성은 최고이고 항만·학계 위원 점수가 높다. 협력업체 데이터, 공공 안전 AI 중복, 효과 계량화가 약하고 위원 간 편차가 가장 크다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "IntelliPERMIT SIMOPS 충돌 관리(대상 산업에 Ports & Harbours 명시, https://www.intellipermit.com/capabilities/conflict-management/), 해수부 항만재해 예측 시스템 계획(https://www.dailian.co.kr/news/view/1574437/), 건설 AI TBM(황룡건설 2025-07, iH 2026-07-31), HJNC HAN눈에·LG U+ PNC CCTV AI",
+        "surviving_differentiation": "항만안전특별법상 하역사 총괄 안전관리 의무에 맞춰 하역계획과 협력업체 작업·출입 신청을 결합하고, 계획 단계에서 동시작업 충돌을 찾는다. TBM은 그 충돌 목록에서 나오는 부속물로만 둔다. 해수부 예측 시스템과는 보완 관계로 표기한다."
+      },
+      "fact_corrections": [
+        "'2025년 사망 7명'은 연간 통계가 아니라 2025-10-15 기사 시점까지의 누계.",
+        "하역사 의무 문구 정정: 법 제9조는 항만운송 종사자(도급·용역 포함) 대상 출입통제·시설·장비 등 자체안전관리계획 수립·승인 의무임. '출입 근로자 전체 총괄 지시·감독'은 2022년 보도 표현이고, 협력업체 동시작업 조정 의무는 법에 직접 없음."
+      ]
+    },
+    {
+      "id": "M6",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 62,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "비추천"
+        },
+        "port-terminal": {
+          "base_total_100": 60,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "비추천"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 64,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "조건부"
+        },
+        "ai-engineer": {
+          "base_total_100": 59,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "business-strategist": {
+          "base_total_100": 60,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "regulation-esg": {
+          "base_total_100": 61,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        }
+      },
+      "expert_avg_base_100": 61.0,
+      "expert_avg_prototype_10": 7.7,
+      "top3_borda_points": 0,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 61.2,
+        "prototype_bonus_avg": 8.2,
+        "one_line": "공개 정답 데이터로 정직한 평가가 가능하지만 EU 규정 하나에 묶여 적합성·효과·혁신이 모두 중간 이하다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "iCustoms AI ICS2 신고·HS 분류(해상 하우스 신고자 대상, https://www.icustoms.ai/blogs/ics2-update-maritime-house-level-filers/), Zonos Customs Description(AI가 품명을 대신 생성), CargoWise ICS2 검증(HS 6자리 형식·필수 필드, 2025-02-10), 로그인네트웍 DocuAI(국내 HS 분류)",
+        "surviving_differentiation": "품명을 대신 쓰지 않고 화주에게 한국어 보완 질문 초안을 만든다. 품명·HS 6단위·인보이스 3자 정합성과 금지어 목록 밖 모호성을 판정한다. 국내 포워더 접수 단계에 위치한다. 해양 AX 적합성 보강이 필요하다."
+      },
+      "fact_corrections": [
+        "의무화 시점 불일치 해소: 해상 하우스 신고는 2024-12-04~2025-04-01 배치 기간 적용. 2026-02-03은 ENS 메시지 v3 이행 기한(2차 자료)이고 의무화 시점이 아님."
+      ]
+    },
+    {
+      "id": "M7",
+      "expert_scores": {
+        "shipping-ops": {
+          "base_total_100": 62,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "port-terminal": {
+          "base_total_100": 58,
+          "prototype_bonus_potential_10": 8,
+          "verdict": "비추천"
+        },
+        "logistics-data-architect": {
+          "base_total_100": 58,
+          "prototype_bonus_potential_10": 6,
+          "verdict": "비추천"
+        },
+        "ai-engineer": {
+          "base_total_100": 58,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "비추천"
+        },
+        "business-strategist": {
+          "base_total_100": 58,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "비추천"
+        },
+        "regulation-esg": {
+          "base_total_100": 58,
+          "prototype_bonus_potential_10": 7,
+          "verdict": "비추천"
+        }
+      },
+      "expert_avg_base_100": 58.7,
+      "expert_avg_prototype_10": 7.2,
+      "top3_borda_points": 0,
+      "first_place_votes": 0,
+      "judge_panel": {
+        "base_avg": 60.8,
+        "prototype_bonus_avg": 7.8,
+        "one_line": "항만 적합성은 좋다. 그러나 국내 문제 근거가 없고 공공 PCS·범용 메일 AI와 겹치며 실현가능성도 낮다."
+      },
+      "duplication": {
+        "risk": "medium",
+        "closest_existing": "PortXchange Synchronizer(대리점·도선·예선에 변경 자동 알림, https://port-xchange.com/case-studies/reduce-vessel-delays-on-departure/), Portbase Port Call Optimisation(2025-10-15), BPA Port-i, 2026 응모작 ITT-Slot(선석계획 변경 트리거 공유, 10-01)과 냉동컨테이너 인계 확인(확인 추적 패턴 공유, 09-29)",
+        "surviving_differentiation": "공용 플랫폼이 없는 국내 항만에서 선박대리점 한 곳이 혼자 쓰는 항만서비스 오더 재확인 원장이다. 업체별 선행시간 규칙, AI 변경 요청 초안, 회신 확인 추적을 묶는다. 제목에서 사용자와 대상을 드러내 기존 응모작과 구분한다."
+      },
+      "fact_corrections": []
+    }
+  ],
+  "critical_fact_corrections": [
+    "M2: 'Maersk 발행 후 정정 USD 100(2023-03-09)'은 출처와 다름. 해당 출처는 Maersk 벨기에의 이메일 정정 EUR 50 공지임. 현행 한국 근거는 머스크 코리아 2026-09-16 공지(2026-10-12부터 SOB+1일 이후 정정 KRW 55,000).",
+    "M1·M2: DCSA eBL API v3.0.3(2026-04-14)이 DRAFT·ISSUED TD 직접 정정 경로(선택 구현)를 추가함. 'Draft 직접 수정 불가'라는 단정은 고쳐야 함. 요청 대비 결과 대조 기능이 표준 범위 밖이라는 점은 유지됨.",
+    "M1·M2·M3: 관세법 제277조 '200만원 이하'는 법정 상한임. 시행령 별표5 실제 부과기준: 제251조 위반 10만·30만·50만원, 불일치 적재화물목록 10만·20만·30만원(오류 B/L 11~50건 2배, 51건 이상 3배), 입·출항 전 미제출 1차 60만원.",
+    "M4: 근거를 원문으로 확정함. 관세법 제216조제3항(2026-01-01 시행 개정) + 제277조제6항제2호 + 별표5(1차 50만원, 2차 100만원, 3차 이상 200만원). 신고 시점은 보세운송 고시 제26조②~④. '3개월 1,000만원'은 예상액.",
+    "M4: 공공 반출입 API 상세 항목에 반출입 시각·차량번호가 보이지 않음. 사후 차량 대조 기능은 항목 확인 전까지 핵심 기능으로 쓰지 않음.",
+    "M3: 7월 56.4%는 최저가 아님. 최신 8월 49.9%, 평균 지연 6.81일(Sea-Intelligence 2026-09-29).",
+    "M5: '2025년 사망 7명'은 2025-10 기사 시점 누계임. 하역사 '출입 근로자 전체 총괄 지시·감독'은 현행 법문이 아니며, 협력업체 동시작업 조정 의무는 법에 직접 없음.",
+    "M6: 해상 하우스 신고 의무 배치 기간은 2024-12-04~2025-04-01이고, 2026-02-03은 ENS v3 메시지 이행 기한임. stop word 갱신 목록 2026-08-03 발효는 EU 공식 페이지로 확인.",
+    "M1·M2: Hamburg Süd USD 95는 2020년 자료이고 브랜드가 통합됐으므로 현행 근거가 아님. Hapag-Lloyd 한국 MAF KRW 60,000('세관 제출 후 정정', 2026-07-01)으로 대체.",
+    "M2: 관세법 제135조제2항 단서의 포워더 직접 제출은 탁송품 운송업자 한정임. 하우스 적하목록 근거는 「보세화물 입출항 하선 하기 및 적재에 관한 고시」 제2조·제43조·제44조·제48조(출항 정정 기한 해상 90일)."
+  ],
+  "judge_award_view": "최우수 이상을 노릴 1순위는 조건부로 M1이고, 근소한 차로 M3가 대안이다. 현재 평균은 M3 70.2점, M1 68.8점으로 M3가 앞서지만 1.4점 차는 채점 오차 범위다. 보강 후 상한 추정은 M1 80점, M3 77점이다. M1을 앞에 둔 이유는 세 가지다. 한글 수출신고 품명과 영문 B/L 품명의 의미 대조처럼 규칙으로 대신하기 어려운 AI 몫이 있다. 선사 문서팀용 발행 전 점검 모드로 KOBC 선사 PoC와 이을 수 있다. 3열 대조와 비용 시점 라벨로 프로토타입 가점 기대가 가장 높다. 대상권(가정상 기본 85점 이상)에 든 후보는 현재 없다. 공개 근거로 국내 발생 빈도를 보이지 못하는 것이 모든 후보의 공통 상한이다. M1이 최우수권에 가려면 다음 조건이 필요하다. ① 국적 선사 공개 요율표 등에서 국내 정정 비용 근거를 원문으로 1건 이상 확보한다. ② 기존 제품과의 차이를 '추출·입력'과 '버전·출처·비용 시점 대조'로 나눈 비교표 하나로 보인다. 비교 대상은 포스코DX R대리, IQAX×CargoNPay, CargoWise+Shipamax, Kognitos다. ③ 정상 차이의 처리 규칙을 명시한다. 수출신고필증–B/L 1:N 관계, 분할선적, HBL과 MBL의 당사자 차이가 여기에 해당한다. ④ M2의 평가 탭(규칙만, 규칙+정규화, 규칙+LLM)을 넣되 합성 데이터 기준임을 밝히고 효과 수치로 쓰지 않는다. ⑤ 선사 모드와 KOBC PoC 경로를 1쪽 안에 쓴다. ⑥ 범위를 SI, Draft MBL, HBL(적하목록 초안), 수출신고필증 4종으로 고정한다. M3 기능은 '변경 통지가 오면 게이트 재실행' 한 줄로만 잇는다. M3로 간다면 AI 역할을 통지 추출 이상으로 키우고, 포워딩 ERP와 가시성 플랫폼의 기존 기능 경계를 공개 문서로 확인해야 한다.",
+  "merge_suggestions_by_expert": {
+    "shipping-ops": [
+      "M1을 축으로 나머지를 단계별 모드로 합친다. 1) SI 제출 직전 점검: EP 합계와 목적지 사전신고 품질(M6). 2) Draft 수신 후 세관 마감 전 3자 대조: M1 본체. 3) 정정 요청 후 재검증: 요청 외 변경, HBL·AMS·ICS2 재전송(M2). 4) 모선·항차 변경 시 재점검 트리거: M3 축소. 모든 단계의 비용 라벨은 선사 세관 신고 마감 기준으로 통일한다.",
+      "합친 안의 제목은 '세관 신고 마감 전 선적서류 정합성 게이트'처럼 마감 전 무료 정정 창을 중심으로 잡는다. 그래야 문서 추출 AI와 구분된다.",
+      "M4는 사용자(보세운송 배차)와 데이터가 달라 섞지 않는다. 물류 Track 예비안으로 따로 둔다.",
+      "M5는 TBM 근거 브리핑을 1단계로 하는 축소안으로 항만 Track 예비안에 두고, M7은 보류한다."
+    ],
+    "port-terminal": [
+      "M1+M2+M3를 하나의 '수출 선적서류 정합성 게이트'로 묶는다. 같은 필드·마감 규칙표를 쓰고, Draft 수신 시(M1 본체), 정정 재발행 시(M2 검증 모드), 모선·항차·컷오프 변경 시(M3 재점검 트리거)에 돈다. 본문 주 흐름은 M1 하나로 두고, M2·M3는 확장에 한 문단씩만 쓴다.",
+      "게이트 마감 시계를 출항 적하목록 제출 마감(적재 24시간 전, 근거리는 적재 전)에 고정한다. 선박 선적 예정 시각에서 역산하고, 선박이 바뀌면 다시 계산한다. 고시 원문은 별도로 확인해야 한다.",
+      "M6은 M1의 EU행 목적지 사전신고 규칙 카드로 흡수하고 단독 출품하지 않는다.",
+      "M5는 TBM 단일 기능(시행령 제6조 제1항 제2·3·5호 매핑, 악천후 시나리오 중심)으로 줄여 항만 Track 예비안으로 보관한다. SIMOPS는 확장 계획으로 내린다.",
+      "M7은 단독 출품에서 빼고, 울산항 선석배정 데이터 분석 결과가 유의미할 때만 M3의 변경 이벤트 출처로 재활용한다.",
+      "M4는 스마트 보세운송 서비스의 기능 범위 확인을 통과할 때만 'COPINO 대 세관 차량신고, 게이트 반출 직전 대조'로 포지셔닝해 물류 Track 예비안으로 쓴다."
+    ],
+    "logistics-data-architect": [
+      "대표안은 M1로 하고, 내부 구조를 '선적 건 문서 원장' 하나로 통일한다. M2는 재발행 Draft 검증 모드, M3는 변경 트리거(수출신고 수리일+30일 대비 새 ETD 비교), M6는 EU행 목적지 규칙 팩(HS 10단위 앞 6자리 대 ENS HS 6단위)으로 흡수한다. 다만 기획서와 프로토타입의 핵심 흐름은 'Draft 승인 회신 직전' 한 장면에 집중한다.",
+      "Booking–SI 버전–Draft MBL–HBL–수출신고번호–컨테이너 N:M 연결표, 필드 대조 규칙 사전, 사람 판정 로그를 아키텍처 그림 한 장으로 만들어 차별점으로 내세운다.",
+      "2.4·2.5에 최소 아키텍처 5계층(읽기 전용 수집 → 키 정규화 → 규칙 엔진 → LLM(원문 근거 필수) → 판정 로그)을 고정하고, 차년도 비용 항목도 계층별로 적는다.",
+      "수출신고필증은 PDF 추출과 UNI-PASS 수출신고번호 조회(구조화 보조) 두 경로로 설계한다. UNI-PASS 응답 항목은 사용자가 확인한 범위만 기재한다.",
+      "M4는 M1과 합치지 않고 예비안으로 보관한다. 엠투코리아 서비스의 기능을 확인한 결과로 진행 여부를 정한다.",
+      "M7의 울산항 선석배정 공개 파일은 수정일자의 의미를 확인한 뒤에만 일정 변경 빈도의 국내 근거로 빌린다."
+    ],
+    "ai-engineer": [
+      "결합안 1(권장), 가칭 '수출 선적서류 버전 원장 게이트'. M1을 본체로 하고 M2를 입력 모듈로 둔다: 자유문 정정 요청은 LLM이 SI 델타로 구조화한다. 모선·항차 변경 통지는 재검사 트리거로 쓴다(M3). 대조 대상은 Draft MBL, HBL·House 적하목록 초안, EP 4필드다. EP 수리일 기준 제251조 30일 적재기간 경고를 붙이고, M2의 발행 후 국가별 규칙표는 뺀다.",
+      "결합안 2: M6을 결합안 1의 EU향 품명 검사 모듈로 흡수한다. 평가 탭에 '목록 제외 시험' 결과를 넣어 AI 근거를 보강한다.",
+      "공통 평가 설계(ai-engineer-3 흡수): 합성 생성기, 고정된 변형 유형, 기준선 3단을 쓴다. 지표는 실질 차이 재현율, 건당 오경고, 사람이 볼 항목 수, LLM 호출 비율, 해석 불가 비율이다. 결과에는 '합성 데이터 기준'이라고 명시한다.",
+      "예비안: M5 축소판(동시작업 충돌 점검 본체, TBM은 출력 채널)을 항만 Track 대안으로 유지한다.",
+      "프로토타입 공통 원칙: 실행 중 외부 API 호출 없이 LLM 결과를 사전 생성·고정하고 모델·프롬프트·생성일을 공개한다. 규칙 엔진은 브라우저에서 실제로 실행한다. 제출 2일 전 동결하고 접속을 검증한다."
+    ],
+    "business-strategist": [
+      "주안은 M1을 본체로 하고 M2를 '정정 루프' 모드로 결합하는 것이다. 두 모드는 같은 필드 출처·차이 엔진을 쓴다. 프로토타입은 선적 1건과 3~4화면으로 두 흐름을 시연하고, M2는 기획서 2.4의 두 번째 시나리오로 반 페이지 이내에 넣는다.",
+      "M3는 기능으로 넣지 않는다. 2.5 차년도 확장에 '선사 변경 통지 수신 시 같은 엔진으로 재대조'라는 세 번째 트리거로 한 줄만 쓴다. 이것이 플랫폼 확장성의 근거가 된다.",
+      "M6는 M1의 목적지 사전신고 필드 점검 플러그인(ICS2 Stop word 규칙과 모호 품명 질문 초안)으로 줄이고 단독 출품하지 않는다.",
+      "M4는 사용자와 도메인이 달라 M1과 섞지 않는다. KCLA Pass+와 기능을 비교한 결과에 따라 별도 예비안으로 둘지만 정한다.",
+      "M5를 유지한다면 TBM 근거 브리핑 하나로 좁히고, 사업화 주체는 항만공사 안전 지원사업으로 명시한다.",
+      "공통 사업화 서술은 이렇게 쓴다. 차년도에는 포워더 1곳에서 KOBC PoC를 운영하고, 기준선은 기존 선사 청구서의 정정·Late SI 수수료 3개월치로 잡는다. 이후 공용 매핑 자산과 회사별 판단 기록을 분리한 구조로 KOBC AX 플랫폼에 탑재해 확산한다. 금액과 절감률은 쓰지 않고 산식만 쓴다."
+    ],
+    "regulation-esg": [
+      "단일 출품안은 M1 핵심(SI–Draft MBL–HBL·적하목록 초안–수출신고필증 대조)을 축으로 하고 세 가지를 붙인다. M3는 변경 통지 트리거와 '수리일+30일 적재기한' 경보, M2는 재발행 Draft 검증 모드, M6은 EU ICS2 금지 품명 규칙 1개다. 주 흐름은 M1 하나로 유지한다.",
+      "공통 규칙표에 근거 URL, 발효일, 확인일, 가설 여부 열을 두고, 점검 결과마다 적용 규정 버전을 표시해 규제 변화 위험에 대한 대응을 보여 준다.",
+      "과태료 문구를 표준화한다. 적재화물목록 불일치는 제277조 제7항 제1호(면제 단서 포함), 제출 의무·적재기간 위반은 제277조 제6항 제2호로 쓴다. 건당 금액은 시행령 별표 원문을 확인하기 전까지 쓰지 않는다.",
+      "M4는 M1 계열과 섞지 않는다. 물류 AX 별도 예비안으로만 두고, 제출 직전에 관세청 동향을 다시 확인한다.",
+      "M5는 동시작업 충돌 점검을 주 기능으로 두고 TBM은 그 출력물로 한다. M7은 결합 대상에서 뺀다."
+    ]
+  },
+  "key_insights_by_expert": {
+    "shipping-ops": "정정 비용은 B/L 발행이나 출항 때가 아니라 선사의 세관 신고 마감 때부터 붙는다. Hapag-Lloyd 한국 매뉴얼(v3, 2026-02-06)에 따르면 세관 신고 이후(모선 접안 24시간 전 기준) 들어온 정정에는 KRW 60,000이 부과되고, 사전신고국은 재전송비 USD 40이 추가된다. AMS·ICS2 하우스 정정은 웹이 아니라 메일로만 받는다. 또 Maersk 한국 가이드에 따르면 SI 제출 때 EP를 '번호/포장수/중량'으로 넣어야 하고, 면장과 B/L의 수량·중량이 같아야 한다(동시포장 제외). 따라서 M1의 승부처는 문서 추출 AI가 아니라 '마감 전 무료 정정 창' 관리다. 이 확인으로 내가 라운드1에서 세운 가설('Draft 단계는 비용이 안 드러난다')도 바로잡았다.",
+    "port-terminal": "항만 관점에서 서류 계열 후보(M1·M2·M3)는 터미널 작업 지연과 직접 이어지지 않는다. 터미널은 B/L이 아니라 선적 목록으로 움직이기 때문이다. 그래서 효과는 서류·신고 쪽 Q·C로 정직하게 좁혀야 한다. 대신 출항 적하목록 제출 마감(일반 적재 24시간 전, 근거리 적재 전. 2021년 2차 자료로만 확인)을 게이트의 기한으로 삼으면 항만 일정과 이어지는 고리가 생긴다. 이 마감은 선박 선적 시각에서 역산할 수 있다. 내 아이디어 M5는 원문을 확인한 결과 불리한 점이 나왔다. 시행령 제6조 제1항의 자체안전관리계획 포함 사항에 협력업체 동시작업 조정과 TBM이 명시돼 있지 않다. 그래서 TBM 단일 기능으로 축소한 예비안으로 내렸다. 직접 연결되는 조항은 제2호 하역작업별 작업기준, 제3호 하역장비 안전수칙, 제5호 악천후 대비 조치다. M7은 예선이 예선운영협의회·예선사용기준 체계로 관리된다는 점이 확인돼 '여러 업체에 개별 전파한다'는 전제가 흔들린다. 실제 배정 경로는 확인하지 못했다.",
+    "logistics-data-architect": "데이터 관점의 승부처는 세 가지다. 입력이 사용자 조직 안에 있는가, 판정 기준이 되는 정답 원장이 있는가, 합성 데이터용 공개 스키마가 있는가. M1은 셋을 모두 충족한다. M1의 숨은 기술 핵심은 수출신고번호–HBL–컨테이너 사이의 N:M 연결(분할선적·혼재)과 필드 정의 차이(거래품명 대 B/L 품명, 순중량 대 총중량)를 다루는 대조 규칙 사전이다. 이를 전면에 세워야 문서 AI 제품(R대리·Shipamax·IQAX×CargoNPay)과 구분된다. M4는 웹으로 확인한 결과 두 가지 약점이 드러났다. 공공 외항컨테이너반출입정보 API는 선박 기항 단위로 조회하고 공개 명세에 반출입 일시·차량번호가 없어, 라운드1의 사후 점검 주장이 과장일 수 있다. 또 엠투코리아 서비스가 운전자·차량 교체 처리와 관세청 연계를 표방해 차별성이 약하다. M6는 EU의 공개 허용·불허 예시로 LLM 성능을 실측할 수 있어, 가점 근거로 M1에 붙이기 좋다.",
+    "ai-engineer": "AI 엔지니어 관점에서 두 가지를 새로 확인했다. 첫째, SI–B/L 대조와 Draft–Final B/L 대조는 이미 있다. Cozentus가 글로벌 3PL에 AI/ML/NLP로 제공한 사례가 검색 결과에 나온다(검색 요약 기준이며 본문은 404). 그래서 M1·M2는 'DCSA 표준에 대조 장치가 없다'를 혁신 근거로 쓸 수 없다. 차별점은 국내 규제 층(EP·House 적하목록), 비용·시점 라벨, 자유문 정정 요청을 SI 버전 델타로 바꾸는 원장으로 옮겨야 한다. 둘째, 내가 라운드1에서 제안한 '규칙만 대 규칙+LLM' 비교는 자유문 입력에서 규칙 기준선이 0이 되는 허수아비 비교다. 기준선을 3단(diff, 정규화 규칙, LLM)으로 바꾸고, '사람이 봐야 할 항목 수'를 검토시간 대용 지표로 둬야 한다. M4·M7·M3은 AI 몫이 범용 추출에 그친다. M6은 하우스 신고가 2025-04-01까지 시행됐다(2026-02-03은 v2 메시지 폐지일, FIATA). 거절도 제출 직후 통보돼 단독 효과가 약하다.",
+    "business-strategist": "점수 차이는 작다(M1 69, M2·M4 68, M3 67). 순위를 가르는 것은 '비용이 확정되는 시점과 그 비용을 내는 사람을 국내 공개 근거로 한 줄에 고정할 수 있느냐'다. Hapag-Lloyd 한국 로컬차지표에서 세관 제출 후 B/L 정정 KRW 60,000/건(2026-07-01 시행)을 직접 확인했다. 같은 표에 Late SI KRW 60,000/BL과 Booking Amendment KRW 60,000/요청도 있다. 이로써 M1·M3의 비용 근거가 해외 사례에서 국내 공개 요율로 바뀌었다. KOBC는 검증된 모델을 플랫폼형 서비스로 일반에 개방하겠다는 방침이고 지원 대상에 물류 기업이 포함된다(2025-09-15 보도). 따라서 DCSA 표준 기반으로 여러 중소 포워더에 복제할 수 있는 문서 정합성 게이트가 사업화에 가장 유리하다. 반대로 M4는 엠투코리아의 KCLA Pass+보세운송 앱이 같은 사용자에게 '누락 방지·과태료 부담 감소'를 이미 내세우고 있어 상용 중복 위험이 커졌다. 아직 확인하지 못한 핵심 가설은 포워더가 정정 수수료를 화주에게 넘기는지 여부다. 넘긴다면 M1의 도입 동기가 수수료가 아니라 작업시간과 서비스 품질로 바뀐다.",
+    "regulation-esg": "원문으로 확인한 결과 관세법 제277조 제7항 제1호에 단서가 있다. 화주가 직접 적입·봉인해 제출자가 확인할 수 없는 화물은 '적재물품과 불일치한 적재화물목록' 과태료(100만원 이하) 대상에서 빠진다. 따라서 문서 정합성 후보(M1·M2)는 과태료 예방이 아니라 유료 정정·정정 신고 예방을 주 효과로 써야 한다. 보세운송 후보(M4)의 근거는 제216조 제3항과 제277조 제6항 제2호(200만원 이하)로 확인했다. 하지만 시행 시점 보도가 2024-01-01과 2026-01-01로 엇갈리고, 업계의 유예 요구와 COPINO 전산 연동 요구 때문에 규제 변화 위험이 가장 크다. ICS2 해상 하우스 신고의 배치 기간은 2024-12-04~2025-04-01이었다. 출처마다 의무화 시점으로 적힌 2026-02는 ENS v3 메시지 전환 시한이다."
+  },
+  "moderator_decision": {
+    "finalists": [
+      {
+        "id": "MF1",
+        "title": "세관 신고 마감 전 수출 선적서류 정합성 게이트(M1 본체 + M2 재발행 검증 모드 + M3 변경 재점검 트리거 + M6 EU 목적지 규칙 카드)",
+        "basis": "M1 전문가 평균 70.2·1위표 6/6·Borda 18, 모의 심사 68.8(보강 후 상한 추정 80), 프로토타입 가점 기대 최고."
+      },
+      {
+        "id": "MF2",
+        "title": "선적 변경 연쇄 점검(M3 단독, AI 역할 강화)",
+        "basis": "모의 심사 평균 1위(70.2)이나 전문가 평균 66.2. MF1과 경쟁 설계로 비교."
+      },
+      {
+        "id": "MF3",
+        "title": "하역사 안전관리 지원(M5 축소: 시행령 제6조 제1항 매핑 TBM 근거 브리핑 + 동시작업 충돌 점검)",
+        "basis": "항만 Track 대안. 적합성 최고, 모의 심사 67.6. 문서 AI 중복 위험이 없는 비문서 대안."
+      }
+    ],
+    "demoted": [
+      {
+        "id": "M2",
+        "reason": "단독으로는 2차 오류. MF1의 재발행 검증 모드와 평가 탭으로 흡수."
+      },
+      {
+        "id": "M4",
+        "reason": "중복 위험 high(엠투코리아 스마트 보세운송·KCLA Pass+), 공공 API 항목 한계, 제도 변경 위험, 해양 적합성 중간. 물류 Track 예비안으로만 보관."
+      },
+      {
+        "id": "M6",
+        "reason": "EU 규정 하나에 묶여 적합성·효과 중간 이하, 하우스 신고 의무화는 2025-04 완료. MF1의 목적지 규칙 카드로 흡수."
+      },
+      {
+        "id": "M7",
+        "reason": "국내 문제 근거 부재, PortXchange·Port-i·응모작과 겹침, 예선 배정 체계 전제 흔들림."
+      }
+    ],
+    "round3_plan": "MF1~MF3 각각 담당 전문가가 기획서 양식(개요·2.1~2.7)에 맞춘 컨셉을 쓰고, 반론자 2명(전문가 1 + 모의 심사위원단)이 반박한 뒤 담당자가 수정본을 낸다. 마지막에 모의 심사위원단이 최종 비교 판정을 한다."
+  }
+}

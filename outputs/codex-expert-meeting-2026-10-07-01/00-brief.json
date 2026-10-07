@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "meeting_id": "maritime-ax-codex-2026-10-07-01",
+  "producer": "Codex",
+  "language": "ko",
+  "date_kst": "2026-10-07",
+  "status": "in_progress",
+  "purpose": "해양 AX 공모전 후보의 강점·반증·실행 조건을 전문가들이 독립 검토하고 상호 반박한 기록을 JSON으로 남겨 추후 Claude 회의와 비교",
+  "scope": {
+    "project": "C:/dev/maritime-ax-idea",
+    "deliverable": "AI 전문가 역할별 1차 의견, 상호 질문·답변, 수정 의견, 총괄 합의와 비교 기준",
+    "topic_selection": "권고만 작성하며 사용자 출품 주제 확정은 아님",
+    "implementation": false
+  },
+  "independence": {
+    "claude_meeting_read": false,
+    "excluded_outputs": [
+      "outputs/topic-comparison-v1.md",
+      "outputs/independent-review-v1.md",
+      "타 에이전트가 생성한 Claude 회의 파일"
+    ],
+    "historical_context_read": [
+      "docs/planning-session-2026-10-07.md"
+    ],
+    "caveat": "기존 기획 기록의 A 축소안과 가정을 공유했으므로 무맥락 맹검은 아니다. 이번 Claude 회의는 읽지 않고 비교는 유보한다."
+  },
+  "user_constraints": [
+    "개인 참가·기획서 중심",
+    "현장 인터뷰·실제 문서 확보 경로는 미확인",
+    "사용자 경험·수치·수요·효과를 창작하지 않는다",
+    "외부 문의·접수·배포는 범위 밖",
+    "합성 샘플은 기능 설명용이며 현장 효과의 증거가 아니다"
+  ],
+  "candidates": [
+    {
+      "id": "A",
+      "name": "운송 문서 불일치 검토",
+      "problem_status": "가설",
+      "starting_scope": "기존 기록의 축소안: 발행 전 동일 선적의 최신 SI–Draft B/L 제한 필드 대조. AI가 근거와 검토 후보를 제시하고 담당자가 판단.",
+      "open_issues": [
+        "문서 역할·필드 의미·버전 확정",
+        "정상 차이와 오류 구분",
+        "단순 규칙·기존 제품 대비 AI 필요성",
+        "합법적인 샘플과 국내 수요 근거"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "인수인계 미처리 항목 추적",
+      "problem_status": "가설",
+      "starting_scope": "이메일·문서·메신저의 담당자·기한·상태 누락을 항만·물류의 한 인수인계 단계로 좁혀 검토",
+      "open_issues": [
+        "구체 업무·사용자·누락 사례",
+        "일반 업무관리 제품 대비 차별성",
+        "연계 권한과 데이터 확보"
+      ]
+    }
+  ],
+  "evaluation": {
+    "official_weights": {
+      "feasibility": 30,
+      "impact": 30,
+      "problem_definition": 20,
+      "fit": 10,
+      "innovation": 10
+    },
+    "score_policy": "검증 안 된 수상 확률·심사 점수는 생성하지 않는다. 필요 시 의사결정용 가정임을 밝히며 정성 비교를 우선한다.",
+    "deliverable_policy": "개요 포함 10쪽 이내는 보수적 작성 방침이며 양식의 분량 문구는 병존한다."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "current_official_web",
+      "url": "https://kobcax.com/contest/?id=1821&sbr2_action=view&sbr2_page=1",
+      "checked_on": "2026-10-07",
+      "supports": "공모 주제·개인 참가·2026-10-30 14:00 마감",
+      "limit": "첨부 원본 파일 최신성·레이아웃은 이번 회의에서 재확인 전"
+    },
+    {
+      "id": "S2",
+      "kind": "local_official_extract",
+      "path": "sources/notice.txt",
+      "supports": "기본평가 항목과 배점",
+      "authority_note": "sources/notice.hwp 원본 우선"
+    },
+    {
+      "id": "S3",
+      "kind": "local_native_hwp_extract",
+      "path": "work/notice-native-hwp.txt",
+      "supports": "이전 HWP COM 추출문. 배점 재대조 가능",
+      "limit": "이번 회의는 HWP GUI를 다시 열지 않음"
+    },
+    {
+      "id": "S4",
+      "kind": "local_native_hwp_extract",
+      "path": "work/form-native-hwp.txt",
+      "supports": "프로토타입 선택·미제출 감점 없음, 제출 형식",
+      "limit": "이번 회의는 원본 레이아웃 미검증"
+    },
+    {
+      "id": "S5",
+      "kind": "project_input",
+      "path": "docs/idea-candidates.md",
+      "supports": "A·B 문제 가설"
+    },
+    {
+      "id": "S6",
+      "kind": "historical_project_context",
+      "path": "docs/planning-session-2026-10-07.md",
+      "supports": "기획서 중심·현장 접근 미확인·A 축소안",
+      "limit": "과거 기록의 판단을 현재 사실로 승격하지 않음"
+    }
+  ],
+  "roles": [
+    {
+      "id": "business",
+      "role": "사업성·현장 업무",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "reason": "업무 대안과 개인 기획의 실행 조건 종합",
+      "ownership": "분석만 수행, 파일 저장은 총괄"
+    },
+    {
+      "id": "architecture",
+      "role": "기술·데이터 실현성",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "reason": "최소 입력·출력·오류 처리와 검증 설계",
+      "ownership": "분석만 수행, 파일 저장은 총괄"
+    },
+    {
+      "id": "evidence",
+      "role": "근거 검증·심사 반론",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "reason": "근거의 적용 범위·반증·상충 판단",
+      "ownership": "읽기 전용 의견, 파일 저장은 총괄"
+    }
+  ],
+  "method": {
+    "rounds": [
+      "independent_assessment",
+      "peer_challenge_and_response",
+      "revised_position_and_synthesis"
+    ],
+    "recording": "실제 서브에이전트 산출물과 교환 메시지. 가상 사람의 회의나 실제 현장 자문으로 표현하지 않는다.",
+    "skills": [
+      "orchestrate",
+      "superpowers:brainstorming"
+    ],
+    "grilling": "별도 grill-me/grilling 스킬을 발견하지 못함. 반증 질문 방식만 사용.",
+    "verification": [
+      "JSON 구문·스키마 핵심키",
+      "출처와 주장 상태",
+      "실제 질문과 답변 연결",
+      "소스·결과 SHA256"
+    ]
+  },
+  "comparison_dimensions": [
+    "문제·대상 사용자",
+    "업무 범위",
+    "확인 사실과 가정",
+    "AI 필요성·비AI 대안",
+    "데이터 확보 가능성",
+    "기존 제품 대비 차별성",
+    "효과 측정·실패 기준",
+    "도입 비용·기간의 가정",
+    "기각한 대안",
+    "최종 권고·미합의 쟁점",
+    "외부 근거 최신성",
+    "회의 중 바뀐 의견"
+  ],
+  "unknowns": [
+    "실무자 접근 가능 여부",
+    "실제 처리량·오류율·비용",
+    "샘플 사용 권한",
+    "최종 주제 선택",
+    "Claude 회의 의제·투입 자료·참석 역할"
+  ]
+}
